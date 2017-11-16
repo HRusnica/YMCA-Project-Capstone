@@ -4,6 +4,8 @@
 
 BEGIN;
 
--- INSERT statements go here
+INSERT INTO app_user (email, password) VALUES ('heather.rusnica@gmail.com', 'passwordPassword');
+INSERT INTO manager (email, first_name, last_name) VALUES ('heather.rusnica@gmail.com', 'Heather', 'Rusnica');
+
 
 COMMIT;
