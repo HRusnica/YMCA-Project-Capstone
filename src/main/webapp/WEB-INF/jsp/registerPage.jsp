@@ -28,13 +28,7 @@
 				<form:input path="password"/>
 				<form:errors path="password" cssClass="error"></form:errors>
 			</div>
-			<div>
-				<label for="confirmPassword">Confirm Password</label>
-				<form:input path="confirmPassword"/>
-				<form:errors path="confirmPassword" cssClass="error"></form:errors>
-			</div>
 	<div>
-		<label></label>
 		<input type="submit" value="Submit"/>	
 	</div>
 </form:form>

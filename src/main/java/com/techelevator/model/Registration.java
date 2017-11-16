@@ -14,9 +14,6 @@ public class Registration {
 		
 		@NotBlank(message="Invalid Email") @Email
 		private String email;
-		
-		@NotBlank(message="Invalid Email") @Email
-		private String confirmEmail;
 	
 		//add requirements for special characters or capitals
 		@NotBlank(message="Password is Required") @Length(min=12, message="Password must be at least 12 characters long") 
@@ -55,17 +52,7 @@ public class Registration {
 			this.email = email;
 		}
 
-
-		public String getConfirmEmail() {
-			return confirmEmail;
-		}
-
-
-		public void setConfirmEmail(String confirmEmail) {
-			this.confirmEmail = confirmEmail;
-		}
-
-
+		
 		public String getPassword() {
 			return password;
 		}
