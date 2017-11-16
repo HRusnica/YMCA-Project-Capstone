@@ -25,11 +25,13 @@ import com.techelevator.security.PasswordHasher;
 			
 			@Override
 			public void saveUser(String email, String password) {
+				if (checkForEmail(email)) {
 				byte[] salt = passwordHasher.generateRandomSalt();
 				String hashedPassword = passwordHasher.computeHash(password, salt);
 				String saltString = new String(Base64.encode(salt));
 				jdbcTemplate.update("INSERT INTO app_user(email, password, salt) VALUES (?,?,?)",
 						email, hashedPassword, saltString);
+				}
 			}
 
 			@Override
@@ -49,12 +51,18 @@ import com.techelevator.security.PasswordHasher;
 			}
 
 			@Override
-			public void updatePassword(String userName, String password) {
+			public void updatePassword(String email, String password) {
 				byte[] salt = passwordHasher.generateRandomSalt();
 				String hashedPassword = passwordHasher.computeHash(password, salt);
 				String saltString = new String(Base64.encode(salt));
-				jdbcTemplate.update("UPDATE app_user SET password = ?, salt = ? WHERE user_name = ?",
-						hashedPassword, saltString, userName);
+				jdbcTemplate.update("UPDATE app_user SET password = ?, salt = ? WHERE email = ?",
+						hashedPassword, saltString, email);
+			}
+			
+			public boolean checkForEmail(String email){
+				String sqlSearchForUser = "SELECT * FROM app_user WHERE UPPER(email) = ? ";
+				SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForUser, email.toUpperCase());
+				return (results.next());
 			}
 
 }
