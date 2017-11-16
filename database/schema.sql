@@ -7,6 +7,7 @@ BEGIN;
 CREATE TABLE app_user (
   email varchar(32) UNIQUE NOT NULL,
   password varchar(32) NOT NULL,
+  salt varchar(255) NOT NULL,
   CONSTRAINT pk_app_user_email PRIMARY KEY (email)
 );
 
