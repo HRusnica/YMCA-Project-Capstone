@@ -31,6 +31,11 @@ public class UserController {
 		 return "registerPage";
 	}
 	
+	@RequestMapping(path="/index", method=RequestMethod.GET)
+	public String laurensGloriousIndex(){
+		 return "index";
+	}
+	
 	@RequestMapping(path="/register", method=RequestMethod.POST)
 	public String processRegistration(@ModelAttribute Registration registration, BindingResult result, 
 			RedirectAttributes flash){
