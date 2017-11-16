@@ -12,7 +12,7 @@ CREATE TABLE app_user (
 );
 
 CREATE TABLE manager (
-  email varchar(32) UNIQUE NOT NULL,
+  email varchar(255) UNIQUE NOT NULL,
   manager_id serial,
   first_name varchar(32) NOT NULL,
   last_name varchar(32) NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE manager (
 
 CREATE TABLE instructor (
     instructor_id serial,
-	email varchar(32) UNIQUE NOT NULL,
+	email varchar(255) UNIQUE NOT NULL,
 	manager_id int,
 	first_name varchar(255) NOT NULL,
 	last_name varchar(255) NOT NULL,
@@ -32,5 +32,8 @@ CREATE TABLE instructor (
      CONSTRAINT fk_manager_instructor FOREIGN KEY (manager_id) REFERENCES manager (manager_id)
 );
 
+CREATE TABLE whitelist (
+	email varchar(255)
+);
 
 COMMIT;

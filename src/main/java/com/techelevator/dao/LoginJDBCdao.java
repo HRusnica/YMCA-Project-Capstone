@@ -60,7 +60,7 @@ import com.techelevator.security.PasswordHasher;
 			}
 			
 			public boolean checkForEmail(String email){
-				String sqlSearchForUser = "SELECT * FROM app_user WHERE UPPER(email) = ? ";
+				String sqlSearchForUser = "SELECT * FROM whitelist WHERE UPPER(email) = ? ";
 				SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForUser, email.toUpperCase());
 				return (results.next());
 			}
