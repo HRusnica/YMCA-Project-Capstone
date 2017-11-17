@@ -8,14 +8,15 @@ CREATE TABLE app_user (
   email varchar(32) UNIQUE NOT NULL,
   password varchar(32) NOT NULL,
   salt varchar(255) NOT NULL,
+  first_name varchar(255) NOT NULL,
+  last_name varchar(255) NOT NULL,
   CONSTRAINT pk_app_user_email PRIMARY KEY (email)
 );
 
 CREATE TABLE manager (
   email varchar(255) UNIQUE NOT NULL,
   manager_id serial,
-  first_name varchar(32) NOT NULL,
-  last_name varchar(32) NOT NULL,
+  
   CONSTRAINT pk_manager_id PRIMARY KEY (manager_id),
   CONSTRAINT fk_app_user_manager FOREIGN KEY (email) REFERENCES app_user (email)
 );
@@ -24,8 +25,6 @@ CREATE TABLE instructor (
     instructor_id serial,
 	email varchar(255) UNIQUE NOT NULL,
 	manager_id int,
-	first_name varchar(255) NOT NULL,
-	last_name varchar(255) NOT NULL,
 	bio TEXT,
 	 CONSTRAINT pk_instructor_id PRIMARY KEY (instructor_id),
      CONSTRAINT fk_app_user_instructor FOREIGN KEY (email) REFERENCES app_user (email),
@@ -62,8 +61,6 @@ CREATE TABLE skill_student (
 	CONSTRAINT fk_student_id FOREIGN KEY (skill_id) REFERENCES student (student_id),
 	CONSTRAINT fk_skill_id FOREIGN KEY (skill_id) REFERENCES skill (skill_id)
 );
-
-
 
 CREATE TABLE level (
 	level_id serial,
@@ -114,15 +111,11 @@ CREATE TABLE class (
 --	CONSTRAINT fk_level_id FOREIGN KEY (level_id) REFERENCES level (level_id)
 );
 
-
 CREATE TABLE class_student(
 	student_id int,
 	class_id int,
 	CONSTRAINT fk_student_id FOREIGN KEY (student_id) REFERENCES student (student_id),
 	CONSTRAINT fk_class_id FOREIGN KEY (class_id) REFERENCES class (class_id)
 );
-
-
-
 
 COMMIT;

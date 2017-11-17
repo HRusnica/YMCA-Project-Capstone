@@ -4,8 +4,10 @@
 
 BEGIN;
 
-INSERT INTO app_user (email, password, salt) VALUES ('HEATHER.RUSNICA@gmail.com', 'passwordPassword', 'super');
-INSERT INTO manager (email, first_name, last_name) VALUES ('HEATHER.RUSNICA@gmail.com', 'Heather', 'Rusnica');
+--INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('HEATHER.RUSNICA@gmail.com', 'passwordPassword', 'super', 'Heather', 'Rusnica');
+INSERT INTO whitelist (email) VALUES ('HEATHER.RUSNICA@gmail.com');
+--INSERT INTO manager (email) VALUES ('HEATHER.RUSNICA@gmail.com');
+
 INSERT INTO whitelist (email) VALUES ('new@aol.com');
 
 COMMIT;
