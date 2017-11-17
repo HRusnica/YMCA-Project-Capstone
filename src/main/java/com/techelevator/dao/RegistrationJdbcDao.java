@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import com.techelevator.model.Registration;
 import com.techelevator.security.PasswordHasher;
 
 @Component
@@ -35,6 +36,18 @@ public class RegistrationJdbcDao implements RegistrationDAO {
 		}
 	}
 
+	@Override
+	public void saveUser(Registration registration) {
+		
+		if (checkForEmail(registration.getEmail())) {
+			byte[] salt = passwordHasher.generateRandomSalt();
+			String hashedPassword = passwordHasher.computeHash(registration.getPassword(), salt);
+			String saltString = new String(Base64.encode(salt));
+			jdbcTemplate.update("INSERT INTO app_user(email, password, salt) VALUES (?,?,?)", registration.getEmail(), hashedPassword,
+					saltString);
+		}
+	}
+	
 	public boolean checkForEmail(String email) {
 		String sqlSearchForUser = "SELECT * FROM whitelist WHERE UPPER(email) = ? ";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForUser, email.toUpperCase());
