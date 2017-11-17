@@ -16,40 +16,13 @@ import com.techelevator.model.Login;
 import com.techelevator.model.Registration;
 
 @Controller
-public class UserController {
+public class LoginController {
 	
 	private LoginDAO loginDAO;
 	
-
-	@RequestMapping(path="/index", method=RequestMethod.GET)
-	public String laurensGloriousIndex(){
-		 return "index";
-	}
-
 	@RequestMapping(path="/", method=RequestMethod.GET)
 	public String getMainScreen() {
 		return "homePage";
-	}
-
-	@RequestMapping(path="/register", method=RequestMethod.GET)
-	public String showRegistration(@ModelAttribute Registration registration){
-		
-		 return "registerPage";
-	}
-	
-	@RequestMapping(path="/register", method=RequestMethod.POST)
-	public String processRegistration(@RequestParam String email, @RequestParam String password){
-		System.out.println(email);
-		System.out.println(password);
-//		flash.addFlashAttribute("registration", registration);
-//		
-//		if(result.hasErrors()){
-//			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "registration", result);
-//			return "redirect:/loginPage";
-//		}
-//		
-		loginDAO.saveUser(email, password);
-		 return "redirect:/login";
 	}
 	
 	@RequestMapping(path="/login", method=RequestMethod.GET)
@@ -73,8 +46,9 @@ public class UserController {
 		return "redirect:/confirmationPage";
 	}
 
-	@RequestMapping(path="/confirmationPage", method=RequestMethod.GET)
-	public String showConfirmationPage(){
-		return "/confirmationPage";
+	
+	@RequestMapping(path="/index", method=RequestMethod.GET)
+	public String laurensGloriousIndex(){
+		 return "index";
 	}
 }

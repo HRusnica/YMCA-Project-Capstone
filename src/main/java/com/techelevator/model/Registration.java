@@ -6,17 +6,17 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class Registration {
 
-		@NotBlank(message="First Name is required") @Length(max=20)   
+		//@NotBlank(message="First Name is required") @Length(max=20)   
 		private String firstName;
 		
-		@NotBlank(message="Last Name is required") @Length(max=20) 
+		//@NotBlank(message="Last Name is required") @Length(max=20) 
 		private String lastName; 
 		
-		@NotBlank(message="Invalid Email") @Email
+		//@NotBlank(message="Invalid Email") @Email
 		private String email;
 	
 		//add requirements for special characters or capitals
-		@NotBlank(message="Password is Required") @Length(min=12, message="Password must be at least 12 characters long") 
+		//@NotBlank(message="Password is Required") @Length(min=12, message="Password must be at least 12 characters long") 
 		private String password;
 		
 
