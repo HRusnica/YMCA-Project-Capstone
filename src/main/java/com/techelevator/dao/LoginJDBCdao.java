@@ -25,7 +25,7 @@ import com.techelevator.security.PasswordHasher;
 			
 			@Override
 			public void saveUser(String email, String password) {
-				if (checkForEmail(email)) {
+				if (true) {
 				byte[] salt = passwordHasher.generateRandomSalt();
 				String hashedPassword = passwordHasher.computeHash(password, salt);
 				String saltString = new String(Base64.encode(salt));
