@@ -1,38 +1,38 @@
- a{
-            color:#fff;
-            text-decoration:none;
-        }
-        a:hover{
-            text-decoration:underline;
-        }
-        span.reference{
-            position:fixed;
-            left:10px;
-            bottom:10px;
-            font-size:13px;
-            font-weight:bold;
-        }
-        span.reference a{
-            color:#fff;
-            text-shadow:1px 1px 1px #000;
-            padding-right:20px;
-        }
-        span.reference a:hover{
-            color:#ddd;
-            text-decoration:none;
-        }
+a{
+    color:#fff;
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+span.reference{
+    position:fixed;
+    left:10px;
+    bottom:10px;
+    font-size:13px;
+    font-weight:bold;
+}
+span.reference a{
+    color:#fff;
+    text-shadow:1px 1px 1px #000;
+    padding-right:20px;
+}
+span.reference a:hover{
+    color:#ddd;
+    text-decoration:none;
+}
 
-* {
+*{
     margin:0;
     padding:0;
 }
 body{
-    background:#000;
+    background:#ffffff;
     font-family:Cachet Book;
     font-size: 34px;
     font-style: italic;
     letter-spacing:-1px;
-    width:12000px;
+    width:5000px;
     position:absolute;
     top:0px;
     left:0px;
@@ -43,10 +43,6 @@ body{
 	font-family: Cachet Bold;
 }
 
-h2 {
-	font-family: Cachet Medium;
-}
-
 .section{
     margin:0px;
     bottom:0px;
@@ -55,21 +51,30 @@ h2 {
     height:100%;
     text-shadow:1px 1px 2px #f0f0f0;
 }
+
+.regSection{
+    margin:0px;
+    bottom:0px;
+    width:1000px;
+    float:left;
+    height:100%;
+    text-shadow:1px 1px 2px #f0f0f0;
+}
 .section h2{
+    font-family: Cachet Medium;
     margin:50px 0px 30px 50px;
 }
 .section p{
     margin:20px 0px 0px 50px;
     width:600px;
 }
-.darkblue{
+.blue{
     color:#fff;
-   
-    background:#000 url(../images/toDarkBlue.jpg) no-repeat top right;
+    background:#1b60af url(../img/bubbles.jpg) no-repeat top right;
 }
-.lightBlue{
-    color:#000;
-    background:#fff url(../images/toLightBlue.jpg) no-repeat top right;
+.white{
+    background:#ffffff;
+   
 }
 
 .section ul{
