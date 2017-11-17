@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import com.techelevator.security.PasswordHasher;
 
 	@Component
-	public class LoginJDBCdao implements LoginDAO{
+	public class LoginJdbcDao implements LoginDAO{
 		
 
 			private JdbcTemplate jdbcTemplate;
@@ -23,17 +23,7 @@ import com.techelevator.security.PasswordHasher;
 				this.passwordHasher = passwordHasher;
 			}
 			
-			@Override
-			public void saveUser(String email, String password) {
-				if (true) {
-				byte[] salt = passwordHasher.generateRandomSalt();
-				String hashedPassword = passwordHasher.computeHash(password, salt);
-				String saltString = new String(Base64.encode(salt));
-				jdbcTemplate.update("INSERT INTO app_user(email, password, salt) VALUES (?,?,?)",
-						email, hashedPassword, saltString);
-				}
-			}
-
+			
 			@Override
 			public boolean searchForEmailAndPassword(String email, String password) {
 				String sqlSearchForUser = "SELECT * "+
