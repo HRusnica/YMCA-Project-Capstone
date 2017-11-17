@@ -9,4 +9,5 @@ public interface LoginDAO {
 	public void JDBCUserDAO(DataSource dataSource, PasswordHasher passwordHasher);
 	public void updatePassword(String userName, String password);
 	public boolean searchForEmailAndPassword(String email, String password);
+	public String getRole(String email); 
 }

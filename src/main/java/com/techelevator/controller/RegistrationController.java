@@ -27,14 +27,14 @@ public class RegistrationController {
 //	}
 	
 	@RequestMapping(path="/register", method=RequestMethod.POST)
-	public String processRegistration(@Valid @ModelAttribute("Registration") Registration registration, BindingResult result, 
+	public String processRegistration(@Valid @ModelAttribute("registration") Registration registration, BindingResult result, 
 			RedirectAttributes flash){
 		
 		flash.addFlashAttribute("registration", registration);
 		
 		if(result.hasErrors()){
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "registration", result);
-			return "redirect:/"; // redirect back to div 2 where registration is
+			return "redirect:/#register"; 
 		}
 		
 		registrationDAO.saveUser(registration);

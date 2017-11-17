@@ -16,7 +16,7 @@ public class Registration {
 		private String email;
 	
 		//add requirements for special characters or capitals
-		@NotBlank(message="Password is Required") //@Length(min=12, message="Password must be at least 12 characters long") 
+		@NotBlank(message="Password is Required") @Length(min=12, message="Password must be at least 12 characters long") 
 		private String password;
 		
 

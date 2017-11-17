@@ -23,6 +23,17 @@ import com.techelevator.security.PasswordHasher;
 				this.passwordHasher = passwordHasher;
 			}
 			
+			@Override
+			public String getRole(String email){
+				String sqlSearchForRole = "SELECT * FROM whitelist WHERE UPPER(email) = ? ";
+				SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForRole, email.toUpperCase());
+				if(results.next()){
+					String role = results.getString("role");
+					return role;	
+				} else {
+					return "";	
+				}
+			}
 			
 			@Override
 			public boolean searchForEmailAndPassword(String email, String password) {

@@ -11,6 +11,9 @@ public class Login {
 	@NotBlank(message="Password is Required")
 	private String password;
 	
+	private String role; 
+	
+	
 	public String getPassword() {
 		return password;
 	}
@@ -22,6 +25,12 @@ public class Login {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
 	}
 	
 	

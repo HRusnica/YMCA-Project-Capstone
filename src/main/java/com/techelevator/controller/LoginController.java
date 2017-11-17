@@ -28,8 +28,10 @@ public class LoginController {
 			request.getSession().setAttribute("email", email);
 			if(destination!=null&& !destination.isEmpty()){
 				return "redirect:" + destination;
-			}else{
-			return "redirect:/confirmationPage";
+			}else if(loginDAO.getRole(email).equals("manager")){
+				return "managerHome";
+			} else {
+				return "redirect:/confirmationPage";
 			}
 		} else {
 			return "redirect:/";

@@ -24,17 +24,17 @@ public class RegistrationJdbcDao implements RegistrationDAO {
 		this.passwordHasher = passwordHasher;
 	}
 	
-	@Override
-	public void saveUser(String email, String password) {
-		
-		if (checkForEmail(email)) {
-			byte[] salt = passwordHasher.generateRandomSalt();
-			String hashedPassword = passwordHasher.computeHash(password, salt);
-			String saltString = new String(Base64.encode(salt));
-			jdbcTemplate.update("INSERT INTO app_user(email, password, salt) VALUES (?,?,?)", email, hashedPassword,
-					saltString);
-		}
-	}
+//	@Override
+//	public void saveUser(String email, String password) {
+//		
+//		if (checkForEmail(email)) {
+//			byte[] salt = passwordHasher.generateRandomSalt();
+//			String hashedPassword = passwordHasher.computeHash(password, salt);
+//			String saltString = new String(Base64.encode(salt));
+//			jdbcTemplate.update("INSERT INTO app_user(email, password, salt) VALUES (?,?,?)", email, hashedPassword,
+//					saltString);
+//		}
+//	}
 
 	@Override
 	public void saveUser(Registration registration) {
@@ -43,8 +43,8 @@ public class RegistrationJdbcDao implements RegistrationDAO {
 			byte[] salt = passwordHasher.generateRandomSalt();
 			String hashedPassword = passwordHasher.computeHash(registration.getPassword(), salt);
 			String saltString = new String(Base64.encode(salt));
-			jdbcTemplate.update("INSERT INTO app_user(email, password, salt) VALUES (?,?,?)", registration.getEmail(), hashedPassword,
-					saltString);
+			jdbcTemplate.update("INSERT INTO app_user(email, password, salt, first_name, last_name) VALUES (?,?,?,?,?)", registration.getEmail(), hashedPassword,
+					saltString, registration.getFirstName(), registration.getLastName());
 		}
 	}
 	

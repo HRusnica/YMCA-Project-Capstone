@@ -39,10 +39,10 @@
 			</form:form>
 
             <ul class="nav">
-                <li><a href="#section2">Register</a></li>
+                <li><a href="#register">Register</a></li>
             </ul>
         </div>
-        <div class="regSection white" id="section2">
+        <div class="regSection white" id="register">
             <h2>Register</h2>
             <h2>New Registration Page</h2>
 			<c:url var="registerUrl" value="/register"/>
@@ -51,22 +51,22 @@
 			<div>
 				<label for="firstName">First Name</label>
 				<form:input path="firstName"/>
-				<form:errors path="firstName" cssClass="error"></form:errors>
+				<form:errors path="firstName" cssClass="error"/>
 			</div>
 			<div>
 				<label for="lastName">Last Name</label>
 				<form:input path="lastName"/>
-				<form:errors path="lastName" cssClass="error"></form:errors>
+				<form:errors path="lastName" cssClass="error"/>
 			</div>
 			<div>
 				<label for="email">Email Address</label>
 				<form:input path="email"/>
-				<form:errors path="email" cssClass="error"></form:errors>
+				<form:errors path="email" cssClass="error"/>
 			</div>
 			<div>
 				<label for="password">Password</label>
 				<form:password path="password"/>
-				<form:errors path="password" cssClass="error"></form:errors>
+				<form:errors path="password" cssClass="error"/>
 			</div>
 			<div>
 				<input type="submit" value="Submit"/>	
