@@ -32,7 +32,8 @@ CREATE TABLE instructor (
 );
 
 CREATE TABLE whitelist (
-	email varchar(255)
+	email varchar(255) NOT NULL,
+	role varchar(255) NOT NULL
 );
 
 CREATE TABLE student(
