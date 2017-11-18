@@ -15,13 +15,20 @@
 
 
 <button id="addNewInstructor" ><strong>Add New Instructor</strong></button>
+
+<p id="addInstructorEmail">
+
+	<c:url var="addInstructorUrl" value="/addInstructor" />
+	<form:form method="POST" action="${addInstructorUrl}" modelAttribute="instructor">
 	
-	<p id="addInstructorEmail">
-	<c:url var="addInstructorUrl" value="/addInstructor"/>
-	<form:form method="POST" action="${addInstructorUrl}" modelAttribute="login">
-	<label for="email"> Add instructor E-mail: </label>
-	<form:input path="email"/>
-	<fom:errors path="email" cssClass="error"></fom:errors>form:errors>
-	<input type="submit" value="Add new Instructor"/>	
+		<div>
+			<label for="email">Instructor E-mail: </label>
+			<form:input path="email" />
+			<form:errors path="email" cssClass="error" />
+		</div>
+		<div>
+			<input type="submit" value="Submit"/>
+		</div>	
+		
 	</form:form>
-	</p>
+</p>

@@ -4,12 +4,14 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
 import com.techelevator.dao.LoginDAO;
+import com.techelevator.model.Login;
 
 
 @Controller
@@ -21,7 +23,7 @@ public class LoginController {
 	@RequestMapping(path="/login", method=RequestMethod.POST)
 	public String makeLogin(@RequestParam String email, 
 			@RequestParam String password, HttpServletRequest request,
-			@RequestParam(required=false) String destination){
+			@RequestParam(required=false) String destination, ModelMap modelHolder){
 		
 		if(loginDAO.searchForEmailAndPassword(email, password)) {
 			request.changeSessionId();
@@ -29,6 +31,9 @@ public class LoginController {
 			if(destination!=null&& !destination.isEmpty()){
 				return "redirect:" + destination;
 			}else if(loginDAO.getRole(email).equals("manager")){
+				if(! modelHolder.containsAttribute("instructor")) {
+					modelHolder.addAttribute("instructor", new Login());
+				}
 				return "managerHome";
 			} else {
 				return "redirect:/confirmationPage";
