@@ -1,15 +1,10 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
-	<head>
-		<title>YMCA Swim</title>
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		</head>
-	<body>
-		<header>
-			<c:url var="homePageHref" value="/" />
-			<c:url var="imgSrc" value="/img/placeholder.png" />
-			<a href="${homePageHref}"><img src="${imgSrc}" class="img-responsive" /></a>
-		</header>
-		<body>
+    <head>
+    	<meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><c:out value="${pageTitle}"/></title>
+        
+        
+    </head>
+    <body>

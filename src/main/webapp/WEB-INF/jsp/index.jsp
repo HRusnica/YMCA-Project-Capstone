@@ -1,22 +1,21 @@
-<!DOCTYPE html> 
-<html>
-    <head>
-        <title>YMCA Swim</title>
-  
-        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
-        
-        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-		<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-		<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<!-- JSTL Libraries -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+<!-- Tab title -->
+<c:set var="pageTitle" value="YMCA - Login & Manager"/>
+
+<!-- CSS -->
+<link  rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
 		
-    </head>
-    
-    <body>
-    
+	
+<c:import url="/WEB-INF/jsp/common/header.jspf" />
+
         <div class="loginSection blue" id="section1">
            <div class="screen">
-			<c:url var="imageName" value="/img/white-transparent-logo.png"/>
-			<img class="logo" src="${imageName}"/>
+			<c:url var="whiteTransLogo" value="/img/white-transparent-logo.png"/>
+			<img class="logo" src="${whiteTransLogo}"/>
 			<h2>Swim Class Login</h2>
 			<c:url var="loginUrl" value="/login"/>
 			<form:form method="POST" action="${loginUrl}" modelAttribute="login">
@@ -97,5 +96,3 @@
                 });
             });
         </script>
-    </body>
-</html>
