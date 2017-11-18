@@ -13,25 +13,27 @@
     
     <body>
     
-        <div class="section blue" id="section1">
-           
-			<h2>YMCA Swim Class Login Page</h2>
+        <div class="loginSection blue" id="section1">
+           <div class="screen">
+			<c:url var="imageName" value="/img/white-transparent-logo.png"/>
+			<img class="logo" src="${imageName}"/>
+			<h2>Swim Class Login</h2>
 			<c:url var="loginUrl" value="/login"/>
 			<form:form method="POST" action="${loginUrl}" modelAttribute="login">
 				
-				<div>
+				<div class="loginForm">
 				<label for="email">Email</label>
 				<form:input path="email"/>
 				<form:errors path="email" cssClass="error"></form:errors>
 				</div>
 				
-				<div>
+				<div class="loginForm">
 				<label for="password">Password</label>
 				<form:password path="password"/>
 				<form:errors path="password" cssClass="error"></form:errors>
 				</div>
 				
-				<div>
+				<div class="loginForm">
 					<label></label>
 					<input type="submit" value="Submit"/>	
 				</div>
@@ -42,7 +44,10 @@
                 <li><a href="#register">Register</a></li>
             </ul>
         </div>
+        </div>
+        
         <div class="regSection white" id="register">
+            <div class="screen">
             <h2>Register</h2>
             <h2>New Registration Page</h2>
 			<c:url var="registerUrl" value="/register"/>
@@ -71,10 +76,11 @@
 			<div>
 				<input type="submit" value="Submit"/>	
 			</div>
-		</form:form>
+			</form:form>
             <ul class="nav">
                 <li><a href="#section1">Home</a></li>
             </ul>
+       </div>
         </div>
         
 

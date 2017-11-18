@@ -29,9 +29,8 @@ span.reference a:hover{
 body{
     background:#ffffff;
     font-family:Cachet Book;
-    font-size: 34px;
-    letter-spacing:-1px;
-    width:5000px;
+    font-size: 18px;
+    width:500vw;
     position:absolute;
     top:0px;
     left:0px;
@@ -42,35 +41,36 @@ body{
 	font-family: Cachet Bold;
 }
 
-.section{
+.loginSection{
     margin:0px;
     bottom:0px;
-    width:4000px;
+    width:400vw;
     float:left;
-    height:100%;
-    text-shadow:1px 1px 2px #f0f0f0;
+    height:100vh;
 }
 
 .regSection{
     margin:0px;
     bottom:0px;
-    width:1000px;
+    width:100vw;
     float:left;
-    height:100%;
-    text-shadow:1px 1px 2px #f0f0f0;
 }
+
 .section h2{
     font-family: Cachet Medium;
     margin:50px 0px 30px 50px;
 }
+
 .section p{
     margin:20px 0px 0px 50px;
     width:600px;
 }
+
 .blue{
     color:#fff;
     background:#1b60af url(../img/bubbles.jpg) no-repeat top right;
 }
+
 .white{
     background:#ffffff;
    
@@ -107,4 +107,19 @@ body{
 .white ul li a:hover{
     text-decoration:none;
     color:#000;
+}
+
+.loginForm {
+	text: center;
+}
+
+.screen{
+	text-align: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.logo {
+	width: 20vw;
+	padding-top: 20px;
 }
