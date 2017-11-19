@@ -16,7 +16,6 @@ CREATE TABLE app_user (
 CREATE TABLE manager (
   email varchar(255) UNIQUE NOT NULL,
   manager_id serial,
-  
   CONSTRAINT pk_manager_id PRIMARY KEY (manager_id),
   CONSTRAINT fk_app_user_manager FOREIGN KEY (email) REFERENCES app_user (email)
 );
@@ -96,9 +95,7 @@ CREATE TABLE class_time (
 	day_of_week varchar(32) NOT NULL,
 	start_date varchar(32) NOT NULL,
 	end_date varchar(32) NOT NULL,
-	class_cancelled_date varchar(32),
-	CONSTRAINT pk_class_time PRIMARY KEY (class_time_id),
-	CONSTRAINT fk_class_time_id FOREIGN KEY (class_time_id) REFERENCES student_attendance (class_time_id)	
+	CONSTRAINT pk_class_time_id PRIMARY KEY (class_time_id)	
 );
 
 CREATE TABLE class (
