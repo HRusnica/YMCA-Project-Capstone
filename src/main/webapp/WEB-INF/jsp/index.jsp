@@ -1,20 +1,13 @@
-<!-- JSTL Libraries -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <!-- Tab title -->
 <c:set var="pageTitle" value="YMCA - Login & Manager"/>
 
-<!-- CSS -->
-<link  rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
-		
-	
-<c:import url="/WEB-INF/jsp/common/header.jspf" />
+<%@include file="common/header.jspf"%>
 
         <div class="loginSection blue" id="section1">
            <div class="screen">
-			<c:url var="whiteTransLogo" value="/img/white-transparent-logo.png"/>
+			<c:url var="whiteTransLogo" value="/img/ymcaBlue.jpeg"/>
 			<img class="logo" src="${whiteTransLogo}"/>
 			<h2>Swim Class Login</h2>
 			<c:url var="loginUrl" value="/login"/>
@@ -96,3 +89,6 @@
                 });
             });
         </script>
+
+        
+<%@include file="common/footer.jspf"%>	
