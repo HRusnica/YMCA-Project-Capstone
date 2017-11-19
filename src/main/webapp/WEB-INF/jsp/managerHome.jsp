@@ -18,8 +18,7 @@
 
 	<h2>Manager Home Page </h2>
 
-
-<button id="addNewInstructor" ><strong>Add New Instructor</strong></button>
+	<h3>Add New Instructor</h3>
 
 <p id="addInstructorEmail">
 
@@ -37,5 +36,10 @@
 		
 	</form:form>
 </p>
+
+<c:url var="allClasses" value="/allClasses"/>
+
+
+
 
 <%@include file="common/footer.jspf"%>

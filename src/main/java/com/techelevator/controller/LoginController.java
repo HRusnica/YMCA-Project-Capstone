@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 import com.techelevator.dao.LoginDAO;
+import com.techelevator.model.AppUser;
 import com.techelevator.model.Login;
 
 
@@ -21,15 +22,26 @@ public class LoginController {
 	@Autowired
 	private LoginDAO loginDAO;
 	
+	@RequestMapping(path="/users", method=RequestMethod.GET)
+	public String getClasses(){
+		return "users";
+	}
+	
 	@RequestMapping(path="/login", method=RequestMethod.POST)
 	public String makeLogin(@RequestParam String email, 
 			@RequestParam String password, HttpServletRequest request,
 			@RequestParam(required=false) String destination, ModelMap modelHolder, 
 			HttpSession session){
 		
+
+		
 		if(loginDAO.searchForEmailAndPassword(email, password)) {
 			request.changeSessionId();
 			request.getSession().setAttribute("email", email);
+			
+			AppUser user = loginDAO.getUser(email);
+			
+					
 			if(destination != null && !destination.isEmpty()){
 				return "redirect:" + destination;
 			}else if(loginDAO.getRole(email).equals("manager")){
