@@ -4,7 +4,7 @@
 
 BEGIN;
 INSERT INTO whitelist (email, role) VALUES ('HEATHER.RUSNICA@GMAIL.COM','manager');
-INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('HEATHER.RUSNICA@GMAIL.COM', 'lApBpVSalBGV2Gz3UCRI5w==', 'm90wwhGqndzrDgOS8pLJx4VbuDW9LA/sOUVpQUSS5qTrva5+yRhjHRqpHLDkV63g2H6L8G6YjrXDn2Hk6tFH9uK7edqtmNDzVPDAgbr1lfj6ywLOggRalFLRQQQEQWDzvxcm3YgA93QFOXqVQENDlg09qTttc/ck3JG55o3AUoE=', 'Heather', 'Rusnica'ey);
+INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('HEATHER.RUSNICA@GMAIL.COM', 'lApBpVSalBGV2Gz3UCRI5w==', 'm90wwhGqndzrDgOS8pLJx4VbuDW9LA/sOUVpQUSS5qTrva5+yRhjHRqpHLDkV63g2H6L8G6YjrXDn2Hk6tFH9uK7edqtmNDzVPDAgbr1lfj6ywLOggRalFLRQQQEQWDzvxcm3YgA93QFOXqVQENDlg09qTttc/ck3JG55o3AUoE=', 'Heather', 'Rusnica');
 --INSERT INTO manager (email) VALUES ('HEATHER.RUSNICA@GMAIL.COM');
 
 INSERT INTO whitelist (email, role) VALUES ('NEW@AOL.COM','instructor');
