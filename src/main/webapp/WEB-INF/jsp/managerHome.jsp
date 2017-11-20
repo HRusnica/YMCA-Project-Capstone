@@ -18,7 +18,7 @@
 
 	<h2>Manager Home Page </h2>
 
-	<h3>Add New Instructor</h3>
+	<button id="addNewInstructor"><strong>Add New Instructor</strong></button>
 
 <p >
 
