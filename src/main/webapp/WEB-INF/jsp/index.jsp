@@ -12,6 +12,10 @@
 			<h2>Swim Class Login</h2>
 			<c:url var="loginUrl" value="/login"/>
 			<form:form method="POST" action="${loginUrl}" modelAttribute="login">
+			
+			<c:if test="${registration.email != null}">
+				<h3>The following email has been registered: <c:out value = "${registration.email}"/></h3>
+			</c:if>
 				
 				<div class="loginForm">
 				<label for="email">Email</label>
