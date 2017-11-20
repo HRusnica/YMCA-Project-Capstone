@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import com.techelevator.model.AppUser;
 import com.techelevator.security.PasswordHasher;
 
 	@Component
@@ -65,5 +66,28 @@ import com.techelevator.security.PasswordHasher;
 				SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForUser, email.toUpperCase());
 				return (results.next());
 			}
-
+			
+			public AppUser getUser(String email){
+				AppUser user = new AppUser();
+				String sqlSearchForUser = "SELECT * FROM app_user WHERE UPPER(email) = ?";
+				String sqlSearchForRole = "SELECT role FROM whitelist WHERE UPPER(email) = ?";
+				
+				SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForUser, email.toUpperCase());
+				SqlRowSet role = jdbcTemplate.queryForRowSet(sqlSearchForRole, email.toUpperCase());
+				
+				if(results.next()) {
+					user.setEmail(results.getString("email"));
+					user.setFirstName(results.getString("first_name"));
+					user.setLastName(results.getString("last_name"));
+				}
+				
+				if(role.next()) {
+					user.setRole(role.getString("role"));
+				}
+				
+				return user;
+			}
+	
 }
+
+	

@@ -67,7 +67,7 @@ body{
 }
 
 .blue{
-    color:#fff;
+    color:#1b60af;
     background:#1b60af url(../img/bubbles.jpg) no-repeat top right;
 }
 
@@ -95,7 +95,6 @@ body{
     color:#fff;
 }
 .white ul li{
-    float:left;
     padding:5px;
     margin:5px;
     color:#aaa;
