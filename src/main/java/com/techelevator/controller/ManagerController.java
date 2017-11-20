@@ -1,5 +1,7 @@
 package com.techelevator.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +11,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.dao.ManagerDAO;
+import com.techelevator.dao.SwimClassDAO;
 import com.techelevator.model.Instructor;
 import com.techelevator.model.Login;
+import com.techelevator.model.SwimClass;
+
 
 @Controller
 public class ManagerController {
@@ -38,5 +44,12 @@ public class ManagerController {
 //				} 
 				managerDao.saveInstructorEmail(instructor.getEmail());
 				return "redirect:/managerHome";
+		}
+		@RequestMapping(path="/allClasses",method=RequestMethod.GET)
+		public String showAllClassess(ModelMap modelHolder){	
+			List<SwimClass> classes = SwimClassDAO.getAllClasses();
+			modelHolder.put("allClasses", classes);
+			
+			return "allClasses";		
 		}
 }

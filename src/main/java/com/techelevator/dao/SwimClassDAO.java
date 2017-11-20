@@ -6,5 +6,8 @@ import com.techelevator.model.SwimClass;
 
 public interface SwimClassDAO {
 
-	public List<SwimClass> getAllClasses();
+	public static List<SwimClass> getAllClasses() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

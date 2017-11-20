@@ -24,7 +24,6 @@ public class SwimClassJdbcDao implements SwimClassDAO{
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
-	@Override
 	public List<SwimClass> getAllClasses() {
 		List<SwimClass> allClasses= new ArrayList<>();
 		String sqlSearchForClass = "SELECT * FROM level";

@@ -39,10 +39,10 @@
 		
 	</form:form>
 </p>
+<%-- <button id="allClasses"><strong>Add Classes</strong>
+<c:url var="allClasses" value="/allClasses"/></button> --%>
 
-<c:url var="allClasses" value="/allClasses"/>
-
-
+<button type="submit" data-target="/allClasses"><strong>Add Class</strong></button>
 
 
 <%@include file="common/footer.jspf"%>
