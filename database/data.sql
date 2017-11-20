@@ -4,19 +4,19 @@
 
 BEGIN;
 INSERT INTO whitelist (email, role) VALUES ('HEATHER.RUSNICA@GMAIL.COM','manager');
-INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('HEATHER.RUSNICA@GMAIL.COM', 'passwordPassword', 'hey', 'Heather', 'Rusnica');
-INSERT INTO manager (email) VALUES ('HEATHER.RUSNICA@GMAIL.COM');
+--INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('HEATHER.RUSNICA@GMAIL.COM', 'passwordPassword', 'hey', 'Heather', 'Rusnica');
+--INSERT INTO manager (email) VALUES ('HEATHER.RUSNICA@GMAIL.COM');
 
 INSERT INTO whitelist (email, role) VALUES ('NEW@AOL.COM','instructor');
 
 INSERT INTO whitelist (email, role) VALUES ('THIS@IS.FAKE', 'instructor');
 INSERT INTO whitelist (email, role) VALUES ('ALSO@FAKE.TOO', 'instructor');
 
-INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('THIS@IS.FAKE', 'passwordPassword', 'hey', 'Sho', 'Nuff');
-INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('ALSO@FAKE.TOO', 'passwordPassword', 'hey', 'Ben', 'Diver');
+--INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('THIS@IS.FAKE', 'passwordPassword', 'hey', 'Sho', 'Nuff');
+--INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('ALSO@FAKE.TOO', 'passwordPassword', 'hey', 'Ben', 'Diver');
 
-INSERT INTO instructor (email, manager_id) VALUES ('THIS@IS.FAKE', 1);
-INSERT INTO instructor (email, manager_id) VALUES ('ALSO@FAKE.TOO', 1);
+--INSERT INTO instructor (email, manager_id) VALUES ('THIS@IS.FAKE', 1);
+--INSERT INTO instructor (email, manager_id) VALUES ('ALSO@FAKE.TOO', 1);
 
 INSERT INTO skill (skill_name, skill_description) VALUES ('Blow bubbles', 'on surface, assisted');
 INSERT INTO skill (skill_name, skill_description) VALUES ('Front tow', 'chin in water, assisted');
@@ -57,7 +57,7 @@ INSERT INTO skill_level(skill_id, level_id) VALUES (16, 2);
 INSERT INTO skill_level(skill_id, level_id) VALUES (17, 2);
 
 INSERT INTO class_time(hour, day_of_week, start_date, end_date) VALUES ('6:00', 'Monday', '11-11-17', '12-11-17');
-
-INSERT INTO class(level_id, instructor_id, class_time_id) VALUES (1, 2, 1);
+--
+--INSERT INTO class(level_id, instructor_id, class_time_id) VALUES (1, 2, 1);
 
 COMMIT;
