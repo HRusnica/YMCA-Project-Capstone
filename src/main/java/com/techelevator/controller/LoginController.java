@@ -33,15 +33,12 @@ public class LoginController {
 			@RequestParam(required=false) String destination, ModelMap modelHolder, 
 			HttpSession session){
 		
-
-		
 		if(loginDAO.searchForEmailAndPassword(email, password)) {
 			request.changeSessionId();
 			request.getSession().setAttribute("email", email);
 			
 			AppUser user = loginDAO.getUser(email);
-			
-					
+				
 			if(destination != null && !destination.isEmpty()){
 				return "redirect:" + destination;
 			}else if(loginDAO.getRole(email).equals("manager")){

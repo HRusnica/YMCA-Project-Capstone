@@ -21,7 +21,9 @@
 	<button id="addNewInstructor"><strong>Add New Instructor</strong></button>
 
 <p >
-
+	<c:if test="${instructor.email != null}">
+		<h3>The following email has been added: <c:out value = "${instructor.email}"/></h3>
+	</c:if>
 	<c:url var="addInstructorUrl" value="/addInstructor" />
 	<form:form method="POST" action="${addInstructorUrl}" modelAttribute="instructor">
 	
