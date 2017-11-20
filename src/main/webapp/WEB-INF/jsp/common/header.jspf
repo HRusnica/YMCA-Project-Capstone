@@ -8,13 +8,15 @@
 <html>
     <head>
     	<meta charset="utf-8" />
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.5">
         <title><c:out value="${pageTitle}"/></title>
         
-        <!-- CSS -->
+       <!-- CSS -->
+       <c:url value="/css/bootstrap.min.css" var="cssBootstrap"/>
+       <link rel="stylesheet" href="${cssBootstrap}">
+       
        <c:url value="/css/style.css" var="cssHref"/>
        <link rel="stylesheet" href="${cssHref}">
-       
-          
+         
     </head>
     <body>

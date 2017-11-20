@@ -8,11 +8,11 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  
  		<div >  <h1>All Classes</h1> </div>
-			<c:forEach items= "${allClasses}" var="class">
+			<c:forEach items= "${allClasses}" var="classes">
 		<div  >
 
-		<p ><strong><c:out value="${class.levelName}"/></strong></p>
-		<p ><strong><c:out value="${class.ageGroup}"/></strong></p>
+		<p ><strong><c:out value="${classes.levelName}"/></strong></p>
+		<p ><strong><c:out value="${classes.ageGroup}"/></strong></p>
 		  <br>
 		 
 		</div>

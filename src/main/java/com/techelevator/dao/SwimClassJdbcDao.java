@@ -40,3 +40,13 @@ public class SwimClassJdbcDao implements SwimClassDAO{
 	}
 
 }
+//@Override
+//public List<Message> getPublicMessages(int limit) {
+//	String sqlSelectPublicMessages = "SELECT * "+
+//									 "FROM message "+
+//									 "WHERE private = FALSE "+
+//									 "ORDER BY create_date DESC "+
+//									 "LIMIT "+limit;
+//	SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPublicMessages);
+//	return mapRowSetToMessages(results);
+//}

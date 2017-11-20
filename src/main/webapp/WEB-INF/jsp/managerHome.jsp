@@ -39,10 +39,17 @@
 		
 	</form:form>
 </p>
-<%-- <button id="allClasses"><strong>Add Classes</strong>
-<c:url var="allClasses" value="/allClasses"/></button> --%>
 
-<button type="submit" data-target="/allClasses"><strong>Add Class</strong></button>
+<input id="btntest" type="button" value="Add Class" 
+       onclick="return btntest_onclick()" />
+
+<script language="javascript" type="text/javascript">
+function btntest_onclick() 
+{
+    window.location.href = "http://localhost:8080/capstone/allClasses";
+}
+</script>
+<!-- <button type="submit" data-target="/allClasses"><strong>Add Class</strong></button> -->
 
 
 <%@include file="common/footer.jspf"%>
