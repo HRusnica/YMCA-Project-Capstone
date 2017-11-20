@@ -42,7 +42,7 @@
                     	<button class="btn" type="button" id="dropdownButton">
                     	Assign Instructor to Class
                     	</button>
-                    	foreach(var instructor in InstructorList){
+                    	foreach(var instructor : InstructorList){
                     	<div class="drowpdown-menu" aria-labelledby="dropdownButton">
                     	<a class="dropdown-item" href="#">instructor</a>
                     	</div>
