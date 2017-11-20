@@ -37,9 +37,7 @@ body{
     bottom:0px;
 }
 
-.h1 {
-	font-family: Cachet Bold;
-}
+/* ====== Jared's responsive design ====== */
 
 .loginSection{
     margin:0px;
@@ -49,11 +47,28 @@ body{
     height:100vh;
 }
 
+.screen{
+	text-align: center;
+	width: 100vw;
+	height: 100vh;
+}
+
 .regSection{
     margin:0px;
     bottom:0px;
     width:100vw;
     float:left;
+}
+
+.indexButtons {
+	color:#000;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++ */
+
+
+.h1 {
+	font-family: Cachet Bold;
 }
 
 .section h2{
@@ -91,7 +106,7 @@ body{
     color:#f0f0f0;
 }
 .black ul li a:hover{
-    text-decoration:none;
+    text-decoration:underline;
     color:#fff;
 }
 .white ul li{
@@ -104,18 +119,12 @@ body{
     color:#222;
 }
 .white ul li a:hover{
-    text-decoration:none;
+    text-decoration:underline;
     color:#000;
 }
 
 .loginForm {
 	text: center;
-}
-
-.screen{
-	text-align: center;
-	width: 100vw;
-	height: 100vh;
 }
 
 .logo {
