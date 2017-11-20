@@ -8,10 +8,10 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  <script>
  $(document).ready(function(){
-	 $("p").hide();
+	 $(".hide1").hide();
 	 
 	 $("#addNewInstructor").click(function(){
-		 $("addInstructorEmail").toggle();
+		 $("#addInstructorEmail").toggle();
 	 });
  });
  </script>
@@ -21,18 +21,19 @@
 
 <button id="addNewInstructor" ><strong>Add New Instructor</strong></button>
 
-<p id="addInstructorEmail">
+<p >
 
 	<c:url var="addInstructorUrl" value="/addInstructor" />
 	<form:form method="POST" action="${addInstructorUrl}" modelAttribute="instructor">
 	
-		<div>
+		<div class ="hide1" id="addInstructorEmail">
 			<label for="email">Instructor E-mail: </label>
 			<form:input path="email" />
 			<form:errors path="email" cssClass="error" />
-		</div>
-		<div>
 			<input type="submit" value="Submit"/>
+		</div>
+		<div class="hide1">
+			
 		</div>	
 		
 	</form:form>
