@@ -31,7 +31,7 @@ public class ManagerController {
 		
 		@RequestMapping(path="/addInstructor", method=RequestMethod.POST)
 			public String addInstructor(@Valid @ModelAttribute Instructor instructor, BindingResult result, RedirectAttributes flash){
-//				flash.addFlashAttribute("instructor", instructor);
+				flash.addFlashAttribute("instructor", instructor);
 //				if(result.hasErrors()){
 //					flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "instructor", result);
 //					return "redirect:/managerHome";
