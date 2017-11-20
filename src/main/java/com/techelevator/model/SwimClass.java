@@ -4,6 +4,8 @@ public class SwimClass {
 
 	private String levelName;
 	private String ageGroup;
+	
+	
 	public String getLevelName() {
 		return levelName;
 	}
