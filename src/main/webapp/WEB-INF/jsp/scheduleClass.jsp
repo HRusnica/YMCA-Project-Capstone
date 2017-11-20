@@ -17,7 +17,7 @@
         <table class="table table-striped table-hover" id="userTable">
             <thead>
                 <tr>
-                    <th>Place Holder</th>
+                    <th>Schedule New Class</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -35,10 +35,43 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                <h1>$"{swimClass.name}</h1>
+                <h2>$"{swimClass.level</h2>
                     <form>
+                    <div class="dropdown">
+                    	<button class="btn" type="button" id="dropdownButton">
+                    	Assign Instructor to Class
+                    	</button>
+                    	foreach(var instructor : InstructorList){
+                    	<div class="drowpdown-menu" aria-labelledby="dropdownButton">
+                    	<a class="dropdown-item" href="#">instructor</a>
+                    	</div>
+                    	}
+                    </div>
+                    <div class="dropdown">
+                    	<button class="btn" 
+                    </div>
+                    <p>Day of the Week:</p><select> 
+  						<option value="Sunday">Sunday</option>
+                    	<option value="Monday">Monday</option>
+                    	<option value="Tuesday">Tuesday</option>
+                    	<option value="Wednesday">Wednesday</option>
+                    	<option value="Thursday">Thursday</option>
+                    	<option value="Friday">Friday</option>
+                    	<option value="Saturday">Saturday</option>
+                    	</select>
+                   	<p>Time</p><select>
+                   	</select>
+                   	<p>Start Date</p><select>
+                   	</select>
+                   	<p>End Date</p><select>
+                   	</select>
+                   	<p>Add Students</p><select>
+                   	</select>
+                    	
                         <input type="hidden" name="id" id="id" />
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">Clas</label>
                             <input id="name" name="name" type="text" class="form-control" />
                         </div>
                     
