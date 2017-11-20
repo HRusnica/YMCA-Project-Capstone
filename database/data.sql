@@ -3,20 +3,20 @@
 -- *****************************************************************************
 
 BEGIN;
-INSERT INTO whitelist (email, role) VALUES ('HEATHER.RUSNICA@gmail.com','manager');
-INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('HEATHER.RUSNICA@gmail.com', 'passwordPassword', 'hey', 'Heather', 'Rusnica');
-INSERT INTO manager (email) VALUES ('HEATHER.RUSNICA@gmail.com');
+INSERT INTO whitelist (email, role) VALUES ('HEATHER.RUSNICA@GMAIL.COM','manager');
+INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('HEATHER.RUSNICA@GMAIL.COM', 'passwordPassword', 'hey', 'Heather', 'Rusnica');
+INSERT INTO manager (email) VALUES ('HEATHER.RUSNICA@GMAIL.COM');
 
-INSERT INTO whitelist (email, role) VALUES ('NEW@aol.com','instructor');
+INSERT INTO whitelist (email, role) VALUES ('NEW@AOL.COM','instructor');
 
-INSERT INTO whitelist (email, role) VALUES ('THIS@is.fake', 'instructor');
-INSERT INTO whitelist (email, role) VALUES ('ALSO@fake.too', 'instructor');
+INSERT INTO whitelist (email, role) VALUES ('THIS@ISFAKE.COM', 'instructor');
+INSERT INTO whitelist (email, role) VALUES ('ALSO@ISFAKE.COM', 'instructor');
 
-INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('THIS@is.fake', 'passwordPassword', 'hey', 'Sho', 'Nuff');
-INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('ALSO@fake.too', 'passwordPassword', 'hey', 'Ben', 'Diver');
+INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('THIS@ISFAKE.COM', 'passwordPassword', 'hey', 'Sho', 'Nuff');
+INSERT INTO app_user (email, password, salt, first_name, last_name) VALUES ('ALSO@ISFAKE.COM', 'passwordPassword', 'hey', 'Ben', 'Diver');
 
-INSERT INTO instructor (email, manager_id) VALUES ('THIS@is.fake', 1);
-INSERT INTO instructor (email, manager_id) VALUES ('ALSO@fake.too', 1);
+INSERT INTO instructor (email, manager_id) VALUES ('THIS@ISFAKE.COM', 1);
+INSERT INTO instructor (email, manager_id) VALUES ('ALSO@ISFAKE.COM', 1);
 
 INSERT INTO skill (skill_name, skill_description) VALUES ('Blow bubbles', 'on surface, assisted');
 INSERT INTO skill (skill_name, skill_description) VALUES ('Front tow', 'chin in water, assisted');
