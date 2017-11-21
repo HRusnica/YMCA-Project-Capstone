@@ -43,7 +43,7 @@ import com.techelevator.model.SwimClass;
 		@Override
 		public List<Instructor> getAllInstructors() {
 			List<Instructor> instructors = new ArrayList<>();
-			String sqlSearchForInstructors = "SELECT * FROM instructor i JOIN app_user au ON i.email=au.email";
+			String sqlSearchForInstructors = "SELECT i.instructor_id, au.first_name, au.last_name FROM instructor i JOIN app_user au ON i.email=au.email";
 			SqlRowSet results =jdbcTemplate.queryForRowSet(sqlSearchForInstructors);
 			while (results.next()){
 				Instructor teach = new Instructor();

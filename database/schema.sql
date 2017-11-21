@@ -37,7 +37,7 @@ CREATE TABLE whitelist (
 
 CREATE TABLE student(
 	student_id serial,
-	age int NOT NULL,
+	birthDay date NOT NULL,
 	first_name varchar(32) NOT NULL,
 	last_name varchar(32) NOT NULL,
 	gender varchar(32) NOT NULL,

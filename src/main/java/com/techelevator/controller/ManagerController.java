@@ -66,6 +66,11 @@ public class ManagerController {
 		}
 		
 
+		@RequestMapping(path="/allInstructors", method=RequestMethod.GET)
+		public String getAllInstructors(){
+			return "allInstructors";
+		}
+
 		@RequestMapping(path="/managerDashboard", method=RequestMethod.GET)
 		public String showManagerDashboard(ModelMap modelHolder){
 			if(! modelHolder.containsAttribute("instructor")) {
@@ -73,6 +78,7 @@ public class ManagerController {
 			}
 			return "managerDashboard";
 			
+
 		}
 }
 
