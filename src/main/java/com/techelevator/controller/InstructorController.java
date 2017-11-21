@@ -26,7 +26,8 @@ public class InstructorController {
 	
 	@RequestMapping(path="/instructorDashboard", method=RequestMethod.GET)
 	public String getInstructorHomePage(ModelMap modelHolder, HttpSession session) {
-		List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(request.getSession(Instructor).getInstructorId());
+		HttpSession mySession = request.getSession();
+		List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(HttpSession.getAttribute("instructor").getInstructorId());
 		modelHolder.put("allScheduledClasses", "classes");
 		return "instructorDashboard";
 	}
