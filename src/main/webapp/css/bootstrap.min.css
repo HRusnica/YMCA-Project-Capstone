@@ -1352,9 +1352,10 @@ body {
 }
 
 button, input, select, textarea {
+	color: black;
 	font-family: inherit;
 	font-size: inherit;
-	line-height: inherit
+	line-height: inherit;
 }
 
 a {

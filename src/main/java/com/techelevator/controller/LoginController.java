@@ -45,9 +45,9 @@ public class LoginController {
 				if(! modelHolder.containsAttribute("instructor")) {
 					modelHolder.addAttribute("instructor", new Login());
 				}
-				return "redirect:/managerHome";
+				return "redirect:/managerDashboard";
 			} else {
-				return "redirect:/instructorHome";
+				return "redirect:/instructorDashboard";
 			}
 		} else {
 			return "redirect:/";
