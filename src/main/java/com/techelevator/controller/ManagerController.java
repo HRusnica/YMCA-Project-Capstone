@@ -58,8 +58,11 @@ public class ManagerController {
 		}
 		
 		@RequestMapping(path="/scheduleClass", method=RequestMethod.GET)
-		public String showScheduleClass(){
-			return "scheduleClass";
+		public String showScheduleClass(ModelMap modelHolder){	
+			List<SwimClass> classes = classDao.getAllClasses();
+			modelHolder.put("allClasses", classes);
+			
+			return "scheduleClass";	
 		}
 		
 

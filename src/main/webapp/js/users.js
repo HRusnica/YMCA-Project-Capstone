@@ -1,40 +1,9 @@
-var root = 'http://localhost:8080/UserRestApi';
-
-var refreshTable = function() {
-    $('#userTable tbody').empty();
-
-    $.ajax({
-        url: root +"/users",
-        method: "GET",
-    }).then(function(data) {
-        for(var i=0; i<data.length; i++){
-            var tableRow = "<tr>" + 
-                "<td>" + data[i].id + "</td>" +
-                "<td>" + data[i].name + "</td>" +
-                "<td>" + data[i].username + "</td>" +
-                "<td>" + data[i].email + "</td>" +
-                '<td><a href="#" class="btn btn-danger delete-button" data-user-id="' + data[i].id +'">DELETE</a></td>' +
-                "</tr>";
-
-            $("#userTable tbody").append(tableRow);    
-        }
-    });
-};
-
 $(function () { 
-    
-    refreshTable();
 
-    $('#userTable').on('click', 'tr', function(event){
-        var id = $(this).children(0).eq(0).text();
-        var name = $(this).children(0).eq(1).text();
-        var username = $(this).children(0).eq(2).text();
-        var email = $(this).children(0).eq(3).text();
-
-        $('#id').val(id);
-        $('#name').val(name);
-        $('#username').val(username);
-        $('#email').val(email);
+    $('#allClassesTable').on('click', 'tr', function(event){
+        var levelId = $(this).attr('data-level-id');
+        var levelName = $(this).attr('data-level-name');
+        var ageGroup = $(this).attr('data-age-group');
 
         $('#myModal').modal();
 
