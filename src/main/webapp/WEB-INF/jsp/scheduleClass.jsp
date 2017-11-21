@@ -45,72 +45,55 @@
         		<div id="panel1" class="panel panel-default">
             <h1>Class Name goes here</h1>
             
-            = <div class="dropdown">
+             <!--  <div class="dropdown">
                    <p>Instructor Name:</p><select> 
-  						<option value="Sunday">Sunday</option>
-                    	<option value="Monday">Monday</option>
-                    	<option value="Tuesday">Tuesday</option>
-                    	<option value="Wednesday">Wednesday</option>
-                    	<option value="Thursday">Thursday</option>
-                    	<option value="Friday">Friday</option>
-                    	<option value="Saturday">Saturday</option>
+  						<!--  loop to have a dropdown for all instructor names 
+  						<option value="Sunday">Instructor Name 1</option>
+                    	<option value="Monday">Instructor Name 2</option>
+                    	<option value="Tuesday">Instructor Name 3</option>
                     	</select>
-                    </div>
+                    </div> -->
             
             <fieldset>
                 <legend><span class="number"></span>class name goes here</legend>
                 <label for="name">Name:</label>
                 <div class="input-group input-group-md">
                     <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user"></span></span>
-                    <input type="text" class="form-control" placeholder="Type your name here..." aria-describedby="sizing-addon1">
+                    <input type="text" class="form-control" placeholder="Type instructor name here..." aria-describedby="sizing-addon1">
                 </div>
                 <br />
-                <label for="mail">E-mail:</label>
-                <div class="input-group input-group-md">
-                    <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-envelope"></span></span>
-                    <input type="text" class="form-control" placeholder="Type your e-mail here..." aria-describedby="sizing-addon2">
-                </div>
-                <br />
-                <label for="pass">Password:</label>
-                <div class="input-group input-group-md">
-                    <span class="input-group-addon" id="sizing-addon3"><span class="glyphicon glyphicon-cog"></span></span>
-                    <input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon3" id="pass">
-                </div>
-                <br />
-                <label for="pass_confirm">Confirm password:</label>
-                <div class="input-group input-group-md">
-                    <span class="input-group-addon" id="sizing-addon4"><span class="glyphicon glyphicon-envelope"></span></span>
-                    <input type="password" class="form-control" placeholder="Confirm password" aria-describedby="sizing-addon4" id="confirmPass">
-                </div>
-                <p id="passwordMatch"></p>
-                <br />
-                <div class="input-group input-group-md">
-                    <label>Gender:</label>
-                    <select>
-                        <option value="0">Male</option>
-                        <option value="1">Female</option>
-                    </select>
-                </div>
-                <br />
-                <div class="input-group input-group-md">
-                    <label>Date of Birth:</label>
-                    <div id="dateTimePicker"></div>
-                </div>
+            
             </fieldset>
-
-            <fieldset>
+			 <fieldset>
                 <legend><span class="number"></span>Schedule</legend>
-                <input type="checkbox" id="sunday" value="sunday" name="day_of_week"><label class="light" for="sunday">Sunday</label><br>
-                <input type="checkbox" id="monday" value="monday" name="day_of_week"><label class="light" for="monday">Monday</label><br>
-                <input type="checkbox" id="tuesday" value="tuesdsay" name="day_of_week"><label class="light" for="tuesday">Tuesday</label><br>
-                <input type="checkbox" id="wednesday" value="wednesday" name="day_of_week"><label class="light" for="wednesday">Wednesday</label><br>
-                <input type="checkbox" id="thursday" value="thursday" name="day_of_week"><label class="light" for="thursday">Thursday</label><br>
-                <input type="checkbox" id="friday" value="friday" name="day_of_week"><label class="light" for="friday">Friday</label><br>
-                <input type="checkbox" id="saturday" value="saturday" name="day_of_week"><label class="light" for="saturday">Saturday</label>
+				<div class="row">
+				  <div class="col-lg-6">
+				    <div class="input-group">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="Day of Week">
+				      </span>
+				      <input type="text" class="form-control" id="sunday" value="Sunday" name="day_of_week"><label class="light" for="sunday"></label><br>
+				       <span class="input-group-addon">
+				        <input type="checkbox" aria-label="Day of Week">
+				      </span>
+				      <input type="text" class="form-control" id="monday" value="Monday" name="day_of_week"><label class="light" for="monday"></label><br>
+				    
+				    </div>
+				  </div>
+            
+                <legend><span class="number"></span>Schedule</legend>
+                <input type="checkbox" id="sunday" value="sunday" name="day_of_week"><label class="light" for="sunday"> Sunday</label><br>
+                <input type="checkbox" id="monday" value="monday" name="day_of_week"><label class="light" for="monday"> Monday</label><br>
+                <input type="checkbox" id="tuesday" value="tuesdsay" name="day_of_week"><label class="light" for="tuesday"> Tuesday</label><br>
+                <input type="checkbox" id="wednesday" value="wednesday" name="day_of_week"><label class="light" for="wednesday"> Wednesday</label><br>
+                <input type="checkbox" id="thursday" value="thursday" name="day_of_week"><label class="light" for="thursday"> Thursday</label><br>
+                <input type="checkbox" id="friday" value="friday" name="day_of_week"><label class="light" for="friday"> Friday</label><br>
+                <input type="checkbox" id="saturday" value="saturday" name="day_of_week"><label class="light" for="saturday"> Saturday</label>
             </fieldset>
  			
  			<fieldset>
-                <label for="bio">Notes:</label>
+                <legend><span class="number"></span>Notes</legend>
+                <label for="bio">Additional Class Notes:</label><br>
                 <textarea id="bio" name="notes"></textarea>
             </fieldset>
          
