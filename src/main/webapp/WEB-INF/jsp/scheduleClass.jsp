@@ -67,7 +67,7 @@
 						<div class="col-md-6">
 							<div id="panel1" class="panel panel-default">
 
-								<h1>Class Name that you clicked on</h1>
+								<h1 >Class Name that you clicked on</h1>
 
 								<fieldset>
 									<legend>
