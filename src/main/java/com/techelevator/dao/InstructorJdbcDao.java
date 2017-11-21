@@ -27,7 +27,7 @@ public class InstructorJdbcDao implements InstructorDAO {
 		
 		String sqlSearchForScheduledClass = "SELECT l.level_name, l.age_group, ct.hour, ct.day_of_week, "
 				+ "ct.start_date, ct.end_date FROM class c JOIN class_time ct ON c.class_time_id = "
-				+ "ct.class_time_id JOIN level l ON c.level_id = l.level_id WHERE instructor_id = ?";
+				+ "ct.class_time_id JOIN level l ON c.level_id = l.level_id WHERE instructor_id = ? AND NOW BETWEEN start_date AND end_date";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForScheduledClass, instructorId);
 		while(results.next()){
 			ScheduledClass myClass = new ScheduledClass();
