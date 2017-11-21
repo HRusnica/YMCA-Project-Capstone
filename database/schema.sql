@@ -100,7 +100,7 @@ CREATE TABLE class_time (
 
 CREATE TABLE class (
 	class_id serial,
-	level_id varchar(32) NOT NULL,
+	level_id int NOT NULL,
 	instructor_id int NOT NULL,
 	class_time_id int NOT NULL,
 	CONSTRAINT pk_class_id PRIMARY KEY (class_id),
