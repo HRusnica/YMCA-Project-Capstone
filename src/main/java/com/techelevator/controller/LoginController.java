@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+import com.techelevator.dao.InstructorDAO;
 import com.techelevator.dao.LoginDAO;
 import com.techelevator.model.AppUser;
+import com.techelevator.model.Instructor;
 import com.techelevator.model.Login;
 
 
@@ -21,6 +22,7 @@ public class LoginController {
 	
 	@Autowired
 	private LoginDAO loginDAO;
+	private InstructorDAO instructorDao;
 	
 	@RequestMapping(path="/users", method=RequestMethod.GET)
 	public String getClasses(){
@@ -47,10 +49,10 @@ public class LoginController {
 				}
 				return "redirect:/managerDashboard";
 			} else if(loginDAO.getRole(email).equals("instructor")){
-					request.setAttribute("instructor", new Login());
+					Instructor loggedInInstructor = instructorDao.InstructorByEmail(email);
+					request.getSession().setAttribute("instructor", loggedInInstructor);
 				}
 				return "redirect:/instructorDashboard";
-			}
 		} else {
 			return "redirect:/";
 		}

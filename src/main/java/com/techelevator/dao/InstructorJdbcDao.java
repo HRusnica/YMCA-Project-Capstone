@@ -20,6 +20,14 @@ public class InstructorJdbcDao implements InstructorDAO {
 	public void JDBCUserDAO(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
+	
+	public Instructor InstructorByEmail(String email){
+		String sqlSearchForId = "SELECT instructor_id FROM instructor WHERE email = ?";
+		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSearchForId, email);
+		Instructor thisInstructor = new Instructor();
+		thisInstructor.setInstructorId(result.getInt("instructor_id"));
+		return thisInstructor;
+	}
 
 	@Override
 	public List<ScheduledClass> GetAllScheduledClassesByInstructor(int instructorId) {
