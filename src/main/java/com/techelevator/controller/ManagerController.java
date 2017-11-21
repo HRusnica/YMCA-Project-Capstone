@@ -28,6 +28,9 @@ public class ManagerController {
 		@Autowired
 		private ManagerDAO managerDao;
 		
+		@Autowired
+		private SwimClassDAO classDao;
+		
 		@RequestMapping(path="/managerHome", method=RequestMethod.GET)
 			public String getManagerHome(ModelMap modelHolder){
 			if(! modelHolder.containsAttribute("instructor")) {
@@ -48,7 +51,7 @@ public class ManagerController {
 		}
 		@RequestMapping(path="/allClasses",method=RequestMethod.GET)
 		public String showAllClassess(ModelMap modelHolder){	
-			List<SwimClass> classes = SwimClassDAO.getAllClasses();
+			List<SwimClass> classes = classDao.getAllClasses();
 			modelHolder.put("allClasses", classes);
 			
 			return "allClasses";		
