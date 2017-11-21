@@ -47,6 +47,9 @@ public class LoginController {
 				if(! modelHolder.containsAttribute("instructor")) {
 					modelHolder.addAttribute("instructor", new Login());
 				}
+				if(! modelHolder.containsAttribute("student")) {
+					modelHolder.addAttribute("student", new Login());
+				}
 				return "redirect:/managerDashboard";
 			} else if(loginDAO.getRole(email).equals("instructor")){
 					Instructor loggedInInstructor = instructorDao.InstructorByEmail(email);
