@@ -13,9 +13,9 @@ public class InstructorController {
 	@Autowired
 	private InstructorDAO instructorDao;
 	
-	@RequestMapping(path="/instructorHome", method=RequestMethod.GET)
+	@RequestMapping(path="/instructorDashboard", method=RequestMethod.GET)
 	public String getInstructorHomePage() {
-		return "instructorHome";
+		return "instructorDashboard";
 	}
 
 }
