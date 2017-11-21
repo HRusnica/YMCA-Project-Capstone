@@ -44,10 +44,10 @@ public class ManagerController {
 				flash.addFlashAttribute("instructor", instructor);
 //				if(result.hasErrors()){
 //					flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "instructor", result);
-//					return "redirect:/managerHome";
+//					return "redirect:/managerDashboard";
 //				} 
 				managerDao.saveInstructorEmail(instructor.getEmail());
-				return "redirect:/managerHome";
+				return "redirect:/managerDashboard";
 		}
 		@RequestMapping(path="/allClasses",method=RequestMethod.GET)
 		public String showAllClassess(ModelMap modelHolder){	
@@ -62,9 +62,20 @@ public class ManagerController {
 			return "scheduleClass";
 		}
 		
+
 		@RequestMapping(path="/allInstructors", method=RequestMethod.GET)
 		public String getAllInstructors(){
 			return "allInstructors";
+		}
+
+		@RequestMapping(path="/managerDashboard", method=RequestMethod.GET)
+		public String showManagerDashboard(ModelMap modelHolder){
+			if(! modelHolder.containsAttribute("instructor")) {
+				modelHolder.addAttribute("instructor", new Login());
+			}
+			return "managerDashboard";
+			
+
 		}
 }
 
