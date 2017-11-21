@@ -46,7 +46,9 @@ public class LoginController {
 					modelHolder.addAttribute("instructor", new Login());
 				}
 				return "redirect:/managerDashboard";
-			} else {
+			} else if(loginDAO.getRole(email).equals("instructor")){
+					request.setAttribute("instructor", new Login());
+				}
 				return "redirect:/instructorDashboard";
 			}
 		} else {
