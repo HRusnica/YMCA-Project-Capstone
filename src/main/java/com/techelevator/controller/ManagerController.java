@@ -61,5 +61,10 @@ public class ManagerController {
 		public String showScheduleClass(){
 			return "scheduleClass";
 		}
+		
+		@RequestMapping(path="/allInstructors", method=RequestMethod.GET)
+		public String getAllInstructors(){
+			return "allInstructors";
+		}
 }
 
