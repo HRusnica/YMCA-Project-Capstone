@@ -7,7 +7,7 @@
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  
- 		<div >  <h1>All Classes</h1> </div>
+ 		 <h1>All Classes</h1> 
 			<c:forEach items= "${allClasses}" var="classes">
 		<div  >
 

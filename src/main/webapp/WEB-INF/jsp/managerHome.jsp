@@ -49,7 +49,7 @@ function btntest_onclick()
     window.location.href = "http://localhost:8080/capstone/allClasses";
 }
 </script>
-<!-- <button type="submit" data-target="/allClasses"><strong>Add Class</strong></button> -->
+
 
 
 <%@include file="common/footer.jspf"%>

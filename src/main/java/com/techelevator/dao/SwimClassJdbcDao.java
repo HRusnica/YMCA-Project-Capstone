@@ -32,6 +32,7 @@ public class SwimClassJdbcDao implements SwimClassDAO{
 			SwimClass swim = new SwimClass();
 			swim.setLevelName(results.getString("level_name"));
 			swim.setAgeGroup(results.getString("age_group"));
+			swim.setLevelId(results.getInt("level_id"));
 			
 			allClasses.add(swim);
 		}
