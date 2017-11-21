@@ -1,7 +1,10 @@
 package com.techelevator.model;
 
+import org.hibernate.validator.constraints.Email;
+
 public class AppUser {
 	
+	@Email(message="must be a valid email")
 	private String email;
 	private String password;
 	private String salt;
@@ -12,6 +15,7 @@ public class AppUser {
 	public String getEmail() {
 		return email;
 	}
+	
 	public void setEmail(String email) {
 		this.email = email;
 	}

@@ -1,7 +1,10 @@
 package com.techelevator.dao;
 
+<<<<<<< HEAD
 import java.time.LocalDate;
 import java.util.ArrayList;
+=======
+>>>>>>> bb66262f168e9981fe7c959aa0919478cf843eeb
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -11,7 +14,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+<<<<<<< HEAD
 import com.techelevator.model.ScheduledClass;
+=======
+import com.techelevator.model.Instructor;
+>>>>>>> bb66262f168e9981fe7c959aa0919478cf843eeb
 
 @Component
 public class InstructorJdbcDao implements InstructorDAO {
@@ -22,6 +29,7 @@ public class InstructorJdbcDao implements InstructorDAO {
 	public void JDBCUserDAO(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
+<<<<<<< HEAD
 
 	@Override
 	public List<ScheduledClass> GetAllScheduledClassesByInstructor(int instructorId) {
@@ -47,4 +55,6 @@ public class InstructorJdbcDao implements InstructorDAO {
 	}
 	
 
+=======
+>>>>>>> bb66262f168e9981fe7c959aa0919478cf843eeb
 }
