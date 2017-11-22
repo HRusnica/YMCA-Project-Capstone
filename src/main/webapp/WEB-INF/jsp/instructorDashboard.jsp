@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
+    <script type="text/javascript" src="js/attendance.js"></script>
     <title>Instructor Dashboard</title>
 
 	
@@ -64,20 +64,18 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
+            <c:url value="/instructorViewClasses" var="instructorViewClassesLink"/>
+            <li><a href="${instructorViewClassesLink}">View Classes</a></li>
+           
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
+            <c:url value="http://www.ymca.net/" var="ymcaLink"/>
+            <li><a href="${ymcaLink}">YMCA</a></li>
+            <c:url value="http://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/water-safety/swim-safety" var="swimSafety"/>
+            <li><a href="${swimSafety}">Swim Safety Tips</a></li>
+            
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
             <li><a href="">Another nav item</a></li>
           </ul>
         </div>
@@ -108,9 +106,9 @@
             </div>
           </div>
 
-          <h2 class="sub-header">Classes Instructor is scheduled to Teach</h2>
+          <h2 class="sub-header">My Classes</h2>
           <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-striped" id="attTable">
               <thead>
                 <tr>
                   <th>Class Name</th>
@@ -123,7 +121,7 @@
               </thead>
               <tbody>
               <c:forEach items="${allScheduledClasses}" var="classes">
-                <tr>
+                <tr data-level-name="${classes.levelName}" data-age-group="${classes.ageGroup}" data-student-name="${classes.studentName}" data-toggle="modal" data-target="#att-modal" >
                   <td><c:out value="${classes.levelName }" /></td>
                   <td><c:out value="${classes.ageGroup }" /></td>
                   <td><c:out value="${classes.dayOfWeek }" /></td>
@@ -139,6 +137,67 @@
         </div>
       </div>
     </div>
+    
+<!-- ATTENDANCE MODAL BELOW -->
+<div id="att-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2>Attendance</h2>
+        <h3 class="modal-title">Modal title</h3>
+        <h4 class="modal-sub-title">Modal subtitle</h4>
+      </div>
+      
+      <div class="modal-body">
+      <label for="selectInstructor">Select Instructor</label>
+      <select name="assignedInstructor" class="form-control">
+      <c:forEach var="instructor" items="${allInstructors}">
+        <option value="${instructor.instructorId }"><c:out value="${instructor.firstName + ' ' + instructor.lastName}"/></option>
+       	</c:forEach>
+       	</select>
+  	  </div>
+  	  
+  	  <div class="modal-body">
+      <label for="dayOfWeek">Day Of Week</label>
+      <select name="assignDayOfWeek" class="form-control">
+		<option value="Sunday">Sunday</option>
+       	<option value="Monday">Monday</option>
+       	<option value="Tuesday">Tuesday</option>
+       	<option value="Wednesday">Wednesday</option>
+       	<option value="Thursday">Thursday</option>
+       	<option value="Friday">Friday</option>
+       	<option value="Saturday">Saturday</option>
+       	</select>
+  	  </div>
+  	  
+  	  <div class="modal-body">
+      <label for="time">Class Time</label>
+      	<input id="time" class="form-control"></input>
+  	  </div>
+  	  
+  	  <div class="modal-body">
+      <label for="startDate">Start Date</label>
+      	<input id="time" class="form-control"></input>
+  	  </div>
+  	  
+  	  <div class="modal-body">
+      <label for="endDate">End Date</label>
+      	<input id="time" class="form-control"></input>
+  	  </div>
+  	  
+  	  <div class="modal-body">
+      <label for="notes">Class Notes</label>
+      	<textarea id="notes" class="form-control"></textarea>
+  	  </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
