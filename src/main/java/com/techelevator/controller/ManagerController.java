@@ -19,6 +19,7 @@ import com.techelevator.dao.ManagerDAO;
 import com.techelevator.dao.SwimClassDAO;
 import com.techelevator.model.Instructor;
 import com.techelevator.model.Login;
+import com.techelevator.model.Student;
 import com.techelevator.model.SwimClass;
 
 
@@ -74,11 +75,12 @@ public class ManagerController {
 		@RequestMapping(path="/managerDashboard", method=RequestMethod.GET)
 		public String showManagerDashboard(ModelMap modelHolder){
 			if(! modelHolder.containsAttribute("instructor")) {
-				modelHolder.addAttribute("instructor", new Login());
+				modelHolder.addAttribute("instructor", new Instructor());
+			}
+			if(! modelHolder.containsAttribute("student")) {
+				modelHolder.addAttribute("student", new Student());
 			}
 			return "managerDashboard";
-			
-
 		}
 		
 		@RequestMapping(path="/assignInstructorToClass", method=RequestMethod.GET)
