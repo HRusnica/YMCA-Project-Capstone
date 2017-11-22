@@ -4,23 +4,11 @@ $(function () {
         var levelId = $(this).attr('data-level-id');
         var levelName = $(this).attr('data-level-name');
         var ageGroup = $(this).attr('data-age-group');
-
+        $(levelId)
         $('#myModal').modal();
 
     });
 
-    $('#userTable').on('click', '.delete-button', function(event){
-        event.preventDefault();
-        event.stopPropagation();
-
-        var id = $(this).attr('data-user-id');
-        $.ajax({
-            url: root+ '/users/' + id,
-            method: 'DELETE'
-        }).then(function(data){
-            refreshTable();
-        });
-    });
 
     $('#save').on('click', function(event){
         event.preventDefault();
