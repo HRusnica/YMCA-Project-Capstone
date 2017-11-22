@@ -93,8 +93,8 @@ CREATE TABLE class_time (
 	class_time_id serial,
 	hour varchar(32) NOT NULL,
 	day_of_week varchar(32) NOT NULL,
-	start_date varchar(32) NOT NULL,
-	end_date varchar(32) NOT NULL,
+	start_date DATE NOT NULL,
+	end_date DATE NOT NULL,
 	CONSTRAINT pk_class_time_id PRIMARY KEY (class_time_id)	
 );
 
