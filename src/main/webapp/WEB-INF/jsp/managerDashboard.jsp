@@ -123,6 +123,21 @@
               <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
               <h4>New Student</h4>
               <span class="text-muted">Enroll a new Student</span>
+              <c:url var="addStudentUrl" value="/newStudent" />
+					<form:form method="POST" action="${addStudentUrl}" modelAttribute="student">
+						<div id="addNewStudent">
+							<label for="firstName">First Name: </label>
+							<form:input path="firstName" />
+							<form:errors path="firstName" cssClass="error" />
+							<br>
+							<label for="lastName">Last Name: </label>
+							<form:input path="lastName" />
+							<form:errors path="lastName" cssClass="error" />
+							<input type="submit" value="Submit"/>
+						</div>
+						<div class="hide1">	
+						</div>		
+					</form:form>
             </div>
           </div>
 

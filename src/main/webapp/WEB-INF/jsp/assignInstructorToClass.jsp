@@ -14,7 +14,9 @@
 </head>
 <body>
 
+
 	<div class="container">
+	<h1>Available Classes</h1>
 		<table class="table table-striped table-hover" id="allClassesTable">
 			<tbody>
 			<thead>
