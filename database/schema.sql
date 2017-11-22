@@ -55,8 +55,8 @@ CREATE TABLE skill (
 CREATE TABLE skill_student (
 	skill_id int NOT NULL,
 	student_id int NOT NULL,
-	introduced boolean,
-	accomplished boolean,
+	introduced boolean DEFAULT FALSE,
+	accomplished boolean DEFAULT FALSE,
 	comments text,
 	CONSTRAINT fk_student_id FOREIGN KEY (skill_id) REFERENCES student (student_id),
 	CONSTRAINT fk_skill_id FOREIGN KEY (skill_id) REFERENCES skill (skill_id)
