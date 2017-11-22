@@ -2,6 +2,7 @@
 	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -121,10 +122,13 @@
                 </tr>
               </thead>
               <tbody>
-              <c:forEach items="${getAllScheduledClassesByInstructor}" var="classes">
+              <c:forEach items="${scheduledClassList}" var="classes">
                 <tr>
                   <td><c:out value="${classes.levelName }" /></td>
                   <td><c:out value="${classes.ageGroup }" /></td>
+                  <td><c:out value="${classes.dayOfWeek }" /></td>
+                  <td><c:out value="${classes.startDate }" /></td>
+                  <td><c:out value="${classes.endDate }" /></td>
                   </tr>
                   </c:forEach>
                
