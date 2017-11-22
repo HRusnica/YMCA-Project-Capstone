@@ -42,8 +42,40 @@ INSERT INTO skill (skill_name, skill_description) VALUES ('Jump, push, turn, gra
 INSERT INTO skill (skill_name, skill_description) VALUES ('Back float', 'assisted, 10 secs, recover independently');
 INSERT INTO skill (skill_name, skill_description) VALUES ('Front float', 'assisted, 10 secs, recover independently');
 INSERT INTO skill (skill_name, skill_description) VALUES ('Back glide', 'assistd at wall, 5ft');
-INSERT INTO skill (skill_name, skill_description) VALUES ('Swim, float, swim', 'bob independently');
-INSERT INTO skill (skill_name, skill_description) VALUES ('Submerge', 'assisted, 10ft');
+INSERT INTO skill (skill_name, skill_description) VALUES ('Swim, float, swim', 'assisted, 10ft');
+INSERT INTO skill (skill_name, skill_description) VALUES ('Submerge', 'look at object on bottom');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Front glide', '10ft');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Front glide', '5ft');
+INSERT INTO skill (skill_name) VALUES ('Jump, push, turn, grab');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Back float', '20 secs');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Back float', '10 secs');
+INSERT INTO skill (skill_name) VALUES ('Roll');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Front float', '20 secs');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Front float', '10 secs');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Back glide', '10ft');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Back glide', '5 ft');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Tread water', '10 secs, near wall & exit');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Swim, float, swim', '5yd');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Submerge', 'retrieve object in chest-deep water');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Swim on front', '15yd');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Swim on front', '10yd');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Water exit', 'independently');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Jump, swim, turn, swim, grab', '10yd');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Swim on back', '10yd');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Swim on back', '15yd');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Tread water', '1 min & exit');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Tread water', '30 secs & exit');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Swim, float, swim', '25yd');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Swim, float, swim', '15yd');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Endurance', 'any stroke or combination of strokes, 25yd');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Front crawl', 'rotary breathing, 15yd');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Back crawl', '15yd');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Dive', 'sitting');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Resting stroke', 'elementary backstroke, 15yd');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Tread water', 'scissor & whip kick, 1 min');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Breaststroke', 'kick, 15yd');
+INSERT INTO skill (skill_name, skill_descriptoin) VALUES ('Butterfly', 'kick, 15yd');
+
 
 INSERT INTO level (level_name, age_group) VALUES ('Water Discovery', 'Parent & Child');
 INSERT INTO level (level_name, age_group) VALUES ('Water Acclimation', 'Preschool');
@@ -89,7 +121,7 @@ INSERT INTO class(level_id, instructor_id, class_time_id) VALUES (5, 1, 5);
 INSERT INTO class(level_id, instructor_id, class_time_id) VALUES (6, 2, 6);
 
 INSERT INTO student(birthDay, first_name, last_name, gender) VALUES ('1-1-11', 'Joey', 'Smith', 'male');
-INSERT INTO student(birthDay, first_name, last_name, gender) VALUES ('2-2-12', 'Jim', 'Jones', 'male');
+INSERT INTO student(birthDay, first_name, last_name, gender) VALUES ('2-2-12', 'John', 'Jones', 'male');
 INSERT INTO student(birthDay, first_name, last_name, gender) VALUES ('3-3-13', 'Bob', 'Brown', 'male');
 INSERT INTO student(birthDay, first_name, last_name, gender) VALUES ('4-4-14', 'Candy', 'Cooper', 'female');
 INSERT INTO student(birthDay, first_name, last_name, gender) VALUES ('5-5-15', 'Jen', 'Jefferson', 'female');
@@ -101,5 +133,14 @@ INSERT INTO student(birthDay, first_name, last_name, gender) VALUES ('6-6-06', '
 INSERT INTO student(birthDay, first_name, last_name, gender) VALUES ('5-5-05', 'Sarah', 'Connor', 'female');
 INSERT INTO student(birthDay, first_name, last_name, gender) VALUES ('4-4-04', 'Suzy', 'Smith', 'female');
 
+INSERT INTO class_student(student_id, class_id) VALUES (6, 1);
+INSERT INTO class_student(student_id, class_id) VALUES (5, 1);
+INSERT INTO class_student(student_id, class_id) VALUES (4, 1);
+INSERT INTO class_student(student_id, class_id) VALUES (6, 2);
+INSERT INTO class_student(student_id, class_id) VALUES (2, 3);
+INSERT INTO class_student(student_id, class_id) VALUES (3, 3);
+INSERT INTO class_student(student_id, class_id) VALUES (7, 4);
+INSERT INTO class_student(student_id, class_id) VALUES (8, 4);
+INSERT INTO class_student(student_id, class_id) VALUES (9, 5);
 
 COMMIT;
