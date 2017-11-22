@@ -127,6 +127,7 @@
                   <td><c:out value="${classes.levelName }" /></td>
                   <td><c:out value="${classes.ageGroup }" /></td>
                   <td><c:out value="${classes.dayOfWeek }" /></td>
+                  <td><c:out value="${classes.hour }" /></td>
                   <td><c:out value="${classes.startDate }" /></td>
                   <td><c:out value="${classes.endDate }" /></td>
                   </tr>

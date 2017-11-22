@@ -55,6 +55,7 @@ public class LoginController {
 				System.out.println("JAred");
 				Instructor loggedInInstructor = new Instructor();
 				loggedInInstructor = instructorDao.InstructorByEmail(email);
+				System.out.println(loggedInInstructor.getInstructorId());
 				request.getSession().setAttribute("instructor", loggedInInstructor);
 				return "redirect:/instructorDashboard";
 			} else {

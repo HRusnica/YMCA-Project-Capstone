@@ -26,28 +26,32 @@ public class InstructorJdbcDao implements InstructorDAO {
 		
 		System.out.println("hey");
 		String sqlSearchForId = "SELECT instructor_id FROM instructor WHERE email = ?";
-		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSearchForId, email);
-		while (result.next()) {
+		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSearchForId, email.toUpperCase());
+		if (result.next()) {
 		thisInstructor.setInstructorId((int)result.getLong("instructor_id"));
+		} else {
+			System.out.println("email not found: " + email);
 		}
 		return thisInstructor;
 	}
 
 	@Override
 	public List<ScheduledClass> GetAllScheduledClassesByInstructor(int instructorId) {
+		System.out.println(instructorId);
 		List<ScheduledClass> scheduledClassList = new ArrayList<ScheduledClass>();
 		
-		String sqlSearchForScheduledClass = "SELECT l.level_name, l.age_group, ct.hour, ct.day_of_week, "
+		String sqlSearchForScheduledClass = "SELECT l.level_name, l.level_id, l.age_group, ct.hour, ct.day_of_week, "
 				+ "ct.start_date, ct.end_date FROM class c JOIN class_time ct ON c.class_time_id = "
 				+ "ct.class_time_id JOIN level l ON c.level_id = l.level_id WHERE instructor_id = ? AND NOW() BETWEEN start_date AND end_date";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForScheduledClass, instructorId);
 		while(results.next()){
 			ScheduledClass myClass = new ScheduledClass();
-			myClass.setAgeGroup(results.getString("level_name"));
+			myClass.setAgeGroup(results.getString("age_group"));
 			myClass.setDayOfWeek(results.getString("day_of_week"));
 			myClass.setEndDate((results.getDate("end_date")).toLocalDate());
 			myClass.setInstructorId(instructorId);
 			myClass.setLevelId(results.getInt("level_id"));
+			myClass.setLevelName(results.getString("level_name"));
 			myClass.setStartDate((results.getDate("start_date")).toLocalDate());
 			myClass.setHour(results.getString("hour"));
 			
