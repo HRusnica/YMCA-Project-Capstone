@@ -24,7 +24,7 @@ public class InstructorJdbcDao implements InstructorDAO {
 	public Instructor InstructorByEmail(String email){
 		Instructor thisInstructor = new Instructor();
 		
-		System.out.println("hey");
+		
 		String sqlSearchForId = "SELECT instructor_id FROM instructor WHERE email = ?";
 		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSearchForId, email.toUpperCase());
 		if (result.next()) {
@@ -37,7 +37,7 @@ public class InstructorJdbcDao implements InstructorDAO {
 
 	@Override
 	public List<ScheduledClass> GetAllScheduledClassesByInstructor(int instructorId) {
-		System.out.println(instructorId);
+		
 		List<ScheduledClass> scheduledClassList = new ArrayList<ScheduledClass>();
 		
 		String sqlSearchForScheduledClass = "SELECT l.level_name, l.level_id, l.age_group, ct.hour, ct.day_of_week, "

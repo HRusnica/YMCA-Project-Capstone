@@ -8,6 +8,8 @@ public class Student extends AppUser {
 	
 	private String birthday;
 	private String gender;
+	private String firstName;
+	private String lastName;
 
 	public String getGender() {
 		return gender;
@@ -22,4 +24,21 @@ public class Student extends AppUser {
 		LocalDate dt = LocalDate.parse(birthday, formatter);;
 		return dt;
 	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 }
