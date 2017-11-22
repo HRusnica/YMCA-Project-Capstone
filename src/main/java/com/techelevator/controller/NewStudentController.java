@@ -17,7 +17,7 @@ public class NewStudentController {
 	@Autowired
 	StudentDAO studentDao;
 	
-	@RequestMapping(path = "/newStudent", method = RequestMethod.PUT)
+	@RequestMapping(path = "/newStudent", method = RequestMethod.POST)
 	public void saveStudent (@ModelAttribute Student student) {
 		studentDao.saveStudent(student);
 	}
