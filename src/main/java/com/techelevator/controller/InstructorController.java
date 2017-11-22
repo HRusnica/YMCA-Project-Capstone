@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -25,9 +26,9 @@ public class InstructorController {
 	private InstructorDAO instructorDao;
 	
 	@RequestMapping(path="/instructorDashboard", method=RequestMethod.GET)
-	public String getInstructorHomePage(ModelMap modelHolder, HttpSession session) {
+	public String getInstructorHomePage(ModelMap modelHolder, HttpSession session, HttpServletRequest request) {
 		HttpSession mySession = request.getSession();
-		List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(HttpSession.getAttribute("instructor").getInstructorId());
+		List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
 		modelHolder.put("allScheduledClasses", "classes");
 		return "instructorDashboard";
 	}
