@@ -52,10 +52,10 @@ public class LoginController {
 				// }
 				return "redirect:/managerDashboard";
 			} else if (loginDAO.getRole(email).equals("instructor")) {
-				System.out.println("JAred");
+				
 				Instructor loggedInInstructor = new Instructor();
 				loggedInInstructor = instructorDao.InstructorByEmail(email);
-				System.out.println(loggedInInstructor.getInstructorId());
+				
 				request.getSession().setAttribute("instructor", loggedInInstructor);
 				return "redirect:/instructorDashboard";
 			} else {
