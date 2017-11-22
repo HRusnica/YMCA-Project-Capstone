@@ -13,6 +13,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/attendance.js"></script>
     <title>Instructor Dashboard</title>
 
@@ -121,7 +124,7 @@
               </thead>
               <tbody>
               <c:forEach items="${allScheduledClasses}" var="classes">
-                <tr data-level-name="${classes.levelName}" data-age-group="${classes.ageGroup}" data-student-name="${classes.studentName}" data-toggle="modal" data-target="#att-modal" >
+                <tr data-level-name="${classes.levelName}" data-age-group="${classes.ageGroup}" data-toggle="modal" data-target="#att-modal" >
                   <td><c:out value="${classes.levelName }" /></td>
                   <td><c:out value="${classes.ageGroup }" /></td>
                   <td><c:out value="${classes.dayOfWeek }" /></td>
