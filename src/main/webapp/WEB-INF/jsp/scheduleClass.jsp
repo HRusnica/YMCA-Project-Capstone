@@ -24,25 +24,15 @@
 			<tbody>
 			<thead>
 				<tr>
-					<th>Current YMCA Classes</th>
+					<th>Class Name</th>
+					<th>Class Level</th>
 				</tr>
 				<c:forEach items="${allClasses}" var="classes">
 					<tr data-level-id="${classes.levelId}"
 						data-level-name="${classes.levelName}"
 						data-age-group="${classes.ageGroup}">
-						<td>
-							<div>
-								<p>
-									<strong>Class Name: <c:out
-											value="${classes.levelName}" /></strong>
-								</p>
-								<p>
-									Class Level:
-									<c:out value="${classes.ageGroup}" />
-								</p>
-								<br>
-							</div>
-						</td>
+						<td><strong><c:out value="${classes.levelName}" /></strong></td>
+						<td><c:out value="${classes.ageGroup}" /></td>
 					</tr>
 				</c:forEach>
 			</thead>
@@ -67,7 +57,9 @@
 						<div class="col-md-6">
 							<div id="panel1" class="panel panel-default">
 
-								<h1 >Class Name that you clicked on</h1>
+								
+								<!-- NEWish one -->
+								<!--  <h1>Class Name that you clicked on</h1>
 
 								<fieldset>
 									<legend>
@@ -99,8 +91,7 @@
 								</fieldset>
 
 								<fieldset>
-									<legend>
-										<span class="number"></span>Notes
+									<legend>	
 									</legend>
 									<label for="bio">Additional Class Notes:</label><br>
 									<textarea id="bio" name="notes"></textarea>
@@ -109,11 +100,11 @@
 							</div>
 						</div>
 						<div class="col-md-3"></div>
-					</div>
+					</div>-->
 
 
 					<!-- Start of old Modal -->
-					<!--<h1>$"{swimClass.name}</h1>
+				<h1>$"{swimClass.name}</h1>
                 <h2>$"{swimClass.level</h2>
                     <form>
                     <div class="dropdown">
@@ -157,7 +148,7 @@
                             <input id="email" name="email" type="text" class="form-control" />
                         </div>
                     </form>
-                </div> -->
+                </div> 
 					<!-- End of old Modal -->
 
 					<div class="modal-footer">

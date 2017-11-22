@@ -80,5 +80,14 @@ public class ManagerController {
 			
 
 		}
+		
+		@RequestMapping(path="/assignInstructorToClass", method=RequestMethod.GET)
+		public String showAllClasses(ModelMap modelHolder){	
+			List<SwimClass> classes = classDao.getAllClasses();
+			modelHolder.put("allClasses", classes);
+			
+			return "assignInstructorToClass";	
+		}
+		
 }
 
