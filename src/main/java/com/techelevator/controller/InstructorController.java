@@ -32,6 +32,13 @@ public class InstructorController {
 		modelHolder.put("allScheduledClasses", classes);
 		return "instructorDashboard";
 	}
+	@RequestMapping(path="/instructorViewClasses", method=RequestMethod.GET)
+	public String getInstructorViewClasses(ModelMap modelHolder, HttpSession session, HttpServletRequest request) {
+		HttpSession mySession = request.getSession();
+		List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
+		modelHolder.put("allScheduledClasses", classes);
+		return "instructorViewClasses";
+	}
 //	@RequestMapping(path="/addStudent", method=RequestMethod.POST)
 //	public String addInstructor(@Valid @ModelAttribute Student student, BindingResult result, RedirectAttributes flash){
 //		flash.addFlashAttribute("student", student);
