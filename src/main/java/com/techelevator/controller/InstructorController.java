@@ -29,7 +29,7 @@ public class InstructorController {
 	public String getInstructorHomePage(ModelMap modelHolder, HttpSession session, HttpServletRequest request) {
 		HttpSession mySession = request.getSession();
 		List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
-		modelHolder.put("allScheduledClasses", "classes");
+		modelHolder.put("allScheduledClasses", classes);
 		return "instructorDashboard";
 	}
 //	@RequestMapping(path="/addStudent", method=RequestMethod.POST)

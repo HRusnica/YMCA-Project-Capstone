@@ -122,7 +122,7 @@
                 </tr>
               </thead>
               <tbody>
-              <c:forEach items="${scheduledClassList}" var="classes">
+              <c:forEach items="${allScheduledClasses}" var="classes">
                 <tr>
                   <td><c:out value="${classes.levelName }" /></td>
                   <td><c:out value="${classes.ageGroup }" /></td>
