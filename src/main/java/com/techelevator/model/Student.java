@@ -1,10 +1,12 @@
 package com.techelevator.model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class Student extends AppUser {
 	
-	private LocalDate birthday;
+	private String birthday;
 	private String gender;
 	private String firstName;
 	private String lastName;
@@ -17,12 +19,10 @@ public class Student extends AppUser {
 		this.gender = gender;
 	}
 
-	public LocalDate getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(LocalDate birthday) {
-		this.birthday = birthday;
+	public LocalDate getBirthDate() {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDate dt = LocalDate.parse(birthday, formatter);;
+		return dt;
 	}
 
 	public String getFirstName() {

@@ -2,6 +2,7 @@
 	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,12 +13,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/newStudent.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <title>Manager Dashboard</title>
-
-	
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	
 
     <!-- Bootstrap core CSS -->
     <c:url value="/css/bootstrap.min.css" var="cssBootstrap"/>
@@ -120,24 +122,9 @@
               <span class="text-muted">Add Parent email to Database</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail" data-toggle="modal" data-target="#newStudent-modal">
               <h4>New Student</h4>
               <span class="text-muted">Enroll a new Student</span>
-              <c:url var="addStudentUrl" value="/newStudent" />
-					<form:form method="POST" action="${addStudentUrl}" modelAttribute="student">
-						<div id="addNewStudent">
-							<label for="firstName">First Name: </label>
-							<form:input path="firstName" />
-							<form:errors path="firstName" cssClass="error" />
-							<br>
-							<label for="lastName">Last Name: </label>
-							<form:input path="lastName" />
-							<form:errors path="lastName" cssClass="error" />
-							<input type="submit" value="Submit"/>
-						</div>
-						<div class="hide1">	
-						</div>		
-					</form:form>
             </div>
           </div>
 
@@ -272,6 +259,49 @@
         </div>
       </div>
     </div>
+    
+<!-- MODAL BELOW -->
+<div id="newStudent-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2>New Student</h2>
+        <h4 class="modal-sub-title">Use this form to save a student in the database</h4>
+      </div>
+      
+      <div class="modal-body">
+      <label for="firstName">First Name</label>
+      	<input id="firstNameStudent" class="form-control"></input>
+  	  </div>
+  	  
+  	  <div class="modal-body">
+      <label for="lastName">Last Name</label>
+      	<input id="lastNameStudent" class="form-control"></input>
+  	  </div>
+      
+  	  <div class="modal-body">
+      <label for="gender">Gender</label>
+      <select name="gender" class="form-control" id="genderStudent">
+      	<option value="not specified">Not Specified</option>
+		<option value="male">Male</option>
+       	<option value="female">Female</option>
+      </select>
+  	  </div>
+  	  
+  	  <div class="modal-body">
+      <label for="birthday">Birthday (YYYY-MM-DD)</label>
+      	<input id="birthdayStudent" class="form-control"></input>
+  	  </div>
+  	  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="newStudentButton" onclick="saveNewStudent()">Save Student</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -285,3 +315,4 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
+
