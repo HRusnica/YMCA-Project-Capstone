@@ -20,7 +20,7 @@
     <title>Instructor Dashboard</title>
 
 	
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
 
     <!-- Bootstrap core CSS -->
@@ -66,12 +66,14 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <c:url value="/instructorDashboard" var="instructorDashboard"/>
+            <li class="active"><a href="${instructorDashboard}">Overview <span class="sr-only">(current)</span></a></li>
             <c:url value="/instructorViewClasses" var="instructorViewClassesLink"/>
-            <li><a href="${instructorViewClassesLink}">View Classes</a></li>
+            <li><a href="${instructorViewClassesLink}">View My Classes</a></li>
            
           </ul>
           <ul class="nav nav-sidebar">
+            <li><strong>LINKS</strong></li>
             <c:url value="http://www.ymca.net/" var="ymcaLink"/>
             <li><a href="${ymcaLink}">YMCA</a></li>
             <c:url value="http://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/water-safety/swim-safety" var="swimSafety"/>
@@ -79,7 +81,7 @@
             
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Another nav item</a></li>
+           <!--  <li><a href="">Another nav item</a></li> -->
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -87,25 +89,32 @@
 
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Place Holder</h4>
-              <span class="text-muted">Place Holder information</span>
+              <c:url value="/img/StagesOfLearning.jpeg" var="SOLimage"/>
+              <c:url value="/img/StagesOfLearning.pdf" var="SOLpdf"/>
+              <a href="${SOLpdf}"><img src="${SOLimage}" width="200" height="200" class="img-responsive" alt="Stages of Learning button"></a>
+          	  <!--<h5 class="text-muted">View pdf</h5> -->
 	
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Place Holder</h4>
-              <span class="text-muted">Place Holder information</span>
+              <c:url value="/img/lessonSelector.jpeg" var="lessonimage"/>
+              <c:url value="/img/LessonSelector.pdf" var="lessonpdf"/>
+              <a href="${lessonpdf}"><img src="${lessonimage}" width="200" height="200" class="img-responsive" alt="Lesson Selector button"></a>
+              <!--<h4>Place Holder</h4>
+              <span class="text-muted">Place Holder information</span>-->
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Place Holder</h4>
-              <span class="text-muted">Place Holder information</span>
+              <c:url value="/img/stageDesc.jpeg" var="stageDescimage"/>
+              <c:url value="/img/StageDescription.pdf" var="stagepdf"/>
+              <a href="${stagepdf}"><img src="${stageDescimage}" width="200" height="200" class="img-responsive" alt="Stage Description button"></a>
+              <!--<h4>Place Holder</h4>
+              <span class="text-muted">Place Holder information</span>-->
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Place Holder</h4>
-              <span class="text-muted">Place Holder information</span>
+              <c:url value="/img/programOverview.jpeg" var="programOverviewimage"/>
+              <c:url value="/img/programOverview.pdf" var="programpdf"/>
+              <a href="${programpdf}"><img src="${programOverviewimage}" width="200" height="200" class="img-responsive" alt="Program Overview button"></a>
+              <!-- <h4>Place Holder</h4>
+              <span class="text-muted">Place Holder information</span> -->
             </div>
           </div>
 
@@ -153,45 +162,12 @@
       </div>
       
       <div class="modal-body">
-      <label for="selectInstructor">Select Instructor</label>
+      <label for="selectInstructor">Student List</label>
       <select name="assignedInstructor" class="form-control">
-      <c:forEach var="instructor" items="${allInstructors}">
-        <option value="${instructor.instructorId }"><c:out value="${instructor.firstName + ' ' + instructor.lastName}"/></option>
+      <c:forEach var="student" items="${allStudents}">
+        <option value="${student.instructorId }"><c:out value="${student.firstName + ' ' + student.lastName}"/></option>
        	</c:forEach>
        	</select>
-  	  </div>
-  	  
-  	  <div class="modal-body">
-      <label for="dayOfWeek">Day Of Week</label>
-      <select name="assignDayOfWeek" class="form-control">
-		<option value="Sunday">Sunday</option>
-       	<option value="Monday">Monday</option>
-       	<option value="Tuesday">Tuesday</option>
-       	<option value="Wednesday">Wednesday</option>
-       	<option value="Thursday">Thursday</option>
-       	<option value="Friday">Friday</option>
-       	<option value="Saturday">Saturday</option>
-       	</select>
-  	  </div>
-  	  
-  	  <div class="modal-body">
-      <label for="time">Class Time</label>
-      	<input id="time" class="form-control"></input>
-  	  </div>
-  	  
-  	  <div class="modal-body">
-      <label for="startDate">Start Date</label>
-      	<input id="time" class="form-control"></input>
-  	  </div>
-  	  
-  	  <div class="modal-body">
-      <label for="endDate">End Date</label>
-      	<input id="time" class="form-control"></input>
-  	  </div>
-  	  
-  	  <div class="modal-body">
-      <label for="notes">Class Notes</label>
-      	<textarea id="notes" class="form-control"></textarea>
   	  </div>
       
       <div class="modal-footer">

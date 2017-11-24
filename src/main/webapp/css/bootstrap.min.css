@@ -5000,17 +5000,17 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 }
 
 .navbar-inverse {
-	background-color: #222;
+	background-color: #005597;
 	border-color: #080808
 }
 
 .navbar-inverse .navbar-brand {
-	color: #9d9d9d
+	color: #fbfcff
 }
 
 .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover
 	{
-	color: #fff;
+	color: #009f86;
 	background-color: transparent
 }
 

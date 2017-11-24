@@ -64,22 +64,32 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <c:url value="/managerDashboard" var="managerDashboard"/>
+            <li class="active"><a href="${managerDashboard}">Overview <span class="sr-only">(current)</span></a></li>
             <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
+            <li><a href="#">All Classes</a></li>
+            
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
+            <li><strong>LINKS</strong></li>
+            <c:url value="http://www.ymca.net/" var="ymcaLink"/>
+            <li><a href="${ymcaLink}">YMCA</a></li>
+            <c:url value="http://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/water-safety/swim-safety" var="swimSafety"/>
+            <li><a href="${swimSafety}">Swim Safety Tips</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
+           	<li><strong>RESOURCES</strong></li>
+           	<c:url value="/img/StagesOfLearning.pdf" var="SOLpdf"/>
+           	<li><a href="${SOLpdf}">Stages of Learning</a></li>
+           	
+           	<c:url value="/img/LessonSelector.pdf" var="lessonpdf"/>
+            <li><a href="${lessonpdf}">Lesson Selector</a></li>
+            
+            <c:url value="/img/StageDescription.pdf" var="stagepdf"/>
+            <li><a href="${stagepdf}">Stage Descriptions</a></li>
+            
+            <c:url value="/img/programOverview.pdf" var="programpdf"/>
+            <li><a href="${programpdf}">Program Overview</a></li> 
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -87,8 +97,8 @@
 
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Add Instructor</h4>
+              <c:url value="/img/addInstructor.jpeg" var="addInstructor"/> 
+              <img src="${addInstructor}" width="200" height="200" class="img-responsive" alt="Add Instructor">
               <span class="text-muted">Add Instructor's email to Database</span>
 
 				<p >
@@ -111,19 +121,19 @@
            
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
+              <c:url value="/img/ScheduleNewClass.jpeg" var="ScheduleNewClass"/>
               <c:url value="/scheduleClass" var="scheduleLink"/>
-              <a href="${scheduleLink}"> <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail"></a>
-              <h4>Schedule New Class</h4>
+              <a href="${scheduleLink}"> <img src="${ScheduleNewClass}" width="200" height="200" class="img-responsive" alt="Schedule New Class"></a>
               <span class="text-muted">View all Classes</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Add Parent</h4>
+			  <c:url value="/img/addParent.jpeg" var="addParentImage"/>
+              <img src="${addParentImage}" width="200" height="200" class="img-responsive" alt="Add Parent">
               <span class="text-muted">Add Parent email to Database</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail" data-toggle="modal" data-target="#newStudent-modal">
-              <h4>New Student</h4>
+              <c:url value="/img/newStudent.jpeg" var="newStudentImage"/>
+              <img src="${newStudentImage}" width="200" height="200" class="img-responsive" alt="New Student" data-toggle="modal" data-target="#newStudent-modal">
               <span class="text-muted">Enroll a new Student</span>
             </div>
           </div>
@@ -131,128 +141,28 @@
           <h2 class="sub-header">Current Class Schedule</h2>
           <div class="table-responsive">
             <table class="table table-striped">
-              <thead>
+             <thead>
                 <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
+                  <th>Class Name</th>
+                  <th>Age Group</th>
+                  <th>Day of Week</th>
+                  <th>Time</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
+                <c:forEach items="${allScheduledClasses}" var="classes">
+                <!--  SHOW ALL CLASSES FROM ALL INSTRUCTORS -->
+                <tr data-level-name="${classes.levelName}" data-age-group="${classes.ageGroup}" data-toggle="modal" data-target="#att-modal" >
+                  <td><c:out value="${classes.levelName }" /></td>
+                  <td><c:out value="${classes.ageGroup }" /></td>
+                  <td><c:out value="${classes.dayOfWeek }" /></td>
+                  <td><c:out value="${classes.hour }" /></td>
+                  <td><c:out value="${classes.startDate }" /></td>
+                  <td><c:out value="${classes.endDate }" /></td>
+                  </tr>
+                  </c:forEach>
               </tbody>
             </table>
           </div>
@@ -260,7 +170,7 @@
       </div>
     </div>
     
-<!-- MODAL BELOW -->
+<!-- ADD NEW STUDENT MODAL BELOW -->
 <div id="newStudent-modal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

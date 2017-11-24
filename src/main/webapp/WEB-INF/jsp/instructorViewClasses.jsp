@@ -63,30 +63,29 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
+           <c:url value="/instructorDashboard" var="instructorDashboard"/>
+            <li><a href="${instructorDashboard}">Overview </a></li>
+            <c:url value="/instructorViewClasses" var="instructorViewClassesLink"/>
+            <li class="active"><a href="${instructorViewClassesLink}">View My Classes<span class="sr-only">(current)</span></a></li>
+           
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
+            <li><strong>LINKS</strong></li>
+            <c:url value="http://www.ymca.net/" var="ymcaLink"/>
+            <li><a href="${ymcaLink}">YMCA</a></li>
+            <c:url value="http://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/water-safety/swim-safety" var="swimSafety"/>
+            <li><a href="${swimSafety}">Swim Safety Tips</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
+            <!--  <li><a href="">Another nav item</a></li>-->
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Instructor View All Classes</h1>
+          <h1 class="page-header">Instructor Dashboard</h1>
 
        
 
-          <h2 class="sub-header">Classes Instructor is scheduled to Teach</h2>
+          <h2 class="sub-header">My Classes</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
