@@ -1,5 +1,6 @@
 package com.techelevator.dao;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,6 +71,12 @@ public class SwimClassJdbcDao implements SwimClassDAO{
 		}
 		
 		return studentSkills;
+	}
+	public void scheduleClass(int instructorId, String dayOfWeek, String hour, LocalDate startDate, LocalDate endDate, int levelId){
+		String sqlInsertClassTime= "INSERT INTO class_time (hour, day_of_week, start_date, end_date) VALUES (?,?,?,?) RETURNING class_time_id";
+		 int newTimeId = jdbcTemplate.update(sqlInsertClassTime, hour, dayOfWeek, startDate,endDate);
+		 String sqlInsertScheduledClass = "INSERT INTO class (level_id,instructor_id,class_time_id) VALUES (?,?,?)";
+		 jdbcTemplate.update(sqlInsertScheduledClass, levelId, instructorId, newTimeId);
 	}
 	
 }
