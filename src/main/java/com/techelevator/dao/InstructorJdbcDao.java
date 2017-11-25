@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 import com.techelevator.model.ScheduledClass;
+import com.techelevator.model.Student;
 import com.techelevator.model.Instructor;
 
 
@@ -58,6 +59,11 @@ public class InstructorJdbcDao implements InstructorDAO {
 			scheduledClassList.add(myClass);
 		}
 		return scheduledClassList;
+	}
+	
+	@Override
+	public void saveInstructor(Instructor instructor) {
+		jdbcTemplate.update("INSERT INTO whitelist (email) VALUES (?)", instructor.getEmail());
 	}
 
 }

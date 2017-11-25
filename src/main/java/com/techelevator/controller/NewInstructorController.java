@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.techelevator.dao.InstructorDAO;
-import com.techelevator.dao.StudentDAO;
 import com.techelevator.model.Instructor;
-import com.techelevator.model.Student;
 
 public class NewInstructorController {
 	
@@ -25,5 +23,5 @@ public class NewInstructorController {
 		public void saveInstructor (@ModelAttribute Instructor instructor) {
 			instructorDao.saveInstructor(instructor);
 		}
-
+	}
 }
