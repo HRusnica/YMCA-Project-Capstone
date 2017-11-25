@@ -99,7 +99,7 @@
             <div class="col-xs-6 col-sm-3 placeholder">
               <c:url value="/img/addInstructor.jpeg" var="addInstructor"/> 
               <img src="${addInstructor}" width="200" height="200" class="img-responsive" alt="Add Instructor">
-              <span class="text-muted">Add Instructor's email to Database</span>
+              <!--<span class="text-muted">Add Instructor's email to Database</span>-->
 
 				<p >
 					<c:if test="${instructor.email != null}">
@@ -124,17 +124,17 @@
               <c:url value="/img/ScheduleNewClass.jpeg" var="ScheduleNewClass"/>
               <c:url value="/scheduleClass" var="scheduleLink"/>
               <a href="${scheduleLink}"> <img src="${ScheduleNewClass}" width="200" height="200" class="img-responsive" alt="Schedule New Class"></a>
-              <span class="text-muted">View all Classes</span>
+              <!--<span class="text-muted">View all Classes</span>-->
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
 			  <c:url value="/img/addParent.jpeg" var="addParentImage"/>
               <img src="${addParentImage}" width="200" height="200" class="img-responsive" alt="Add Parent">
-              <span class="text-muted">Add Parent email to Database</span>
+              <!--<span class="text-muted">Add Parent email to Database</span>-->
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <c:url value="/img/newStudent.jpeg" var="newStudentImage"/>
               <img src="${newStudentImage}" width="200" height="200" class="img-responsive" alt="New Student" data-toggle="modal" data-target="#newStudent-modal">
-              <span class="text-muted">Enroll a new Student</span>
+              <!--  <span class="text-muted">Enroll a new Student</span>-->
             </div>
           </div>
 
