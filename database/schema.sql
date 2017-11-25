@@ -100,20 +100,27 @@ CREATE TABLE class (
 CREATE TABLE class_student(
 	student_id int,
 	class_id int,
+	week_1 boolean DEFAULT false,
+	week_2 boolean DEFAULT false,
+	week_3 boolean DEFAULT false,
+	week_4 boolean DEFAULT false,
+	week_5 boolean DEFAULT false,
+	week_6 boolean DEFAULT false,
 	CONSTRAINT fk_student_id FOREIGN KEY (student_id) REFERENCES student (student_id),
 	CONSTRAINT fk_class_id FOREIGN KEY (class_id) REFERENCES class (class_id)
 );
-CREATE TABLE student_attendance (
-	student_id int UNIQUE NOT NULL,
-	class_id int UNIQUE NOT NULL,
-	week_1 boolean,
-	week_2 boolean,
-	week_3 boolean,
-	week_4 boolean,
-	week_5 boolean,
-	week_6 boolean,
-	CONSTRAINT fk_student_id FOREIGN KEY (student_id) REFERENCES student(student_id),
-	CONSTRAINT fk_class_id FOREIGN KEY (class_id) REFERENCES class(class_id)
-);
+
+--CREATE TABLE student_attendance (
+--	student_id int  NOT NULL,
+--	class_id int  NOT NULL,
+--	week_1 boolean DEFAULT false,
+--	week_2 boolean DEFAULT false,
+--	week_3 boolean DEFAULT false,
+--	week_4 boolean DEFAULT false,
+--	week_5 boolean DEFAULT false,
+--	week_6 boolean DEFAULT false,
+--	CONSTRAINT fk_student_id FOREIGN KEY (student_id) REFERENCES student(student_id),
+--	CONSTRAINT fk_class_id FOREIGN KEY (class_id) REFERENCES class(class_id)
+--);
 
 COMMIT;
