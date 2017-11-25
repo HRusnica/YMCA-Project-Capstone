@@ -57,6 +57,7 @@ body{
     margin:0px;
     bottom:0px;
     width:100vw;
+    height: 100vh;
     float:left;
 }
 
@@ -82,8 +83,12 @@ body{
 }
 
 .blue{
-    color:#fff9fe;
-    background:#1b60af url(../img/bubbles.jpg) no-repeat top right;
+    background-image: url(../img/backgroundimage.jpg);
+    background-size: cover;
+    background-color: rgb(27, 96, 175);
+    
+  
+    
 }
 
 .white{
