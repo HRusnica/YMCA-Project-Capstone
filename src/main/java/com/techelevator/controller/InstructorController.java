@@ -39,6 +39,12 @@ public class InstructorController {
 		modelHolder.put("allScheduledClasses", classes);
 		return "instructorViewClasses";
 	}
+	
+	@RequestMapping(path="/spreadsheet", method=RequestMethod.GET)
+	public String showSpreadsheetTEST() {
+	
+		return "spreadsheet";
+	}
 //	@RequestMapping(path="/addStudent", method=RequestMethod.POST)
 //	public String addInstructor(@Valid @ModelAttribute Student student, BindingResult result, RedirectAttributes flash){
 //		flash.addFlashAttribute("student", student);
