@@ -164,7 +164,7 @@
       <div class="modal-body">
       <label for="selectInstructor">Student List</label>
       <select name="assignedInstructor" class="form-control">
-      <c:forEach var="student" items="${allStudents}">
+      <c:forEach var="student" items="${studentClassList}">
         <option value="${student.instructorId }"><c:out value="${student.firstName + ' ' + student.lastName}"/></option>
        	</c:forEach>
        	</select>

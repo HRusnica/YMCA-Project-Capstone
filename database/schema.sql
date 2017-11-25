@@ -77,18 +77,6 @@ CREATE TABLE skill_level (
 	CONSTRAINT fk_skill_id FOREIGN KEY (skill_id) REFERENCES skill (skill_id)
 );
 
-CREATE TABLE student_attendance (
-	student_id int UNIQUE NOT NULL,
-	class_time_id int UNIQUE NOT NULL,
-	week_1 boolean,
-	week_2 boolean,
-	week_3 boolean,
-	week_4 boolean,
-	week_5 boolean,
-	week_6 boolean,
-	CONSTRAINT pk_student_attendance PRIMARY KEY (student_id)
-);
-
 CREATE TABLE class_time (
 	class_time_id serial,
 	hour varchar(32) NOT NULL,
@@ -105,8 +93,8 @@ CREATE TABLE class (
 	class_time_id int NOT NULL,
 	CONSTRAINT pk_class_id PRIMARY KEY (class_id),
 	CONSTRAINT fk_instructor_id FOREIGN KEY (instructor_id) REFERENCES instructor (instructor_id),
-	CONSTRAINT fk_class_time_id FOREIGN KEY (class_time_id) REFERENCES class_time (class_time_id)
---	CONSTRAINT fk_level_id FOREIGN KEY (level_id) REFERENCES level (level_id)
+	CONSTRAINT fk_class_time_id FOREIGN KEY (class_time_id) REFERENCES class_time (class_time_id),
+	CONSTRAINT fk_level_id FOREIGN KEY (level_id) REFERENCES level (level_id)
 );
 
 CREATE TABLE class_student(
@@ -114,6 +102,18 @@ CREATE TABLE class_student(
 	class_id int,
 	CONSTRAINT fk_student_id FOREIGN KEY (student_id) REFERENCES student (student_id),
 	CONSTRAINT fk_class_id FOREIGN KEY (class_id) REFERENCES class (class_id)
+);
+CREATE TABLE student_attendance (
+	student_id int UNIQUE NOT NULL,
+	class_id int UNIQUE NOT NULL,
+	week_1 boolean,
+	week_2 boolean,
+	week_3 boolean,
+	week_4 boolean,
+	week_5 boolean,
+	week_6 boolean,
+	CONSTRAINT fk_student_id FOREIGN KEY (student_id) REFERENCES student(student_id),
+	CONSTRAINT fk_class_id FOREIGN KEY (class_id) REFERENCES class(class_id)
 );
 
 COMMIT;

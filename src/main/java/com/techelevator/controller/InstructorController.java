@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.dao.InstructorDAO;
+import com.techelevator.dao.StudentDAO;
 import com.techelevator.model.Instructor;
 import com.techelevator.model.ScheduledClass;
 
@@ -24,6 +25,9 @@ public class InstructorController {
 	
 	@Autowired
 	private InstructorDAO instructorDao;
+	
+	@Autowired
+	private StudentDAO studentDao;
 	
 	@RequestMapping(path="/instructorDashboard", method=RequestMethod.GET)
 	public String getInstructorHomePage(ModelMap modelHolder, HttpSession session, HttpServletRequest request) {
@@ -45,6 +49,8 @@ public class InstructorController {
 	
 		return "spreadsheet";
 	}
+	
+	
 //	@RequestMapping(path="/addStudent", method=RequestMethod.POST)
 //	public String addInstructor(@Valid @ModelAttribute Student student, BindingResult result, RedirectAttributes flash){
 //		flash.addFlashAttribute("student", student);
