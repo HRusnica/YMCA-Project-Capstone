@@ -87,13 +87,14 @@
 <!-- The JavaScript -->
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.easing.1.3.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$('ul.nav a').bind('click', function(event) {
 			var $anchor = $(this);
 			$('html, body').stop().animate({
 				scrollLeft : $($anchor.attr('href')).offset().left
-			}, 2000);
+			}, 2000,);
 			event.preventDefault();
 		});
 	});
