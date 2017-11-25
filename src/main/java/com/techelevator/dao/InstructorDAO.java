@@ -7,5 +7,6 @@ import com.techelevator.model.ScheduledClass;
 public interface InstructorDAO {
 	Instructor InstructorByEmail(String email);
 	List<ScheduledClass> GetAllScheduledClassesByInstructor(int instructorId);
+	void saveInstructor(Instructor instructor);
 }
 
