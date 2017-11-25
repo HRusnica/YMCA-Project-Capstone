@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.techelevator.dao.InstructorDAO;
 import com.techelevator.model.Instructor;
 
+
+@RestController
+@CrossOrigin(origins = "*")
 public class NewInstructorController {
 	
-	@RestController
-	@CrossOrigin(origins = "*")
-	public class NewStudentController {
-		
-		@Autowired
-		InstructorDAO instructorDao;
-		
-		@RequestMapping(path = "/newInstructor", method = RequestMethod.POST)
-		public void saveInstructor (@ModelAttribute Instructor instructor) {
-			instructorDao.saveInstructor(instructor);
-		}
+	@Autowired
+	InstructorDAO instructorDao;
+
+	@RequestMapping(path = "/newInstructor", method = RequestMethod.POST)
+	public void saveInstructor(@ModelAttribute Instructor instructor) {
+		instructorDao.saveInstructor(instructor);
+		System.out.println(instructor.getEmail());
 	}
+
 }

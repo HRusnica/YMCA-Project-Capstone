@@ -98,27 +98,8 @@
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
               <c:url value="/img/addInstructor.jpeg" var="addInstructor"/> 
-              <img src="${addInstructor}" width="200" height="200" class="img-responsive" alt="Add Instructor">
+              <img src="${addInstructor}" width="200" height="200" class="img-responsive" alt="Add Instructor" data-toggle="modal" data-target="#newInstructor-modal">
               <!--<span class="text-muted">Add Instructor's email to Database</span>-->
-
-				<p >
-					<c:if test="${instructor.email != null}">
-						<p>The following email has been added: <c:out value = "${instructor.email}"/></p>
-					</c:if>
-					<c:url var="addInstructorUrl" value="/addInstructor" />
-					<form:form method="POST" action="${addInstructorUrl}" modelAttribute="instructor">
-					
-						<div class ="hide1" id="addInstructorEmail">
-							<label for="email">Instructor E-mail: </label>
-							<form:input path="email" />
-							<form:errors path="email" cssClass="error" />
-							<input type="submit" value="Submit"/>
-						</div>
-						<div class="hide1">	
-						</div>		
-					</form:form>
-				</p>
-           
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <c:url value="/img/ScheduleNewClass.jpeg" var="ScheduleNewClass"/>
@@ -207,6 +188,29 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" id="newStudentButton" onclick="saveNewStudent()">Save Student</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- ADD NEW INSTRUCTOR MODAL BELOW -->
+<div id="newInstructor-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2>New Instructor</h2>
+        <h4 class="modal-sub-title">Use this form to save an instructor in the database</h4>
+      </div>
+      
+      <div class="modal-body">
+      <label for="email">Email</label>
+      	<input id="emailInstructor" class="form-control"></input>
+  	  </div>
+  	  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="newInstructorButton" onclick="saveNewInstructor()">Save Student</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
