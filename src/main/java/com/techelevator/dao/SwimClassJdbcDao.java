@@ -10,6 +10,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import com.techelevator.model.Skill;
+import com.techelevator.model.StudentSkill;
 import com.techelevator.model.SwimClass;
 
 
@@ -39,15 +41,36 @@ public class SwimClassJdbcDao implements SwimClassDAO{
 		
 		return allClasses;
 	}
+	public List<Skill> getSkills(int classId) {
+		List<Skill> classSkills = new ArrayList<Skill>();
+		String sqlSearchForSkills = "SELECT s.skill_name,s.skill_description FROM skill s RIGHT JOIN skill_level sl ON s.skill_id=sl.skill_id " +
+				"Right JOIN level l ON l.level_id=sl.level_id JOIN class c ON c.level_id=l.level_id WHERE class_id=?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForSkills, classId);
+		while(results.next()){
+			Skill mySkill = new Skill();
+			mySkill.setSkillName(results.getString("skill_name"));
+			mySkill.setSkillDescription(results.getString("skill_description"));
+			classSkills.add(mySkill);
+		}
+		return classSkills;
 
+	}
+
+	@Override
+	public List<StudentSkill> getStudentSkills(int studentId) {
+		List<StudentSkill> studentSkills = new ArrayList<>();
+		String sqlStudentSkills = "SELECT ss.introduced, ss.accomplished FROM skill_student ss JOIN class_student cs ON ss.student_id=cs.student_id "
+					+" JOIN class c ON c.class_id=cs.class_id WHERE c.class_id=?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlStudentSkills, studentId);
+		while(results.next()){
+			StudentSkill newSkill = new StudentSkill();
+			newSkill.setIntroduced(results.getBoolean("introduced"));
+			newSkill.setAccomplished(results.getBoolean("accomplished"));
+			studentSkills.add(newSkill);
+		}
+		
+		return studentSkills;
+	}
+	
 }
-//@Override
-//public List<Message> getPublicMessages(int limit) {
-//	String sqlSelectPublicMessages = "SELECT * "+
-//									 "FROM message "+
-//									 "WHERE private = FALSE "+
-//									 "ORDER BY create_date DESC "+
-//									 "LIMIT "+limit;
-//	SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPublicMessages);
-//	return mapRowSetToMessages(results);
-//}
+
