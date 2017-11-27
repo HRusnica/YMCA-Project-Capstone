@@ -8,14 +8,12 @@ public class Student extends AppUser {
 	
 	private String birthday;
 	
-<<<<<<< HEAD
-	
-=======
+
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 
->>>>>>> 8d9e47c566957a7dd44bfa59fe52bf5eeda60809
+
 	public String getBirthday() {
 		return birthday;
 	}

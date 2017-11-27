@@ -1,3 +1,9 @@
+var root = 'http://localhost:8080/capstone/';
+
+var getStudentListURL='/studentList';
+
+
+
 $(function(){
     $('#att-modal').modal({
         keyboard: true,
@@ -18,4 +24,21 @@ $(function(){
     	
     	$('#att-modal .modal-sub-title').text(ageGroup);
     });
+    $('#attTable').on('click','tr', function(event){
+    	var classId = $(this).attr('data-class-id');
+
+    });
+ 
 });
+function getAllStudentsAttendance(){
+	$.ajax({
+		url: root + getStudentListURL,
+		method: "GET",
+		data: {
+			classId : classId,
+		}
+		
+	}).done(function(data){
+		alert("hey whats up?");
+	})
+};

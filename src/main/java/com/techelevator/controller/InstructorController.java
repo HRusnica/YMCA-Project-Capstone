@@ -35,8 +35,8 @@ public class InstructorController {
 		HttpSession mySession = request.getSession();
 		List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
 		modelHolder.put("allScheduledClasses", classes);
-		List<Student> students = studentDao.getAllStudentsByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
-		modelHolder.put("studentClassList", students);
+//		List<Student> students = studentDao.getAllStudentsByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
+//		modelHolder.put("studentClassList", students);
 		return "instructorDashboard";
 	}
 	@RequestMapping(path="/instructorViewClasses", method=RequestMethod.GET)

@@ -20,15 +20,8 @@
     <title>Instructor Dashboard</title>
 
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	
 
-    <!-- Bootstrap core CSS -->
-    <c:url value="/css/bootstrap.min.css" var="cssBootstrap"/>
-    <link href="${cssBootstrap}" rel="stylesheet">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <c:url value="/css/dashboard.css" var="cssDashboard"/>
@@ -165,7 +158,7 @@
       <label for="studentList">Student List</label>
       <select name="attendance" class="form-control">
       <c:forEach var="student" items="${studentClassList}">
-        <input type="checkbox" value="${student.classId }"><c:out value="${student.firstName + ' ' + student.lastName}"/>
+         <input type="checkbox" value="${student.classId }"/> <c:out value="${student.firstName + ' ' + student.lastName}"/>
        	</c:forEach>
        	</select>
   	  </div>
@@ -178,15 +171,7 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+ 
   </body>
 </html>
