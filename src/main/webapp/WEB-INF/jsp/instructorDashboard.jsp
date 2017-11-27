@@ -63,7 +63,8 @@
             <li class="active"><a href="${instructorDashboard}">Overview <span class="sr-only">(current)</span></a></li>
             <c:url value="/instructorViewClasses" var="instructorViewClassesLink"/>
             <li><a href="${instructorViewClassesLink}">View My Classes</a></li>
-           
+           <c:url value="/spreadsheet" var="spreadsheetLink"/>
+            <li><a href="${spreadsheetLink}">Spread Sheet</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><strong>LINKS</strong></li>

@@ -7,19 +7,11 @@ import java.util.Locale;
 public class Student extends AppUser {
 	
 	private String birthday;
-<<<<<<< HEAD
-	
 
-=======
->>>>>>> 5ef7923031bfdb799f1f170b06a2189190bbc6f2
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 5ef7923031bfdb799f1f170b06a2189190bbc6f2
 	public String getBirthday() {
 		return birthday;
 	}

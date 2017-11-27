@@ -94,182 +94,185 @@
 
 
 
-<h4>Class Name Here</h4>
-<table class="tg">
-  <tr>
-    <th class="tg-031e"></th>
-    <th class="tg-baqh">Student Name 1</th>
-    <th class="tg-baqh"></th>
-    <th class="tg-baqh">Student Name 2</th>
-    <th class="tg-baqh"></th>
-    <th class="tg-baqh">Student Name 3</th>
-    <th class="tg-baqh"></th>
-    <th class="tg-baqh">Student Name 4</th>
-    <th class="tg-baqh"></th>
-    <th class="tg-baqh">Student Name 5</th>
-    <th class="tg-yw4l"></th>
-  </tr>
-   <thead>
-		<tr>
-		<td colspan="11">I = Skill Introduced M = Skill Mastered</td>
-		</tr>
-  </thead>
-  <tr>
-    <td class="tg-yw4l">Skill Name 1</td>
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-   
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-    
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-    
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-    
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-         
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-
-  </tr>
-  <tr>
-    <td class="tg-yw4l">Skill Name 2</td>
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-   
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-    
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-    
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-    
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-         
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-  </tr>
-  <tr>
-    <td class="tg-yw4l">Skill Name 3</td>
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-   
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-    
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-    
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-    
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-         
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-  </tr>
-  <tr>
-    <td class="tg-yw4l">Skill Name 4</td>
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-   
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-    
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-    
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-    
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-    
-    <td class="tg-yw4l">
-    <input type="checkbox" name="introduced" value="introduced"> I
-    <input type="checkbox" name="mastered" value="mastered"> M
-    </td>
-         
-    <td class="tg-yw4l"></td> <!-- Spacer Column -->
-  </tr>
-  <tfoot>
-		<tr>
-		<td colspan="11"><button type="button" class="btn btn-default" id="button2">Save</button></td>
-		</tr>
-  </tfoot>
-</table>
+<h4>Student Skills Page</h4>
+<c:forEach items="${allScheduledClasses}" var="classes">
+<h2><c:out value="${classes.levelName}"/></h2>
+	<table class="tg">
+	  <tr>
+	    <th class="tg-031e"></th>
+	    <th class="tg-baqh"><c:out value="${classes.firstName}"/></th>
+	    <th class="tg-baqh"></th>
+	    <th class="tg-baqh">Student Name 2</th>
+	    <th class="tg-baqh"></th>
+	    <th class="tg-baqh">Student Name 3</th>
+	    <th class="tg-baqh"></th>
+	    <th class="tg-baqh">Student Name 4</th>
+	    <th class="tg-baqh"></th>
+	    <th class="tg-baqh">Student Name 5</th>
+	    <th class="tg-yw4l"></th>
+	  </tr>
+	   <thead>
+			<tr>
+			<td colspan="11">I = Skill Introduced M = Skill Mastered</td>
+			</tr>
+	  </thead>
+	  <tr>
+	    <td class="tg-yw4l">Skill Name 1</td>
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	   
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	    
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	    
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	    
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	         
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	
+	  </tr>
+	  <tr>
+	    <td class="tg-yw4l">Skill Name 2</td>
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	   
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	    
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	    
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	    
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	         
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	  </tr>
+	  <tr>
+	    <td class="tg-yw4l">Skill Name 3</td>
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	   
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	    
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	    
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	    
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	         
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	  </tr>
+	  <tr>
+	    <td class="tg-yw4l">Skill Name 4</td>
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	   
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	    
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	    
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	    
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	    
+	    <td class="tg-yw4l">
+	    <input type="checkbox" name="introduced" value="introduced"> I
+	    <input type="checkbox" name="mastered" value="mastered"> M
+	    </td>
+	         
+	    <td class="tg-yw4l"></td> <!-- Spacer Column -->
+	  </tr>
+	  <tfoot>
+			<tr>
+			<td colspan="11"><button type="button" class="btn btn-default" id="button2">Save</button></td>
+			</tr>
+	  </tfoot>
+	</table>
+</c:forEach>	
 
  <!-- Bootstrap core JavaScript
     ================================================== -->
