@@ -27,8 +27,6 @@ import com.techelevator.model.SwimClass;
 		
 		public Manager ManagerByEmail(String email){
 			Manager thisManager = new Manager();
-			
-			
 			String sqlSearchForId = "SELECT manager_id FROM manager WHERE email = ?";
 			SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSearchForId, email.toUpperCase());
 			if (result.next()) {
@@ -37,6 +35,17 @@ import com.techelevator.model.SwimClass;
 				System.out.println("email not found: " + email);
 			}
 			return thisManager;
+		}
+		
+		public String getInstructorFullNameByID(int instructorId){
+			String fullName = "";
+			Instructor thisInstructor = new Instructor();
+			String sqlSearchForFullName = "SELECT a.first_name, a.last_name FROM instructor i LEFT JOIN app_user a ON i.email = a.email WHERE i.instructor_id = ?";
+			SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSearchForFullName, instructorId);
+			while(result.next()){
+				fullName = thisInstructor.getFullName(result.getString("first_name"), result.getString("last_name"));
+			}
+			return fullName;
 		}
 		
 		public String saveInstructorEmail(String email){
@@ -77,7 +86,7 @@ import com.techelevator.model.SwimClass;
 			
 			List<ScheduledClass> scheduledClassList = new ArrayList<ScheduledClass>();
 			
-			String sqlSearchForScheduledClass = "SELECT l.level_name, l.level_id, l.age_group, ct.hour, ct.day_of_week, ct.start_date,"
+			String sqlSearchForScheduledClass = "SELECT i.instructor_id, l.level_name, l.level_id, l.age_group, ct.hour, ct.day_of_week, ct.start_date,"
 					+ " ct.end_date FROM instructor i JOIN class c ON c.instructor_id = i.instructor_id JOIN class_time ct ON"
 					+ " c.class_time_id = ct.class_time_id JOIN level l ON c.level_id = l.level_id "
 					+ "WHERE manager_id = ? AND NOW() BETWEEN start_date AND end_date";
@@ -91,6 +100,7 @@ import com.techelevator.model.SwimClass;
 				myClass.setLevelName(results.getString("level_name"));
 				myClass.setStartDate((results.getDate("start_date")).toLocalDate());
 				myClass.setHour(results.getString("hour"));
+				myClass.getInstructorFullName(getInstructorFullNameByID(results.getInt("instructor_id")));
 				
 				scheduledClassList.add(myClass);
 			}

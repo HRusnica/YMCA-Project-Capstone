@@ -13,6 +13,7 @@ public class ScheduledClass {
 	private LocalDate endDate;
 	private int instructorId;
 	private int classId;
+	private String instructorFullName;
 	
 	
 	public String getLevelName() {
@@ -68,6 +69,12 @@ public class ScheduledClass {
 	}
 	public void setClassId(int classId) {
 		this.classId = classId;
+	}
+	public String getInstructorFullName() {
+		return instructorFullName;
+	}
+	public void setInstructorFullName(String instructorFullName) {
+		this.instructorFullName = instructorFullName;
 	}
 
 	

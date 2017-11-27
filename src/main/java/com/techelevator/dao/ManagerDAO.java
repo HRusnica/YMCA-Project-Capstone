@@ -10,7 +10,8 @@ public interface ManagerDAO {
 	public String saveInstructorEmail(String email);
 	public boolean checkForEmail (String email);
 	public List<Instructor> getAllInstructors();
-	List<ScheduledClass> GetAllScheduledClassesByManager(int managerId);
+	public List<ScheduledClass> GetAllScheduledClassesByManager(int managerId);
 	public Manager ManagerByEmail(String email);
+	public String getInstructorFullNameByID(int instructorId);
 
 }

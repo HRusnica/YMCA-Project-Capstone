@@ -11,11 +11,9 @@ public class Manager extends AppUser {
 	public int getManagerId() {
 		return managerId;
 	}
-
+	
 	public void setManagerId(int managerId) {
 		this.managerId = managerId;
 	}
-	
-
 	
 }

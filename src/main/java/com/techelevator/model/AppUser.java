@@ -12,6 +12,11 @@ public class AppUser {
 	private String lastName;
 	private String role;
 	
+	
+	public String getFullName(String firstName, String lastName) {
+		return firstName + " " + lastName;
+	}
+	
 	public String getEmail() {
 		return email;
 	}

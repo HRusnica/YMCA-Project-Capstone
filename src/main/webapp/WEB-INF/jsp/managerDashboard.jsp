@@ -126,6 +126,7 @@
              <thead>
                 <tr>
                   <th>Class Name</th>
+                  <th>Instructor</th>
                   <th>Age Group</th>
                   <th>Day of Week</th>
                   <th>Time</th>
@@ -138,6 +139,7 @@
                 <!--  SHOW ALL CLASSES FROM ALL INSTRUCTORS -->
                 <tr data-level-name="${classes.levelName}" data-age-group="${classes.ageGroup}" data-toggle="modal" data-target="#att-modal" >
                   <td><c:out value="${classes.levelName }" /></td>
+                  <td><c:out value="${classes.instructorName }" /></td>
                   <td><c:out value="${classes.ageGroup }" /></td>
                   <td><c:out value="${classes.dayOfWeek }" /></td>
                   <td><c:out value="${classes.hour }" /></td>
