@@ -63,7 +63,7 @@ public class InstructorJdbcDao implements InstructorDAO {
 	
 	@Override
 	public void saveInstructor(Instructor instructor) {
-		jdbcTemplate.update("INSERT INTO whitelist (email) VALUES (?)", instructor.getEmail());
+		jdbcTemplate.update("INSERT INTO whitelist (email, role) VALUES (?,?)", instructor.getEmail(), "instructor");
 	}
 
 }

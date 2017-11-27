@@ -7,6 +7,11 @@ import java.util.Locale;
 public class Student extends AppUser {
 	
 	private String birthday;
+	
+	public String getBirthday() {
+		return birthday;
+	}
+
 	private String gender;
 	private String firstName;
 	private String lastName;
@@ -19,9 +24,9 @@ public class Student extends AppUser {
 		this.gender = gender;
 	}
 
-	public LocalDate getBirthDate() {
+	public LocalDate getBirthDate(String birthDate) {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDate dt = LocalDate.parse(birthday, formatter);;
+		LocalDate dt = LocalDate.parse(birthDate, formatter);;
 		return dt;
 	}
 

@@ -26,7 +26,7 @@ public class StudentJdbcDao implements StudentDAO {
 	@Override
 	public void saveStudent(Student student) {
 		jdbcTemplate.update("INSERT INTO student (first_name, last_name, birthday, gender) VALUES (?,?,?,?)",
-		student.getFirstName(), student.getLastName(), LocalDate.now(), student.getGender());
+		student.getFirstName(), student.getLastName(), student.getBirthDate(student.getBirthday()), student.getGender());
 	}
 	@Override
 	public List<Student> getAllStudentsByClass(int classId){
