@@ -109,9 +109,9 @@
               <!--<span class="text-muted">View all Classes</span>-->
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-			  <c:url value="/img/addParent.jpeg" var="addParentImage"/>
-              <img src="${addParentImage}" width="200" height="200" class="img-responsive" alt="Add Parent">
-              <!--<span class="text-muted">Add Parent email to Database</span>-->
+			  <c:url value="/img/addStudentToClass.jpeg" var="addStudentToClassImage"/>
+              <img src="${addStudentToClassImage}" width="200" height="200" class="img-responsive" alt="Add Student To Class">
+             
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <c:url value="/img/newStudent.jpeg" var="newStudentImage"/>
