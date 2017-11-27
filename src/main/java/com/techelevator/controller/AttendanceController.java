@@ -20,9 +20,13 @@ public class AttendanceController {
 	StudentDAO  studentDao;
 	
 	@RequestMapping(path="/studentList", method = RequestMethod.GET)
-	public void getAllStudentsAttendance(@ModelAttribute Student student){
+	public List<Student> getAllStudentsAttendance(@ModelAttribute Student student){
 		List<Student> students = studentDao.getAllStudentsByClass(student.getClassId());
+		return students;
 	}
-	
+	@RequestMapping(path = "/attendance", method = RequestMethod.POST)
+	public void saveAttendance (@ModelAttribute Student student) {
+		studentDao.saveStudent(student);
+	}
 
 }
