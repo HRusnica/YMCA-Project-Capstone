@@ -8,6 +8,10 @@ public class Student extends AppUser {
 	
 	private String birthday;
 	
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+
 	public String getBirthday() {
 		return birthday;
 	}

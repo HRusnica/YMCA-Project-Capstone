@@ -1,6 +1,6 @@
 var root = 'http://localhost:8080/capstone/';
 
-var idk = '/newInstructor';
+var newInstructorURL = '/newInstructor';
 
 
 $(function(){
@@ -14,7 +14,7 @@ $(function(){
 
 function saveNewInstructor(){
 	$.ajax({
-		url: root + idk,
+		url: root + newInstructorURL,
 		method: "POST",
 		data: {
 			'email' : $("#emailInstructor").val(),
