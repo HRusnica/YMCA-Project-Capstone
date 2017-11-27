@@ -11,6 +11,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 import com.techelevator.model.Instructor;
+import com.techelevator.model.Manager;
 import com.techelevator.model.ScheduledClass;
 import com.techelevator.model.SwimClass;
 
@@ -22,6 +23,20 @@ import com.techelevator.model.SwimClass;
 		@Autowired
 		public ManagerJdbcDao(DataSource dataSource){
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
+		}
+		
+		public Manager ManagerByEmail(String email){
+			Manager thisManager = new Manager();
+			
+			
+			String sqlSearchForId = "SELECT manager_id FROM manager WHERE email = ?";
+			SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSearchForId, email.toUpperCase());
+			if (result.next()) {
+			thisManager.setManagerId((int)result.getLong("manager_id"));
+			} else {
+				System.out.println("email not found: " + email);
+			}
+			return thisManager;
 		}
 		
 		public String saveInstructorEmail(String email){
