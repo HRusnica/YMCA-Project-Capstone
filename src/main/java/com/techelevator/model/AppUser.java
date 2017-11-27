@@ -13,7 +13,7 @@ public class AppUser {
 	private String role;
 	
 	
-	public String getFullName(String firstName, String lastName) {
+	public String displayFullName(String firstName, String lastName) {
 		return firstName + " " + lastName;
 	}
 	

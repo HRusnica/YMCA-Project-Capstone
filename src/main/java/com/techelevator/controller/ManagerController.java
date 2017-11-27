@@ -64,6 +64,7 @@ public class ManagerController {
 		public String showScheduleClass(ModelMap modelHolder){	
 			List<SwimClass> classes = classDao.getAllClasses();
 			modelHolder.put("allClasses", classes);
+			modelHolder.put("allInstructors", managerDao.getAllInstructors());
 			
 			return "scheduleClass";	
 		}
@@ -71,6 +72,7 @@ public class ManagerController {
 
 		@RequestMapping(path="/allInstructors", method=RequestMethod.GET)
 		public String getAllInstructors(){
+			
 			return "allInstructors";
 		}
 

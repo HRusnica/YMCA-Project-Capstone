@@ -43,7 +43,7 @@ import com.techelevator.model.ScheduledClass;
 			String sqlSearchForFullName = "SELECT a.first_name, a.last_name FROM instructor i LEFT JOIN app_user a ON i.email = a.email WHERE i.instructor_id = ?";
 			SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSearchForFullName, instructorId);
 			while(result.next()){
-				fullName = thisInstructor.getFullName(result.getString("first_name"), result.getString("last_name"));
+				fullName = thisInstructor.displayFullName(result.getString("first_name"), result.getString("last_name"));
 			}
 			return fullName;
 		}
