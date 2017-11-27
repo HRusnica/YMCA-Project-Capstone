@@ -11,11 +11,12 @@ $(function(){
     	
     	$('#class-modal .modal-title').text(levelName);
     	
-    });
-    
-    $('#allClassesTable').on('click','tr', function(event){
     	var ageGroup = $(this).attr('data-age-group');
     	
     	$('#class-modal .modal-sub-title').text(ageGroup);
+    	
+    	var levelId = $(this).attr('data-level-id');
+    	
+    	$("#classLevelId").val(levelId);
     });
 });

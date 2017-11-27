@@ -23,6 +23,7 @@ function saveNewStudent(){
 			'lastName' : $("#lastNameStudent").val(),
 			'gender' : $("#genderStudent").val(),
 			'birthday' : $("#birthdayStudent").val(),
+			
 		}
 	}).done(function(data){
 		alert("The student has been added.");

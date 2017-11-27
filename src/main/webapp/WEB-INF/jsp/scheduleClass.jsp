@@ -11,6 +11,7 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/assignClass.js"></script>
+<script type="text/javascript" src="js/newClass.js"></script>
 </head>
 <body>
 
@@ -46,20 +47,23 @@
         <h2>New Class Form</h2>
         <h3 class="modal-title">Modal title</h3>
         <h4 class="modal-sub-title">Modal subtitle</h4>
+        <input type="hidden" id="classLevelId" name="levelId">
       </div>
       
       <div class="modal-body">
-      <label for="selectInstructor">Select Instructor</label>
-      <select name="assignedInstructor" class="form-control">
-      <c:forEach var="instructor" items="${allInstructors}">
-        <option value="${instructor.instructorId }"><c:out value="${instructor.firstName + ' ' + instructor.lastName}"/></option>
-       	</c:forEach>
-       	</select>
-  	  </div>
-  	  
+	      <label for="selectInstructor">Select Instructor</label>
+	      <select id="classInstructorId" name="assignedInstructor" class="form-control">
+	      	<option value="">Who?</option>
+	      	<c:forEach var="instructor" items="${allInstructors}">
+	        	<option value="${instructor.instructorId }"><c:out value="${instructor.firstName} ${instructor.lastName}"/></option>
+	       	</c:forEach>
+	      </select>
+	 </div>
+  	   
   	  <div class="modal-body">
       <label for="dayOfWeek">Day Of Week</label>
-      <select name="assignDayOfWeek" class="form-control">
+      <select id="classDayOfWeek" name="assignDayOfWeek" class="form-control">
+		<option value="">Please Choose</option>
 		<option value="Sunday">Sunday</option>
        	<option value="Monday">Monday</option>
        	<option value="Tuesday">Tuesday</option>
@@ -71,28 +75,23 @@
   	  </div>
   	  
   	  <div class="modal-body">
-      <label for="time">Class Time</label>
-      	<input id="time" class="form-control"></input>
+      <label for="hour">Class Time</label>
+      	<input id="classHour" class="form-control"></input>
   	  </div>
   	  
   	  <div class="modal-body">
       <label for="startDate">Start Date</label>
-      	<input id="time" class="form-control"></input>
+      	<input id="classStartDate" class="form-control"></input>
   	  </div>
   	  
   	  <div class="modal-body">
       <label for="endDate">End Date</label>
-      	<input id="time" class="form-control"></input>
-  	  </div>
-  	  
-  	  <div class="modal-body">
-      <label for="notes">Class Notes</label>
-      	<textarea id="notes" class="form-control"></textarea>
+      	<input id="classEndDate" class="form-control"></input>
   	  </div>
       
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" onclick="saveNewClass()">Save changes</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
