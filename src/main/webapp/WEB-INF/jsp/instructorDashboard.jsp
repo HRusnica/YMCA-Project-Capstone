@@ -133,7 +133,7 @@
               </thead>
               <tbody>
               <c:forEach items="${allScheduledClasses}" var="classes">
-                <tr data-level-name="${classes.levelName}" data-age-group="${classes.ageGroup}" data-toggle="modal" data-target="#att-modal" >
+                <tr data-class-id="${classes.classId}" data-level-name="${classes.levelName}" data-age-group="${classes.ageGroup}" data-toggle="modal" data-target="#att-modal" >
                   <td><c:out value="${classes.levelName }" /></td>
                   <td><c:out value="${classes.ageGroup }" /></td>
                   <td><c:out value="${classes.dayOfWeek }" /></td>
@@ -162,10 +162,10 @@
       </div>
       
       <div class="modal-body">
-      <label for="selectInstructor">Student List</label>
-      <select name="assignedInstructor" class="form-control">
+      <label for="studentList">Student List</label>
+      <select name="attendance" class="form-control">
       <c:forEach var="student" items="${studentClassList}">
-        <option value="${student.instructorId }"><c:out value="${student.firstName + ' ' + student.lastName}"/></option>
+        <input type="checkbox" value="${student.classId }"><c:out value="${student.firstName + ' ' + student.lastName}"/>
        	</c:forEach>
        	</select>
   	  </div>

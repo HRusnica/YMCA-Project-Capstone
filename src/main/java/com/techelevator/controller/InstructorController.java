@@ -19,6 +19,7 @@ import com.techelevator.dao.InstructorDAO;
 import com.techelevator.dao.StudentDAO;
 import com.techelevator.model.Instructor;
 import com.techelevator.model.ScheduledClass;
+import com.techelevator.model.Student;
 
 @Controller
 public class InstructorController {
@@ -34,6 +35,8 @@ public class InstructorController {
 		HttpSession mySession = request.getSession();
 		List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
 		modelHolder.put("allScheduledClasses", classes);
+		List<Student> students = studentDao.getAllStudentsByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
+		modelHolder.put("studentClassList", students);
 		return "instructorDashboard";
 	}
 	@RequestMapping(path="/instructorViewClasses", method=RequestMethod.GET)

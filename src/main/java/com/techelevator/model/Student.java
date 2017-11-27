@@ -8,6 +8,7 @@ public class Student extends AppUser {
 	
 	private String birthday;
 	
+	
 	public String getBirthday() {
 		return birthday;
 	}
@@ -15,6 +16,7 @@ public class Student extends AppUser {
 	private String gender;
 	private String firstName;
 	private String lastName;
+	private int classId;
 
 	public String getGender() {
 		return gender;
@@ -44,6 +46,14 @@ public class Student extends AppUser {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public int getClassId() {
+		return classId;
+	}
+
+	public void setClassId(int classId) {
+		this.classId = classId;
 	}
 
 }

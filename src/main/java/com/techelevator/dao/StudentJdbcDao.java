@@ -42,5 +42,20 @@ public class StudentJdbcDao implements StudentDAO {
 		}
 		return 	studentClassList;	
 	}
+	@Override
+	public List<Student> getAllStudentsByInstructor(int instructorId){
+		List<Student> studentClassList = new ArrayList<Student>();		
+		String sqlSearchForStudentsByClass = "SELECT s.first_name, s.last_name, c.class_id FROM student s JOIN class_student cs "
+				+" ON s.student_id=cs.student_id JOIN class c ON c.class_id =cs.class_id JOIN instructor i ON i.instructor_id=c.instructor_id WHERE i.instructor_id= ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForStudentsByClass, instructorId);
+		while(results.next()){
+			Student student = new Student();
+			student.setFirstName(results.getString("first_name"));
+			student.setLastName(results.getString("last_name"));
+			student.setClassId(results.getInt("class_id"));
+			studentClassList.add(student);
+		}
+		return 	studentClassList;	
+	}
 
 }
