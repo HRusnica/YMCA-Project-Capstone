@@ -42,7 +42,7 @@ public class InstructorJdbcDao implements InstructorDAO {
 		List<ScheduledClass> scheduledClassList = new ArrayList<ScheduledClass>();
 		
 		String sqlSearchForScheduledClass = "SELECT l.level_name, l.level_id, l.age_group, ct.hour, ct.day_of_week, "
-				+ "ct.start_date, ct.end_date FROM class c JOIN class_time ct ON c.class_time_id = "
+				+ "ct.start_date, ct.end_date, c.class_id FROM class c JOIN class_time ct ON c.class_time_id = "
 				+ "ct.class_time_id JOIN level l ON c.level_id = l.level_id WHERE instructor_id = ? AND NOW() BETWEEN start_date AND end_date";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForScheduledClass, instructorId);
 		while(results.next()){
@@ -55,6 +55,7 @@ public class InstructorJdbcDao implements InstructorDAO {
 			myClass.setLevelName(results.getString("level_name"));
 			myClass.setStartDate((results.getDate("start_date")).toLocalDate());
 			myClass.setHour(results.getString("hour"));
+			myClass.setClassId(results.getInt("class_id"));
 			
 			scheduledClassList.add(myClass);
 		}
