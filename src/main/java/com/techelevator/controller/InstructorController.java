@@ -48,8 +48,15 @@ public class InstructorController {
 	}
 	
 	@RequestMapping(path="/spreadsheet", method=RequestMethod.GET)
-	public String showSpreadsheetTEST() {
-	
+	public String showSpreadsheetTEST(ModelMap modelHolder, HttpSession session, HttpServletRequest request) {
+		List<Student> students = studentDao.getAllStudentsByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
+		modelHolder.put("allStudents", students);
+		
+		
+		List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
+		modelHolder.put("allScheduledClasses", classes);
+		
+		
 		return "spreadsheet";
 	}
 	
