@@ -11,6 +11,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 import com.techelevator.model.Instructor;
+import com.techelevator.model.ScheduledClass;
 import com.techelevator.model.SwimClass;
 
 	@Component
@@ -54,6 +55,31 @@ import com.techelevator.model.SwimClass;
 				instructors.add(teach);
 			}
 			return instructors;
+		}
+		
+		@Override
+		public List<ScheduledClass> GetAllScheduledClassesByManager(int managerId) {
+			
+			List<ScheduledClass> scheduledClassList = new ArrayList<ScheduledClass>();
+			
+			String sqlSearchForScheduledClass = "SELECT l.level_name, l.level_id, l.age_group, ct.hour, ct.day_of_week, ct.start_date,"
+					+ " ct.end_date FROM instructor i JOIN class c ON c.instructor_id = i.instructor_id JOIN class_time ct ON"
+					+ " c.class_time_id = ct.class_time_id JOIN level l ON c.level_id = l.level_id "
+					+ "WHERE manager_id = ? AND NOW() BETWEEN start_date AND end_date";
+			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForScheduledClass, managerId);
+			while(results.next()){
+				ScheduledClass myClass = new ScheduledClass();
+				myClass.setAgeGroup(results.getString("age_group"));
+				myClass.setDayOfWeek(results.getString("day_of_week"));
+				myClass.setEndDate((results.getDate("end_date")).toLocalDate());
+				myClass.setLevelId(results.getInt("level_id"));
+				myClass.setLevelName(results.getString("level_name"));
+				myClass.setStartDate((results.getDate("start_date")).toLocalDate());
+				myClass.setHour(results.getString("hour"));
+				
+				scheduledClassList.add(myClass);
+			}
+			return scheduledClassList;
 		}
 		
 }
