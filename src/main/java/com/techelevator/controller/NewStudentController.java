@@ -19,6 +19,7 @@ public class NewStudentController {
 	
 	@RequestMapping(path = "/newStudent", method = RequestMethod.POST)
 	public void saveStudent (@ModelAttribute Student student) {
+		System.out.println(student.getBirthday());
 		studentDao.saveStudent(student);
 	}
 
