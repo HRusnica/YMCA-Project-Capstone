@@ -16,6 +16,7 @@ public class ScheduledClass {
 	private String instructorFullName;
 	
 	
+	
 	public String getLevelName() {
 		return levelName;
 	}

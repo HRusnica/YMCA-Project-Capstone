@@ -100,13 +100,15 @@
               </thead>
               <tbody>
               <c:forEach items="${allScheduledClasses}" var="classes">
+                <c:url value="/spreadsheet" var="spreadSheetJSP"/>
                 <tr>
-                  <td><c:out value="${classes.levelName }" /></td>
+                  <td><a href="${spreadSheetJSP}"><c:out value="${classes.levelName}" /></a></td>
                   <td><c:out value="${classes.ageGroup }" /></td>
                   <td><c:out value="${classes.dayOfWeek }" /></td>
                   <td><c:out value="${classes.hour }" /></td>
                   <td><c:out value="${classes.startDate }" /></td>
                   <td><c:out value="${classes.endDate }" /></td>
+            
                   </tr>
                   </c:forEach>
                
@@ -116,6 +118,9 @@
         </div>
       </div>
     </div>
+    
+
+    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

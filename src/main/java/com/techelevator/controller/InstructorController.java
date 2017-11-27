@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -50,12 +51,16 @@ public class InstructorController {
 	}
 	
 	@RequestMapping(path="/spreadsheet", method=RequestMethod.GET)
-	public String showSpreadsheetTEST(ModelMap modelHolder, ModelMap model, HttpSession session, HttpServletRequest request) {
+	public String showSpreadsheet(ModelMap modelHolder, HttpSession session, HttpServletRequest request) {
+	//modelHolder.put("students", studentDao.getAllStudentsByClass(classId));
+	//modelHolder.put("allClasses", instructorDao.GetAllScheduledClassesByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId()));
+		
+		
 		List<Student> students = studentDao.getAllStudentsByClass(((Instructor) session.getAttribute("instructor")).getInstructorId());
 		modelHolder.put("allStudents", students);
 		
-		List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
-		model.put("allScheduledClasses", classes);
+		//List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
+		//model.put("allScheduledClasses", classes);
 		
 		return "spreadsheet";
 	}

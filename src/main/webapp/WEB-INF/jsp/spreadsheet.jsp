@@ -95,19 +95,24 @@
 
 
 <h4>Student Skills Page</h4>
-<c:forEach items="${allScheduledClasses}" var="classes">
-<h2><c:out value="${classes.levelName}"/></h2>
+<h2><c:out value="${allClasses.levelId}"/></h2>
+<h3>Class Level</h3>
+	
 	<table class="tg">
-	  <tr>
-	    <th class="tg-031e"></th>
-	    <th class="tg-baqh"><c:out value="${students.FirstName}"/></th>
 	   
-	  </tr>
 	   <thead>
 			<tr>
 			<td colspan="11">I = Skill Introduced M = Skill Mastered</td>
 			</tr>
 	  </thead>
+	  
+ <!-- foreach for Student Names -->
+		  <tr>
+		    <th class="tg-031e"></th> <!-- Spacer Column -->
+		    <th>Student Name</th>
+		  </tr>
+
+<!-- foreach for Skill Names -->	 
 	  <tr>
 	    <td class="tg-yw4l">Skill Name 1</td>
 	    
@@ -264,7 +269,7 @@
 			</tr>
 	  </tfoot>
 	</table>
-</c:forEach>	
+
 
  <!-- Bootstrap core JavaScript
     ================================================== -->
