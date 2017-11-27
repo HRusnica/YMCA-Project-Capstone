@@ -134,7 +134,7 @@
                 </tr>
               </thead>
               <tbody>
-                <c:forEach items="${allScheduledClasses}" var="classes">
+                <c:forEach items="${allScheduledClassesByManager}" var="classes">
                 <!--  SHOW ALL CLASSES FROM ALL INSTRUCTORS -->
                 <tr data-level-name="${classes.levelName}" data-age-group="${classes.ageGroup}" data-toggle="modal" data-target="#att-modal" >
                   <td><c:out value="${classes.levelName }" /></td>

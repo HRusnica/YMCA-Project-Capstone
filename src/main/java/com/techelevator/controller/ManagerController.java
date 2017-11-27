@@ -3,6 +3,8 @@ package com.techelevator.controller;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,8 @@ import com.techelevator.dao.ManagerDAO;
 import com.techelevator.dao.SwimClassDAO;
 import com.techelevator.model.Instructor;
 import com.techelevator.model.Login;
+import com.techelevator.model.Manager;
+import com.techelevator.model.ScheduledClass;
 import com.techelevator.model.Student;
 import com.techelevator.model.SwimClass;
 
@@ -73,7 +77,9 @@ public class ManagerController {
 		}
 
 		@RequestMapping(path="/managerDashboard", method=RequestMethod.GET)
-		public String showManagerDashboard(ModelMap modelHolder){
+		public String showManagerDashboard(ModelMap modelHolder, HttpSession session, HttpServletRequest request){
+			List<ScheduledClass> classes = managerDao.GetAllScheduledClassesByManager(((Manager)session.getAttribute("manager")).getManagerId());
+			modelHolder.put("allScheduledClassesByManager", classes);
 			if(! modelHolder.containsAttribute("instructor")) {
 				modelHolder.addAttribute("instructor", new Instructor());
 			}
