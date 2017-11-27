@@ -158,8 +158,8 @@
       <div class="modal-body">
       <label for="studentList">Student List</label>
       <select name="attendance" class="form-control">
-      <c:forEach var="student" items="${studentClassList}">
-         <input type="checkbox" value="${student.classId }"/> <c:out value="${student.firstName + ' ' + student.lastName}"/>
+       <c:forEach var="student" items="${studentClassList}">
+        <input type="checkbox" value="${student.classId }"/> <c:out value="${student.firstName + ' ' + student.lastName}"/>
        	</c:forEach>
        	</select>
   	  </div>

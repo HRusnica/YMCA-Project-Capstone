@@ -35,8 +35,10 @@ public class InstructorController {
 		HttpSession mySession = request.getSession();
 		List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
 		modelHolder.put("allScheduledClasses", classes);
-//		List<Student> students = studentDao.getAllStudentsByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
-//		modelHolder.put("studentClassList", students);
+		
+		//List<Student> students = studentDao.getAllStudentsByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
+		//model.put("studentClassList", students);
+		
 		return "instructorDashboard";
 	}
 	@RequestMapping(path="/instructorViewClasses", method=RequestMethod.GET)
@@ -48,14 +50,12 @@ public class InstructorController {
 	}
 	
 	@RequestMapping(path="/spreadsheet", method=RequestMethod.GET)
-	public String showSpreadsheetTEST(ModelMap modelHolder, HttpSession session, HttpServletRequest request) {
-		List<Student> students = studentDao.getAllStudentsByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
+	public String showSpreadsheetTEST(ModelMap modelHolder, ModelMap model, HttpSession session, HttpServletRequest request) {
+		List<Student> students = studentDao.getAllStudentsByClass(((Instructor) session.getAttribute("instructor")).getInstructorId());
 		modelHolder.put("allStudents", students);
 		
-		
 		List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
-		modelHolder.put("allScheduledClasses", classes);
-		
+		model.put("allScheduledClasses", classes);
 		
 		return "spreadsheet";
 	}

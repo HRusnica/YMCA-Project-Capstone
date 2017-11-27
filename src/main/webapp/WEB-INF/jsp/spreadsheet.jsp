@@ -100,16 +100,8 @@
 	<table class="tg">
 	  <tr>
 	    <th class="tg-031e"></th>
-	    <th class="tg-baqh"><c:out value="${classes.firstName}"/></th>
-	    <th class="tg-baqh"></th>
-	    <th class="tg-baqh">Student Name 2</th>
-	    <th class="tg-baqh"></th>
-	    <th class="tg-baqh">Student Name 3</th>
-	    <th class="tg-baqh"></th>
-	    <th class="tg-baqh">Student Name 4</th>
-	    <th class="tg-baqh"></th>
-	    <th class="tg-baqh">Student Name 5</th>
-	    <th class="tg-yw4l"></th>
+	    <th class="tg-baqh"><c:out value="${students.FirstName}"/></th>
+	   
 	  </tr>
 	   <thead>
 			<tr>
