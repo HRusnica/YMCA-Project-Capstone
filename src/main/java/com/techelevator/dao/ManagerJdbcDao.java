@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import com.techelevator.model.Instructor;
 import com.techelevator.model.Manager;
 import com.techelevator.model.ScheduledClass;
-import com.techelevator.model.SwimClass;
+
 
 	@Component
 	public class ManagerJdbcDao implements ManagerDAO {
@@ -100,7 +100,7 @@ import com.techelevator.model.SwimClass;
 				myClass.setLevelName(results.getString("level_name"));
 				myClass.setStartDate((results.getDate("start_date")).toLocalDate());
 				myClass.setHour(results.getString("hour"));
-				myClass.getInstructorFullName(getInstructorFullNameByID(results.getInt("instructor_id")));
+				myClass.setInstructorFullName(getInstructorFullNameByID(results.getInt("instructor_id")));
 				
 				scheduledClassList.add(myClass);
 			}
