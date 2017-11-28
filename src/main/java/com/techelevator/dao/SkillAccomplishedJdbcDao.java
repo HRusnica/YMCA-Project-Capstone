@@ -18,7 +18,7 @@ public class SkillAccomplishedJdbcDao implements SkillAccomplishedDAO{
 
 	@Override
 	public void saveSkillAccomplished(int skillId, int studentId) {
-		String sqlAddAccomplishedSkill  ;
+		String sqlAddAccomplishedSkill = "INSERT INTO skill_student (skill_id, student_id, accomplished) VALUES (?, ?, true)" ;
 		
 	}
 }
