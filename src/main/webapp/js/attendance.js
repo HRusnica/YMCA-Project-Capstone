@@ -35,13 +35,11 @@ function getAllStudentsAttendance(classId){
 		method: "GET",
 		data: {
 			classId : classId,
-//			firstName : firstName,
-//			lastName : lastName,
 		}
 		
 	}).done(function(data){
-		$('#att-modal .modal-form').text(classId);
-		
-		console.log(data);
+		$('#att-modal .modal-body').val();
+		classIdData = data;
+		console.log(classIdData);
 	})
 };

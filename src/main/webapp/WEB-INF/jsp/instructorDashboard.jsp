@@ -154,17 +154,21 @@
         <h3 class="modal-title">Modal title</h3>
         <h4 class="modal-sub-title">Modal subtitle</h4>
       </div>
-      
-      <div class="modal-body">
-      <label for="studentList">Student List</label>
-
-      <form:form name="attendance" class="form-control modal-form">  
-       <c:forEach var="student" items="${studens}">
-        <input type="checkbox" value="${student.classId }"/> <c:out value="${student.firstName + ' ' + student.lastName}"/>
-       	</c:forEach>
-       	</form:form>  
-  	  </div>
-      
+      		<div id="attendanceStudent" class="modal-body " >
+      		<div class="form-check">
+	     	
+		      	<label class="form-check-label">
+		      	<c:forEach items="${classIdData}" var="student" > 
+		      		<input class="form-check-input" type="checkbox" value="">
+		      		hello
+		      		 <c:out value="${student.firstName }"/> 
+		      		</c:forEach>
+		      	</label>
+		      	
+		      	</div>
+		    </div>
+	      	
+  	  	
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
