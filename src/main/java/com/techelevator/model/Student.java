@@ -20,6 +20,7 @@ public class Student extends AppUser {
 	private String firstName;
 	private String lastName;
 	private int classId;
+	private int studentId;
 
 	public String getGender() {
 		return gender;
@@ -57,6 +58,14 @@ public class Student extends AppUser {
 
 	public void setClassId(int classId) {
 		this.classId = classId;
+	}
+
+	public int getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
 	}
 
 }

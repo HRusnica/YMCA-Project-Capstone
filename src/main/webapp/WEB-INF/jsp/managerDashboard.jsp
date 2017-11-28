@@ -100,23 +100,23 @@
             <div class="col-xs-6 col-sm-3 placeholder">
               <c:url value="/img/addInstructor.jpeg" var="addInstructor"/> 
               <img src="${addInstructor}" width="200" height="200" class="img-responsive" alt="Add Instructor" data-toggle="modal" data-target="#newInstructor-modal">
-              <!--<span class="text-muted">Add Instructor's email to Database</span>-->
+             
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <c:url value="/img/ScheduleNewClass.jpeg" var="ScheduleNewClass"/>
               <c:url value="/scheduleClass" var="scheduleLink"/>
               <a href="${scheduleLink}"> <img src="${ScheduleNewClass}" width="200" height="200" class="img-responsive" alt="Schedule New Class"></a>
-              <!--<span class="text-muted">View all Classes</span>-->
+              
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
 			  <c:url value="/img/addStudentToClass.jpeg" var="addStudentToClassImage"/>
-              <img src="${addStudentToClassImage}" width="200" height="200" class="img-responsive" alt="Add Student To Class">
+              <img src="${addStudentToClassImage}" width="200" height="200" class="img-responsive" alt="Add Student To Class" data-toggle="modal" data-target="#addStudentToClass-modal">
              
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <c:url value="/img/newStudent.jpeg" var="newStudentImage"/>
               <img src="${newStudentImage}" width="200" height="200" class="img-responsive" alt="New Student" data-toggle="modal" data-target="#newStudent-modal">
-              <!--  <span class="text-muted">Enroll a new Student</span>-->
+          
             </div>
           </div>
 
@@ -153,6 +153,35 @@
         </div>
       </div>
     </div>
+    
+<!-- ADD NEW STUDENT TO CLASS MODAL BELOW -->  
+<div id="addStudentToClass-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2>Enroll Student</h2>
+        <h4 class="modal-sub-title">Use this form to add a student to a scheduled class</h4>
+      </div>
+      
+      <div class="modal-body">
+	      <label for="selectedStudent">Select Student</label>
+	      <select id="studentName" name="studentName" class="form-control">
+	      	<option value="">Select a student</option>
+	      	<c:forEach var="student" items="${allStudents}">
+	        	<option value="${student.studentId }"><c:out value="${student.firstName} ${student.lastName}"/></option>
+	       	</c:forEach>
+	      </select>
+	 </div>
+  	  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="addStudentToClassButton" onclick="addStudentToClass()">Enroll Student</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+  
     
 <!-- ADD NEW STUDENT MODAL BELOW -->
 <div id="newStudent-modal" class="modal fade" tabindex="-1" role="dialog">

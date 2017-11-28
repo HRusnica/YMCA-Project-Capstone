@@ -1,11 +1,9 @@
 package com.techelevator.dao;
 
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -28,6 +26,28 @@ public class StudentJdbcDao implements StudentDAO {
 		jdbcTemplate.update("INSERT INTO student (first_name, last_name, birthday, gender) VALUES (?,?,?,?)",
 		student.getFirstName(), student.getLastName(), student.getBirthDate(student.getBirthday()), student.getGender());
 	}
+	
+	@Override
+	public List<Student> getAllStudents(){
+		List<Student> studentList = new ArrayList<Student>();		
+		String sqlSearchForStudents = "SELECT first_name, last_name, student_id FROM student";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForStudents);
+		while(results.next()){
+			Student student = new Student();
+			student.setFirstName(results.getString("first_name"));
+			student.setLastName(results.getString("last_name"));
+			student.setStudentId(results.getInt("student_id"));
+			studentList.add(student);
+		}
+		return 	studentList;	
+	}
+	
+	@Override
+	public void saveStudentToClass(int studentId, int classId){
+		String sqlInsertStudent = "INSERT INTO class_student (student_id, class_id) VALUES (?,?)";
+		jdbcTemplate.update(sqlInsertStudent, studentId, classId);		
+	}
+	
 	@Override
 	public List<Student> getAllStudentsByClass(int classId){
 		List<Student> studentClassList = new ArrayList<Student>();		
