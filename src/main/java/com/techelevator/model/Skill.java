@@ -3,7 +3,7 @@ package com.techelevator.model;
 public class Skill {
 	public String skillName;
 	public String skillDescription;
-	
+
 	
 	public String getSkillName() {
 		return skillName;
