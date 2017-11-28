@@ -17,9 +17,13 @@ public class SkillAccomplishedController {
 	@Autowired
 	SkillAccomplishedDAO skillAccomplishedDao;
 	
-	@RequestMapping(path="addAccomplishedSkillToStudent", method=RequestMethod.POST)
+	@RequestMapping(path="/addAccomplishedSkill", method=RequestMethod.POST)
 	public void saveAccomplishedSkill (@ModelAttribute StudentSkill studentSkill){
+<<<<<<< HEAD
 		skillAccomplishedDao.saveSkillAccomplished(studentSkill.getSkillId(), studentSkill.getStudentId());
+=======
+		skillAccomplishedDao.saveSkillAccomplished(studentSkill.getThisSkill().getSkillId(), studentSkill.getStudentId());
+>>>>>>> 4c9ab3a46528980bc476a05518c6c8a60266fdc7
 	}
 	
 }
