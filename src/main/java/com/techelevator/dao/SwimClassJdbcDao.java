@@ -98,5 +98,22 @@ public class SwimClassJdbcDao implements SwimClassDAO{
 		}
 		return swimClass;
 	}
+	
+	public List<Skill> getSkillsByCLassId(int classId) {
+		List<Skill> classSkills = new ArrayList<Skill>();
+		String sqlSearchForSkills = "SELECT s.skill_id, s.skill_name,s.skill_description, sk.introduced FROM skill s JOIN skill_level sl ON s.skill_id=sl.skill_id " +
+				" JOIN level l ON l.level_id=sl.level_id JOIN class c ON c.level_id=l.level_id JOIN skill_student sk ON sk.skill_id=s.skill_id WHERE class_id=? GROUP BY class_id, skill_name, s.skill_description, sk.introduced, s.skill_id";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForSkills, classId);
+		while(results.next()){
+			Skill mySkill = new Skill();
+			mySkill.setSkillName(results.getString("skill_name"));
+			mySkill.setSkillDescription(results.getString("skill_description"));
+			mySkill.setIntroduced(results.getBoolean("introduced"));
+			mySkill.setSkillId(results.getInt("skill_id"));
+			classSkills.add(mySkill);
+		}
+		return classSkills;
+
+	}
 }
 
