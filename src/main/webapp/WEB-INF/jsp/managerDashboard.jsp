@@ -18,6 +18,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/newStudent.js"></script>
 	<script type="text/javascript" src="js/newInstructor.js"></script>
+	<script type="text/javascript" src="js/addStudentToClass.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <title>Manager Dashboard</title>
@@ -47,16 +48,18 @@
           </button>
           <a class="navbar-brand" href="#">YMCA Swim</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+       <!-- Top Right NavBar -->
+        <!-- <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Dashboard</a></li>
             <li><a href="#">Settings</a></li>
             <li><a href="#">Profile</a></li>
             <li><a href="#">Help</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
+          </ul>-->
+           <!-- Optional Search Bar -->
+          <!-- <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
-          </form>
+          </form>-->
         </div>
       </div>
     </nav>
@@ -68,7 +71,7 @@
             <c:url value="/managerDashboard" var="managerDashboard"/>
             <li class="active"><a href="${managerDashboard}">Overview <span class="sr-only">(current)</span></a></li>
             <li><a href="#">Reports</a></li>
-            <li><a href="#">All Classes</a></li>
+           <!--  <li><a href="#">All Classes</a></li> -->
             
           </ul>
           <ul class="nav nav-sidebar">
@@ -174,6 +177,16 @@
 	      </select>
 	 </div>
   	  
+  	  <div class="modal-body">
+	      <label for="selectedClass">Select Class</label>
+	      <select id="className" name="className" class="form-control">
+	      	<option value="">Select a Class</option>
+	      	<c:forEach var="classes" items="${allScheduledClassesByManager}">
+	        	<option value="${classes.levelId}"><c:out value="${classes.levelName} ${classes.ageGroup} - ${classes.instructorFullName }"/></option>
+	       	</c:forEach>
+	      </select>
+	 </div>
+	 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" id="addStudentToClassButton" onclick="addStudentToClass()">Enroll Student</button>
