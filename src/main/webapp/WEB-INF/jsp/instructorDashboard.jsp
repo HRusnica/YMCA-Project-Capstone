@@ -158,10 +158,10 @@
       		<div class="form-check">
 	     	
 		      	<label class="form-check-label">
-		      	<c:forEach items="${classIdData}" var="student" > 
+		      	<c:forEach items="${students}" var="student" > 
 		      		<input class="form-check-input" type="checkbox" value="">
 		      		
-		      		 <c:out value="${student.firstName }"/> 
+		      		 <c:out value="${student.firstName} ${student.lastName }"/> 
 		      		</c:forEach>
 		      	</label>
 		      	
