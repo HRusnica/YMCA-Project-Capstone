@@ -24,7 +24,7 @@ public class ScheduledClassJdbcDao implements ScheduledClassDAO {
 	public void saveScheduledClass(ScheduledClass scheduledClass){
 		String sqlInsertClassTime= "INSERT INTO class_time (hour, day_of_week, start_date, end_date) "
 				+ "VALUES (?,?,?,?) RETURNING class_time_id";
-		 Long newTimeId = (Long) jdbcTemplate.queryForObject(sqlInsertClassTime, Long.class, scheduledClass.getHour(), scheduledClass.getDayOfWeek(), LocalDate.now(), LocalDate.now()/*scheduledClass.getStartDate(),scheduledClass.getEndDate()*/);
+		 Long newTimeId = (Long) jdbcTemplate.queryForObject(sqlInsertClassTime, Long.class, scheduledClass.getHour(), scheduledClass.getDayOfWeek(), scheduledClass.getClassStartDate(scheduledClass.getStartDate()), scheduledClass.getClassEndDate(scheduledClass.getEndDate()));
 		 String sqlInsertScheduledClass = "INSERT INTO class (level_id,instructor_id,class_time_id) VALUES (?,?,?)";
 		 jdbcTemplate.update(sqlInsertScheduledClass, scheduledClass.getLevelId(), scheduledClass.getInstructorId(), newTimeId);
 	}

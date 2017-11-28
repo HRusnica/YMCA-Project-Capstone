@@ -1,6 +1,7 @@
 package com.techelevator.model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class ScheduledClass {
 
@@ -9,13 +10,23 @@ public class ScheduledClass {
 	private int levelId;
 	private String hour;
 	private String dayOfWeek;
-	private LocalDate startDate;
-	private LocalDate endDate;
+	private String startDate;
+	private String endDate;
 	private int instructorId;
 	private int classId;
 	private String instructorFullName;
 	
+	public LocalDate getClassStartDate(String startDate) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDate dt = LocalDate.parse(startDate, formatter);;
+		return dt;
+	}
 	
+	public LocalDate getClassEndDate(String endDate) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDate dt = LocalDate.parse(endDate, formatter);;
+		return dt;
+	}
 	
 	public String getLevelName() {
 		return levelName;
@@ -47,16 +58,16 @@ public class ScheduledClass {
 	public void setDayOfWeek(String dayOfWeek) {
 		this.dayOfWeek = dayOfWeek;
 	}
-	public LocalDate getStartDate() {
+	public String getStartDate() {
 		return startDate;
 	}
-	public void setStartDate(LocalDate startDate) {
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
-	public LocalDate getEndDate() {
+	public String getEndDate() {
 		return endDate;
 	}
-	public void setEndDate(LocalDate endDate) {
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
 	public int getInstructorId() {

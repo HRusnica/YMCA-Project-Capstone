@@ -95,10 +95,10 @@ import com.techelevator.model.ScheduledClass;
 				ScheduledClass myClass = new ScheduledClass();
 				myClass.setAgeGroup(results.getString("age_group"));
 				myClass.setDayOfWeek(results.getString("day_of_week"));
-				myClass.setEndDate((results.getDate("end_date")).toLocalDate());
+				myClass.setEndDate((results.getString("end_date")));
 				myClass.setLevelId(results.getInt("level_id"));
 				myClass.setLevelName(results.getString("level_name"));
-				myClass.setStartDate((results.getDate("start_date")).toLocalDate());
+				myClass.setStartDate((results.getString("start_date")));
 				myClass.setHour(results.getString("hour"));
 				myClass.setInstructorFullName(getInstructorFullNameByID(results.getInt("instructor_id")));
 				
