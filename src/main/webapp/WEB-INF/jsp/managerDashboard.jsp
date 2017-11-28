@@ -165,11 +165,12 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h2>Enroll Student</h2>
         <h4 class="modal-sub-title">Use this form to add a student to a scheduled class</h4>
+        
       </div>
       
       <div class="modal-body">
 	      <label for="selectedStudent">Select Student</label>
-	      <select id="studentName" name="studentName" class="form-control">
+	      <select id="addToClassStudentId" name="studentName" class="form-control">
 	      	<option value="">Select a student</option>
 	      	<c:forEach var="student" items="${allStudents}">
 	        	<option value="${student.studentId }"><c:out value="${student.firstName} ${student.lastName}"/></option>
@@ -179,7 +180,7 @@
   	  
   	  <div class="modal-body">
 	      <label for="selectedClass">Select Class</label>
-	      <select id="className" name="className" class="form-control">
+	      <select id="addToClassClassId" name="className" class="form-control">
 	      	<option value="">Select a Class</option>
 	      	<c:forEach var="classes" items="${allScheduledClassesByManager}">
 	        	<option value="${classes.levelId}"><c:out value="${classes.levelName} ${classes.ageGroup} - ${classes.instructorFullName }"/></option>

@@ -15,8 +15,8 @@ function addStudentToClass(){
 		url: root + addStudentToClassURL,
 		method: "POST",
 		data: {
-			'studentId' : $("#studentId").val(),
-			'classId' : $("#classId").val()
+			'studentId' : $("#addToClassStudentId").val(),
+			'classId' : $("#addToClassClassId").val()
 		}
 	
 	}).done(function(data){

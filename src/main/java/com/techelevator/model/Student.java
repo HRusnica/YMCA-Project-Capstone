@@ -7,6 +7,11 @@ import java.util.Locale;
 public class Student extends AppUser {
 	
 	private String birthday;
+	private String gender;
+	private String firstName;
+	private String lastName;
+	private int classId;
+	private int studentId;
 
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
@@ -15,12 +20,6 @@ public class Student extends AppUser {
 	public String getBirthday() {
 		return birthday;
 	}
-
-	private String gender;
-	private String firstName;
-	private String lastName;
-	private int classId;
-	private int studentId;
 
 	public String getGender() {
 		return gender;
