@@ -34,12 +34,12 @@ function getAllStudentsAttendance(classId){
 		url: root + getStudentListURL,
 		method: "GET",
 		data: {
-			classId : classId,
+			classId : this.classId,
 		}
 		
 	}).done(function(data){
 		$('#att-modal .modal-body').val();
 		classIdData = data;
-		console.log(classIdData);
+		
 	})
 };
