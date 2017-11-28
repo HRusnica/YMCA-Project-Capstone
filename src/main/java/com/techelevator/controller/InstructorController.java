@@ -18,9 +18,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.dao.InstructorDAO;
 import com.techelevator.dao.StudentDAO;
+import com.techelevator.dao.SwimClassDAO;
 import com.techelevator.model.Instructor;
 import com.techelevator.model.ScheduledClass;
 import com.techelevator.model.Student;
+import com.techelevator.model.SwimClass;
 
 @Controller
 public class InstructorController {
@@ -30,6 +32,10 @@ public class InstructorController {
 	
 	@Autowired
 	private StudentDAO studentDao;
+	
+	@Autowired
+	private SwimClassDAO swimClassDao;
+	
 	
 	@RequestMapping(path="/instructorDashboard", method=RequestMethod.GET)
 	public String getInstructorHomePage(ModelMap modelHolder, HttpSession session, HttpServletRequest request) {
@@ -50,10 +56,25 @@ public class InstructorController {
 		return "instructorViewClasses";
 	}
 	
-	@RequestMapping(path="/spreadsheet", method=RequestMethod.GET)
-	public String showSpreadsheet(ModelMap modelHolder, HttpSession session, HttpServletRequest request) {
-	//modelHolder.put("students", studentDao.getAllStudentsByClass(classId));
-	//modelHolder.put("allClasses", instructorDao.GetAllScheduledClassesByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId()));
+	@RequestMapping(path="/spreadsheet/{classId}", method=RequestMethod.GET)
+	public String showSpreadsheet(ModelMap modelHolder, HttpSession session, HttpServletRequest request, @PathVariable int classId) {
+		
+		List<SwimClass> swimClasses = swimClassDao.getAllClasses();
+		System.out.println(swimClasses.get(0).getLevelName());
+
+		
+		for(SwimClass swimClass : swimClasses) {
+			if (classId == (swimClass.getClassId())) {
+				modelHolder.put("swimClass", swimClass);
+				System.out.println(swimClass.getLevelName());
+			} else {
+				System.out.println("fail");
+			}
+		}
+		
+		
+		
+		
 		
 		
 		List<Student> students = studentDao.getAllStudentsByClass(((Instructor) session.getAttribute("instructor")).getInstructorId());

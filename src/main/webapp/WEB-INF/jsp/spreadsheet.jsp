@@ -95,7 +95,7 @@
 
 
 <h4>Student Skills Page</h4>
-<h2><c:out value="${allClasses.levelId}"/></h2>
+<h2><c:out value="${swimClass.levelName}"/></h2>
 <h3>Class Level</h3>
 	
 	<table class="tg">

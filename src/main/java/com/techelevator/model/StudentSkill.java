@@ -6,7 +6,14 @@ public class StudentSkill {
 	public boolean introduced;
 	public boolean accomplished;
 	public String comments;
-	
+	public int studentId;
+
+	public int getStudentId() {
+		return studentId;
+	}
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
 	
 	public boolean isIntroduced() {
 		return introduced;
