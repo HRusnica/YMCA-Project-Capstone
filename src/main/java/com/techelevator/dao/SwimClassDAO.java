@@ -11,4 +11,5 @@ public interface SwimClassDAO {
 	public List<SwimClass> getAllClasses();
 	public List<Skill> getSkills(int classId);
 	public List<StudentSkill> getStudentSkills(int studentId);
+	public SwimClass getClassByClassId(int classId);
 }
