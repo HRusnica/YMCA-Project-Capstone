@@ -58,21 +58,21 @@ public class InstructorController {
 	
 	@RequestMapping(path="/spreadsheet/{classId}", method=RequestMethod.GET)
 	public String showSpreadsheet(ModelMap modelHolder, HttpSession session, HttpServletRequest request, @PathVariable int classId) {
-		
-		List<SwimClass> swimClasses = swimClassDao.getAllClasses();
-		System.out.println(swimClasses.get(0).getLevelName());
-
-		
-		for(SwimClass swimClass : swimClasses) {
-			if (classId == (swimClass.getClassId())) {
-				modelHolder.put("swimClass", swimClass);
-				System.out.println(swimClass.getLevelName());
-			} else {
-				System.out.println("fail");
-			}
-		}
-		
-		
+//		
+//		List<SwimClass> swimClasses = swimClassDao.getAllClasses();
+//		System.out.println(swimClasses.get(0).getLevelName());
+//
+//		
+//		for(SwimClass swimClass : swimClasses) {
+//			if (classId == (swimClass.getClassId())) {
+//				modelHolder.put("swimClass", swimClass);
+//				System.out.println(swimClass.getLevelName());
+//			} else {
+//				System.out.println("fail");
+//			}
+//		}
+//		
+		modelHolder.put("swimClass", swimClassDao.getClassByClassId(classId));
 		
 		
 		
