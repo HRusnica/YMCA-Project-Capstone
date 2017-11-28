@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.dao.ManagerDAO;
+import com.techelevator.dao.StudentDAO;
 import com.techelevator.dao.SwimClassDAO;
 import com.techelevator.model.Instructor;
 import com.techelevator.model.Login;
@@ -33,6 +34,9 @@ public class ManagerController {
 		
 		@Autowired
 		private SwimClassDAO classDao;
+		
+		@Autowired
+		private StudentDAO studentDao;
 		
 		@RequestMapping(path="/managerHome", method=RequestMethod.GET)
 			public String getManagerHome(ModelMap modelHolder){
@@ -88,6 +92,7 @@ public class ManagerController {
 			}
 			return "managerDashboard";
 		}
+		
 		
 		@RequestMapping(path="/assignInstructorToClass", method=RequestMethod.GET)
 		public String showAllClasses(ModelMap modelHolder){	

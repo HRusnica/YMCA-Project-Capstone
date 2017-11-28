@@ -9,4 +9,6 @@ public interface StudentDAO {
 	void saveStudent(Student student);
 	public List<Student> getAllStudentsByClass(int classId);
 	public List<Student> getAllStudentsByInstructor(int instructorId);
+	public List<Student> getAllStudents();
+	public void saveStudentToClass(int studentId, int classId);
 }
