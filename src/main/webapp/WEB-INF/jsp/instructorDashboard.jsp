@@ -17,6 +17,21 @@
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/attendance.js"></script>
+    <script type="text/javascript">
+			$(document).ready(function() {
+				
+				
+				$("#logoutLink").click(function(event){
+					$("#logoutForm").submit();
+				});
+				
+				var pathname = window.location.pathname;
+				$("nav a[href='"+pathname+"']").parent().addClass("active");
+				
+			});
+			
+			
+		</script>
     <title>Instructor Dashboard</title>
 
 	
@@ -43,14 +58,18 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
+           <!--  <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li> -->
+            <c:url var="logoutAction" value="/logoutInstructor" />
+							<form id="logoutForm" action="${logoutAction}" method="POST">
+							<input type="hidden" />
+							</form>
+							<li><a id="logoutLink" href="#">Log Out</a></li>
+            <!-- <li><a href="#">Help</a></li> -->
           </ul>
-          <form class="navbar-form navbar-right">
+        <%--   <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
-          </form>
+          </form> --%>
         </div>
       </div>
     </nav>

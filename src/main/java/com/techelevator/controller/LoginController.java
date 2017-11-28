@@ -74,13 +74,13 @@ public class LoginController {
 		}
 	return "redirect:/";
 	}
-//	@RequestMapping(path="/logoutInstructor", method=RequestMethod.POST)
-//	public String logout(ModelMap model, HttpSession session) {
-//		model.remove("instructor");
-//		session.removeAttribute("instructor");
-//		session.invalidate();
-//		return "redirect:/";
-//	}
+	@RequestMapping(path="/logoutInstructor", method=RequestMethod.POST)
+	public String logoutI(ModelMap model, HttpSession session) {
+		model.remove("instructor");
+		session.removeAttribute("instructor");
+		session.invalidate();
+		return "redirect:/";
+	}
 	@RequestMapping(path="/logoutManager", method=RequestMethod.POST)
 	public String logout(ModelMap model, HttpSession session) {
 		model.remove("manager");
