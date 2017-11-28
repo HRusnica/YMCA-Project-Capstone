@@ -6,7 +6,7 @@ public class Skill {
 	public boolean introduced;
 	public int skillId;
 	
-	
+
 	public String getSkillName() {
 		return skillName;
 	}
