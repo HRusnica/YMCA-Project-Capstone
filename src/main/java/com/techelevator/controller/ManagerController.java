@@ -90,9 +90,17 @@ public class ManagerController {
 			if(! modelHolder.containsAttribute("student")) {
 				modelHolder.addAttribute("student", new Student());
 			}
+			List<Student> allStudents = studentDao.getAllStudents();
+			modelHolder.put("allStudents", allStudents);
 			return "managerDashboard";
 		}
 		
+//		@RequestMapping(path="/addStudentToClass", method=RequestMethod.GET)
+//		public String displayAllStudents(ModelMap modelHolder){
+//			List<Student> allStudents = studentDao.getAllStudents();
+//			modelHolder.put("allStudents", allStudents);
+//			return "addStudentsToClass";
+//		}
 		
 		@RequestMapping(path="/assignInstructorToClass", method=RequestMethod.GET)
 		public String showAllClasses(ModelMap modelHolder){	
