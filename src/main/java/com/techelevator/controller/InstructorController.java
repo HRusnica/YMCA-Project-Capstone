@@ -72,6 +72,7 @@ public class InstructorController {
 //			}
 //		}
 //		
+		System.out.println(classId);
 		modelHolder.put("swimClass", swimClassDao.getClassByClassId(classId));
 		
 		
