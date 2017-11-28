@@ -20,7 +20,7 @@ function addStudentToClass(){
 		}
 	
 	}).done(function(data){
-		alert("The skill has been added.");
+		alert("The skill has been updated to accomplished.");
 		$("#skillId").val("");
 		$("#studentId").val("");
 	})
