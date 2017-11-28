@@ -78,13 +78,13 @@ public class SwimClassJdbcDao implements SwimClassDAO{
 	public SwimClass getClassByClassId(int classId) {
 		SwimClass swimClass = new SwimClass();
 	
-		String sql = "SELECT c.class_id, c.instructor_id, l.age_group, l.level_name, skill.skill_id, skill.skill_name, skill.skill_description, s.student_id, s.first_name, s.last_name FROM class c "
-						+"JOIN class_student cs ON c.class_id=cs.class_id "
-						+"JOIN student s ON cs.student_id=s.student_id "
-						+"JOIN skill_student ss ON s.student_id=ss.student_id "
-						+"JOIN skill ON skill.skill_id=ss.skill_id "
-						+"JOIN skill_level sl ON skill.skill_id=sl.skill_id "
-						+"JOIN level l ON l.level_id=sl.level_id WHERE c.class_id = ?";
+		String sql = "SELECT c.class_id, c.instructor_id, l.age_group, l.level_name, skill.skill_id, skill.skill_name, skill.skill_description, s.student_id, s.first_name, s.last_name, l.level_id FROM class c "
+						+"LEFT JOIN class_student cs ON c.class_id=cs.class_id "
+						+"LEFT JOIN student s ON cs.student_id=s.student_id "
+						+"LEFT JOIN skill_student ss ON s.student_id=ss.student_id "
+						+"LEFT JOIN skill ON skill.skill_id=ss.skill_id "
+						+"LEFT JOIN skill_level sl ON skill.skill_id=sl.skill_id "
+						+"LEFT JOIN level l ON l.level_id=sl.level_id WHERE c.class_id = ?";
 
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sql, classId);
 		if(results.next()){
