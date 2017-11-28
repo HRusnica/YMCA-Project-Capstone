@@ -250,4 +250,21 @@ INSERT INTO class_student(student_id, class_id) VALUES (7, 4);
 INSERT INTO class_student(student_id, class_id) VALUES (8, 4);
 INSERT INTO class_student(student_id, class_id) VALUES (9, 5);
 
+INSERT INTO skill_student (skill_id, student_id) VALUES (1,2);
+INSERT INTO skill_student (skill_id, student_id) VALUES (2,2);
+INSERT INTO skill_student (skill_id, student_id) VALUES (3,2);
+INSERT INTO skill_student (skill_id, student_id) VALUES (4,2);
+INSERT INTO skill_student (skill_id, student_id) VALUES (1,1);
+INSERT INTO skill_student (skill_id, student_id) VALUES (2,1);
+INSERT INTO skill_student (skill_id, student_id) VALUES (3,1);
+INSERT INTO skill_student (skill_id, student_id) VALUES (4,1);
+INSERT INTO skill_student (skill_id, student_id) VALUES (1,3);
+INSERT INTO skill_student (skill_id, student_id) VALUES (2,3);
+INSERT INTO skill_student (skill_id, student_id) VALUES (3,3);
+INSERT INTO skill_student (skill_id, student_id) VALUES (4,3);
+INSERT INTO skill_student (skill_id, student_id) VALUES (1,4);
+INSERT INTO skill_student (skill_id, student_id) VALUES (2,4);
+INSERT INTO skill_student (skill_id, student_id) VALUES (3,4);
+INSERT INTO skill_student (skill_id, student_id) VALUES (4,4);
+
 COMMIT;

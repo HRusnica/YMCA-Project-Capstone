@@ -20,6 +20,22 @@
 	<script type="text/javascript" src="js/newInstructor.js"></script>
 	<script type="text/javascript" src="js/addStudentToClass.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+			$(document).ready(function() {
+				
+				
+				$("#logoutLink").click(function(event){
+					$("#logoutForm").submit();
+				});
+				
+				var pathname = window.location.pathname;
+				$("nav a[href='"+pathname+"']").parent().addClass("active");
+				
+			});
+			
+			
+		</script>
+
 
     <title>Manager Dashboard</title>
 
@@ -49,13 +65,17 @@
           <a class="navbar-brand" href="#">YMCA Swim</a>
         </div>
        <!-- Top Right NavBar -->
-        <!-- <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>-->
+            <!-- <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li> -->
+            <c:url var="logoutAction" value="/logoutManager" />
+							<form id="logoutForm" action="${logoutAction}" method="POST">
+							<input type="hidden" />
+							</form>
+							<li><a id="logoutLink" href="#">Log Out</a></li>
+           <!--  <li><a href="#">Help</a></li> -->
+          </ul>
            <!-- Optional Search Bar -->
           <!-- <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
