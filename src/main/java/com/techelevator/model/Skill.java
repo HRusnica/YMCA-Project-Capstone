@@ -3,14 +3,10 @@ package com.techelevator.model;
 public class Skill {
 	public String skillName;
 	public String skillDescription;
-<<<<<<< HEAD
 	public boolean introduced;
 	public int skillId;
 	
-=======
 
->>>>>>> 042e4616c9ca3f437970f101dc2abcddace213cf
-	
 	public String getSkillName() {
 		return skillName;
 	}
