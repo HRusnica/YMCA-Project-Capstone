@@ -87,7 +87,7 @@ public class SwimClassJdbcDao implements SwimClassDAO{
 						+"JOIN level l ON l.level_id=sl.level_id WHERE c.class_id = ?";
 
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sql, classId);
-		while(results.next()){
+		if(results.next()){
 			
 			System.out.println("1: " + results.getString("level_name"));
 			
