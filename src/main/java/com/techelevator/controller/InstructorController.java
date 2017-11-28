@@ -33,12 +33,12 @@ public class InstructorController {
 	
 	@RequestMapping(path="/instructorDashboard", method=RequestMethod.GET)
 	public String getInstructorHomePage(ModelMap modelHolder, HttpSession session, HttpServletRequest request) {
-		HttpSession mySession = request.getSession();
+//		HttpSession mySession = request.getSession();
 		List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
 		modelHolder.put("allScheduledClasses", classes);
 		
-		//List<Student> students = studentDao.getAllStudentsByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
-		//model.put("studentClassList", students);
+		List<Student> students = studentDao.getAllStudentsByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
+		modelHolder.put("studentClassList", students);
 		
 		return "instructorDashboard";
 	}
