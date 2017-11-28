@@ -100,7 +100,7 @@
               </thead>
               <tbody>
               <c:forEach items="${allScheduledClasses}" var="classes">
-                <c:url value="/spreadsheet/${classes.classId}" var="spreadSheetJSP"/>
+                <c:url value="/skillsIntroduced/${classes.classId}" var="spreadSheetJSP"/>
                 <tr>
                   <td><a href="${spreadSheetJSP}"><c:out value="${classes.levelName}" /></a></td>
                   <td><c:out value="${classes.ageGroup }" /></td>
