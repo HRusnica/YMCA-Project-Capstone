@@ -160,7 +160,7 @@
 		      	<label class="form-check-label">
 		      	<c:forEach items="${classIdData}" var="student" > 
 		      		<input class="form-check-input" type="checkbox" value="">
-		      		hello
+		      		console.log(classIdData);
 		      		 <c:out value="${student.firstName }"/> 
 		      		</c:forEach>
 		      	</label>
