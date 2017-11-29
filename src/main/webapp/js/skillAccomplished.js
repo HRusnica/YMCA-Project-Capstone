@@ -2,20 +2,23 @@ var root = 'http://localhost:8080/capstone/';
 
 var addAccomplishedSkillURL = '/addAccomplishedSkill';
 
-
 $(function(){
+	
 	$('#addAccomplishedSkill-modal').modal({
 		keyboard: true,
         backdrop: "static",
         show:false,
 	});
 	
-	$('#addAccomplishedSkillTable').on('click', 'tr', function(event){
+	$('#addAccomplishedSkillTable').on('click', 'td', function(event){
 		var skillName= $(this).attr('data-skill-name');
-		
-		$('#class-modal .modal-sub-title').text(skillName);
+		alert ("skillName")
+		$('#addAccomplishedSkill-modal .modal-sub-title').text(skillName);
 	});
+	
+	
 });
+
 
 function addStudentToClass(){
 	$.ajax({

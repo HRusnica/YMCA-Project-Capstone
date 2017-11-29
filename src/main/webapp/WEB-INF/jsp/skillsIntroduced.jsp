@@ -131,7 +131,7 @@
 							<label for="${skill.skillId}"><c:out value="${skill.skillName}" /> </label>
 							<c:out value="${skill.skillDescription}"/>
 							</td>	
-							
+		
 							</tr>
 							
 					</c:forEach>
@@ -141,8 +141,8 @@
 					<button type="submit" value="submit">Update Class Progress</button>
 					
 				</form>
-				<button onclick="document.getElementById('addAccomplishedSkill-modal').style.display='block'">Open Modal</button>
-				<button type="button" onclick="testThisShit()">test</button>
+				
+				
 </div>
 </div>
 </div>
@@ -163,16 +163,6 @@
       <div class="modal-body">
 	      <label for="selectedStudent">Select Student</label>
 	      <select id="addToClassStudentId" name="studentName" class="form-control">
-	      	<option value="">Select a student</option>
-	      	<c:forEach var="student" items="${allStudents}">
-	        	<option value="${student.studentId }"><c:out value="${student.firstName} ${student.lastName}"/></option>
-	       	</c:forEach>
-	      </select>
-	 </div>
-      
-      <div class="modal-body">
-	      <label for="selectedStudent">Select Student</label>
-	      <select id="addAccomplishedStudentId" name="studentName" class="form-control">
 	      	<option value="">Select a student</option>
 	      	<c:forEach var="student" items="${allStudents}">
 	        	<option value="${student.studentId }"><c:out value="${student.firstName} ${student.lastName}"/></option>
