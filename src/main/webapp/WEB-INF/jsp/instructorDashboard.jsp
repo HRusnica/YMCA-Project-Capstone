@@ -54,7 +54,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">YMCA Swim</a>
+          <a class="navbar-brand">YMCA Swim</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -88,9 +88,9 @@
           <ul class="nav nav-sidebar">
             <li><strong>LINKS</strong></li>
             <c:url value="http://www.ymca.net/" var="ymcaLink"/>
-            <li><a href="${ymcaLink}">YMCA</a></li>
+            <li><a href="${ymcaLink}" target="_blank">YMCA</a></li>
             <c:url value="http://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/water-safety/swim-safety" var="swimSafety"/>
-            <li><a href="${swimSafety}">Swim Safety Tips</a></li>
+            <li><a href="${swimSafety}" target="_blank">Swim Safety Tips</a></li>
             
           </ul>
           <ul class="nav nav-sidebar">
@@ -105,28 +105,28 @@
             <div class="col-xs-6 col-sm-3 placeholder">
               <c:url value="/img/StagesOfLearning.jpeg" var="SOLimage"/>
               <c:url value="/img/StagesOfLearning.pdf" var="SOLpdf"/>
-              <a href="${SOLpdf}"><img src="${SOLimage}" width="200" height="200" class="img-responsive" alt="Stages of Learning button"></a>
+              <a href="${SOLpdf}" target="_blank"><img src="${SOLimage}" width="200" height="200" class="img-responsive" alt="Stages of Learning button"></a>
           	  <!--<h5 class="text-muted">View pdf</h5> -->
 	
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <c:url value="/img/lessonSelector.jpeg" var="lessonimage"/>
               <c:url value="/img/LessonSelector.pdf" var="lessonpdf"/>
-              <a href="${lessonpdf}"><img src="${lessonimage}" width="200" height="200" class="img-responsive" alt="Lesson Selector button"></a>
+              <a href="${lessonpdf}" target="_blank"><img src="${lessonimage}"width="200" height="200" class="img-responsive" alt="Lesson Selector button"></a>
               <!--<h4>Place Holder</h4>
               <span class="text-muted">Place Holder information</span>-->
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <c:url value="/img/stageDesc.jpeg" var="stageDescimage"/>
               <c:url value="/img/StageDescription.pdf" var="stagepdf"/>
-              <a href="${stagepdf}"><img src="${stageDescimage}" width="200" height="200" class="img-responsive" alt="Stage Description button"></a>
+              <a href="${stagepdf}" target="_blank"><img src="${stageDescimage}" width="200" height="200" class="img-responsive" alt="Stage Description button"></a>
               <!--<h4>Place Holder</h4>
               <span class="text-muted">Place Holder information</span>-->
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <c:url value="/img/programOverview.jpeg" var="programOverviewimage"/>
               <c:url value="/img/programOverview.pdf" var="programpdf"/>
-              <a href="${programpdf}"><img src="${programOverviewimage}" width="200" height="200" class="img-responsive" alt="Program Overview button"></a>
+              <a href="${programpdf}" target="_blank"><img src="${programOverviewimage}" width="200" height="200" class="img-responsive" alt="Program Overview button"></a>
               <!-- <h4>Place Holder</h4>
               <span class="text-muted">Place Holder information</span> -->
             </div>
