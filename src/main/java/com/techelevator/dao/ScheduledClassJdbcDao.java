@@ -29,11 +29,7 @@ public class ScheduledClassJdbcDao implements ScheduledClassDAO {
 		 jdbcTemplate.update(sqlInsertScheduledClass, scheduledClass.getLevelId(), scheduledClass.getInstructorId(), newTimeId);
 	}
 
-	@Override
-	public void saveStudentToClass(int studentId, int classId) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 	
 

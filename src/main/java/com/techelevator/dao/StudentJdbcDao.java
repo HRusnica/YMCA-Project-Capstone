@@ -45,7 +45,24 @@ public class StudentJdbcDao implements StudentDAO {
 	@Override
 	public void saveStudentToClass(int studentId, int classId){
 		String sqlInsertStudent = "INSERT INTO class_student (student_id, class_id) VALUES (?,?)";
-		jdbcTemplate.update(sqlInsertStudent, studentId, classId);		
+		jdbcTemplate.update(sqlInsertStudent, studentId, classId);
+		List<Integer> skillIdList = getAllSkillIdForClass(classId);
+		for(Integer skillId : skillIdList){
+			String sqlInsertSkilledStudent = "INSERT INTO skill_student (student_id, skill_id) VALUES (?, ?)";
+			jdbcTemplate.update(sqlInsertSkilledStudent, studentId, skillId);
+		}
+	}
+	
+	public List<Integer> getAllSkillIdForClass(int classId){
+		List<Integer> skillIdList = new ArrayList<Integer>();
+		String sqlSearchForSkill = "SELECT skill_id FROM skill_level sk JOIN class c ON sk.level_id = c.level_id WHERE c.class_id = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForSkill);
+		if(results.next()){
+			Integer skillId = null;
+			skillId = results.getInt("skill_id");
+			skillIdList.add(skillId);
+		}
+		return skillIdList;
 	}
 	
 	@Override
