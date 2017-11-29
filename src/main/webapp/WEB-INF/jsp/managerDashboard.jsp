@@ -90,7 +90,8 @@
           <ul class="nav nav-sidebar">
             <c:url value="/managerDashboard" var="managerDashboard"/>
             <li class="active"><a href="${managerDashboard}">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
+            <c:url value="/report" var="reportPage"/>
+            <li><a href="${reportPage}">Reports</a></li>
            <!--  <li><a href="#">All Classes</a></li> -->
             
           </ul>

@@ -12,15 +12,19 @@ $(function(){
 	
 	$('#addAccomplishedSkillTable').on('click', 'td', function(event){
 		var skillName= $(this).attr('data-skill-name');
-		alert ("skillName")
 		$('#addAccomplishedSkill-modal .modal-sub-title').text(skillName);
+	
+		var skillId = $(this).attr('data-skill-id');
+		$("#skillId").val(skillId);
+		
 	});
-	
-	
+		
 });
 
 
-function addStudentToClass(){
+function saveAccomplishedSkill(){
+	alert("ajax");
+	console.log(skillId);
 	$.ajax({
 		url: root + addAccomplishedSkillURL,
 		method: "POST",
@@ -34,5 +38,6 @@ function addStudentToClass(){
 		$("#skillId").val("");
 		$("#studentId").val("");
 	})
+	
 };
 
