@@ -113,28 +113,28 @@
 
 						<table class="table table-striped" id="addAccomplishedSkillTable">
 						
-						<tbody>
+						<tbody> 
 						
-						<c:forEach items="${skillList}" var="skill">
+						<c:forEach items="${skillList}" var="skill"> 
 
-							<tr >
-							<td><c:choose>
-								<c:when test="${skill.introduced == true}">
-									<td><input type="checkbox" id="${skill.skillId}" name="${skill.skillId}" value="true" checked >  Introduced</td>
-								</c:when>
-								<c:otherwise>
-									<td><input type="checkbox" id="${skill.skillId}" name="${skill.skillId}" value="true" >  Introduced</td>
-								</c:otherwise>
-							</c:choose></td>
+<!-- 							<tr > -->
+<%-- 							<td><c:choose> --%>
+<%-- 								<c:when test="${skill.introduced == true}"> --%>
+<%-- 									<td><input type="checkbox" id="${skill.skillId}" name="${skill.skillId}" value="true" checked >  Introduced</td> --%>
+<%-- 								</c:when> --%>
+<%-- 								<c:otherwise> --%>
+<%-- 									<td><input type="checkbox" id="${skill.skillId}" name="${skill.skillId}" value="true" >  Introduced</td> --%>
+<%-- 								</c:otherwise> --%>
+<%-- 							</c:choose></td> --%>
 							
-							<td data-skill-id="${skill.skillId}"  data-skill-name="${skill.skillName}" data-toggle="modal" data-target="#addAccomplishedSkill-modal">Skill Accomplished </td>
+<%-- 							<td data-skill-id="${skill.skillId}"  data-skill-name="${skill.skillName}" data-toggle="modal" data-target="#addAccomplishedSkill-modal">Skill Accomplished </td> --%>
 							
-							<td>
-							<label for="${skill.skillId}"><c:out value="${skill.skillName}" /> </label>
-							<c:out value="${skill.skillDescription}"/>
-							</td>	
+<!-- 							<td> -->
+<%-- 							<label for="${skill.skillId}"><c:out value="${skill.skillName}" /> </label> --%>
+<%-- 							<c:out value="${skill.skillDescription}"/> --%>
+<!-- 							</td>	 -->
 		
-							</tr>
+<!-- 							</tr> -->
 							
 							<c:url var="formAction" value="/introducedSkills" />
 							<form method="POST" action="${formAction}">
