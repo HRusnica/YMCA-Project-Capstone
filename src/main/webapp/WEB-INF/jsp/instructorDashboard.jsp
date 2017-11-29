@@ -175,7 +175,7 @@
         <h3 class="modal-title">Modal title</h3>
         <h4 class="modal-sub-title">Modal subtitle</h4>
       </div>
-      		<div id="attendanceStudent" class="modal-body " >
+      		<!--  <div id="attendanceStudent" class="modal-body " >
       		<div class="form-check">
 	     	
 		      	<label class="form-check-label">
@@ -187,10 +187,21 @@
 		      	</label>
 		      	
 		      	</div>
-		    </div>
-	      	
-  	  	
-      <div class="modal-footer">
+		    </div>-->
+
+				<div class="modal-body">
+					<label for="selectedStudent">Select Student</label> <select
+						id="addToClassStudentId" name="studentName" class="form-control">
+						<option value="">Select a student</option>
+						<c:forEach var="student" items="${allStudents}">
+							<option value="${student.studentId }"><c:out
+									value="${student.firstName} ${student.lastName}" /></option>
+						</c:forEach>
+					</select>
+				</div>
+
+
+				<div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
