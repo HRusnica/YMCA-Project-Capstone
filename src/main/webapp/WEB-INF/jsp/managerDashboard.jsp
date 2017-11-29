@@ -62,7 +62,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">YMCA Swim</a>
+          <a class="navbar-brand">YMCA Swim</a>
         </div>
        <!-- Top Right NavBar -->
         <div id="navbar" class="navbar-collapse collapse">
@@ -89,7 +89,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <c:url value="/managerDashboard" var="managerDashboard"/>
-            <li class="active"><a href="${managerDashboard}">Overview <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="${managerDashboard}" >Overview <span class="sr-only">(current)</span></a></li>
             <c:url value="/report" var="reportPage"/>
             <li><a href="${reportPage}">Reports</a></li>
            <!--  <li><a href="#">All Classes</a></li> -->
@@ -98,23 +98,23 @@
           <ul class="nav nav-sidebar">
             <li><strong>LINKS</strong></li>
             <c:url value="http://www.ymca.net/" var="ymcaLink"/>
-            <li><a href="${ymcaLink}">YMCA</a></li>
+            <li><a href="${ymcaLink}" target="_blank">YMCA</a></li>
             <c:url value="http://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/water-safety/swim-safety" var="swimSafety"/>
-            <li><a href="${swimSafety}">Swim Safety Tips</a></li>
+            <li><a href="${swimSafety}" target="_blank">Swim Safety Tips</a></li>
           </ul>
           <ul class="nav nav-sidebar">
            	<li><strong>RESOURCES</strong></li>
            	<c:url value="/img/StagesOfLearning.pdf" var="SOLpdf"/>
-           	<li><a href="${SOLpdf}">Stages of Learning</a></li>
+           	<li><a href="${SOLpdf}" target="_blank">Stages of Learning</a></li>
            	
            	<c:url value="/img/LessonSelector.pdf" var="lessonpdf"/>
-            <li><a href="${lessonpdf}">Lesson Selector</a></li>
+            <li><a href="${lessonpdf}" target="_blank">Lesson Selector</a></li>
             
             <c:url value="/img/StageDescription.pdf" var="stagepdf"/>
-            <li><a href="${stagepdf}">Stage Descriptions</a></li>
+            <li><a href="${stagepdf}" target="_blank">Stage Descriptions</a></li>
             
             <c:url value="/img/programOverview.pdf" var="programpdf"/>
-            <li><a href="${programpdf}">Program Overview</a></li> 
+            <li><a href="${programpdf}" target="_blank">Program Overview</a></li> 
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
