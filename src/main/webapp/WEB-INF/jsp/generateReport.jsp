@@ -49,6 +49,15 @@
     <!-- Custom styles for this template -->
     <c:url value="/css/dashboard.css" var="cssDashboard"/>
     <link href="${cssDashboard}" rel="stylesheet">
+    
+    <!-- Temporary Report CSS -->
+    <style type="text/css">
+	.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+	.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+	.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+	.tg .tg-ejgj{font-family:Verdana, Geneva, sans-serif !important;;vertical-align:top}
+	.tg .tg-zemy{font-family:Verdana, Geneva, sans-serif !important;;text-align:center}
+	@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
   </head>
 
   <body>
@@ -124,29 +133,51 @@
 <!-- END OF HEADER -->
 
 <h2 class="sub-header">Individual Student Report</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-             <!--  <thead>
-                <tr>
-                  <th><c:out value="${student.firstName} ${student.lastName}"/></th>
-                  
-                 
-                </tr>
-              </thead>
-              <tbody>
-                <c:forEach items="${allStudents}" var="students">
-                
-                <tr>
-                  
-                  <td><c:out value="${students.firstName} ${students.lastName }"/></td>
-                  <c:url value="/generateReport/{studentId}" var="studentReport"/>
-                  <td><a href="${studentReport}">Report</a></td>
-                  
-                  </tr>
-                  </c:forEach>
-              </tbody>-->
-            </table>
-          </div>
+
+
+<div class="tg-wrap"><table class="tg table">
+  <tr>
+    <th class="tg-zemy" colspan="3">Swim Class Name<br>Class Level<br>        Instructor Name:             Day/Time:               </th>
+  </tr>
+  <tr>
+    <td class="tg-ejgj" colspan="3">Student Name: </td>
+  </tr>
+  <tr>
+    <td class="tg-ejgj"></td>
+    <td class="tg-ejgj">Introduced</td>
+    <td class="tg-ejgj">Accomplished</td>
+  </tr>
+  <tr>
+    <td class="tg-ejgj">Skill Name 1</td>
+    <td class="tg-ejgj"></td>
+    <td class="tg-ejgj"></td>
+  </tr>
+  <tr>
+    <td class="tg-ejgj">Skill Name 2</td>
+    <td class="tg-ejgj"></td>
+    <td class="tg-ejgj"></td>
+  </tr>
+  <tr>
+    <td class="tg-ejgj">Skill Name 3</td>
+    <td class="tg-ejgj"></td>
+    <td class="tg-ejgj"></td>
+  </tr>
+  <tr>
+    <td class="tg-ejgj">Skill Name 4</td>
+    <td class="tg-ejgj"></td>
+    <td class="tg-ejgj"></td>
+  </tr>
+  <tr>
+    <td class="tg-ejgj">Skill Name 5</td>
+    <td class="tg-ejgj"></td>
+    <td class="tg-ejgj"></td>
+  </tr>
+  <tr>
+    <td class="tg-ejgj">Skill Name 6</td>
+    <td class="tg-ejgj"></td>
+    <td class="tg-ejgj"></td>
+  </tr>
+</table></div>
 
 
 

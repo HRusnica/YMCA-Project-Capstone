@@ -111,13 +111,12 @@
 				
 				<h1 class="page-header">Introduced Skills</h1>
 
-				<c:url var="formAction" value="/introducedSkills" />
-				<form method="POST" action="${formAction}">
-					
 						<table class="table table-striped" id="addAccomplishedSkillTable">
 						
 						<tbody>
+						
 						<c:forEach items="${skillList}" var="skill">
+
 							<tr >
 							<td><c:choose>
 								<c:when test="${skill.introduced == true}">
@@ -137,14 +136,41 @@
 		
 							</tr>
 							
+							<c:url var="formAction" value="/introducedSkills" />
+							<form method="POST" action="${formAction}">
+								<tr>
+								<td>
+									<label for="${skill.skillId}"><c:out value="${skill.skillName}" /> </label>
+									<c:out value="${skill.skillDescription}"/>
+								</td>
+								<td>
+									<c:choose>
+									<c:when test="${skill.introduced == true}">
+										<input type="checkbox" id="${skill.skillId}" name="introduced" value="true" checked >  Introduced
+									</c:when>
+									<c:otherwise>
+										<input type="checkbox" id="${skill.skillId}" name="introduced" value="true" >  Introduced
+									</c:otherwise>
+									</c:choose>
+								</td>
+								<td>
+									<input type="hidden" name="classId" value="${classId}">
+									<input type="hidden" name="skillId" value="${skill.skillId} ">
+									<button type="submit" value="submit">Save Introduced Skill</button>	
+								</td>
+							<div id="accomplished">
+							<td data-skill-name="${skill.skillName}" data-toggle="modal" data-target="#addAccomplishedSkill-modal">Skill Accomplished
+							</div>
+								
+						
+						</tr>
+						</form>
+						
 					</c:forEach>
+						
 					</tbody>
 					</table>
-
-					<button type="submit" value="submit">Update Class Progress</button>
-					
-				</form>
-				
+			
 				
 </div>
 </div>
