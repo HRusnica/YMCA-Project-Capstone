@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.techelevator.dao.SkillAccomplishedDAO;
+import com.techelevator.dao.StudentDAO;
 import com.techelevator.model.Skill;
 import com.techelevator.model.Student;
 import com.techelevator.model.StudentSkill;
