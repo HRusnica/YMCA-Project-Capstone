@@ -17,10 +17,10 @@ public class SkillIntroducedJdbcDao implements SkillIntroducedDAO {
 	}
 
 	@Override
-	public void saveSkillIntroduced(int skillId, int studentId) {
+	public void saveSkillIntroduced(int skillId, int classId) {
 		String sqlAddIntroducedSkill = "UPDATE skill_student  SET introduced=true FROM student s RIGHT JOIN class_student cs ON s.student_id=cs.student_id "
-			+"	RIGHT JOIN class c ON c.class_id=cs.class_id WHERE s.student_id=? AND skill_id=?";
-		jdbcTemplate.update(sqlAddIntroducedSkill, skillId, studentId);
+			+"	RIGHT JOIN class c ON c.class_id=cs.class_id WHERE skill_id=? AND c.class_id=?";
+		jdbcTemplate.update(sqlAddIntroducedSkill, skillId, classId);
 	}
 
 }
