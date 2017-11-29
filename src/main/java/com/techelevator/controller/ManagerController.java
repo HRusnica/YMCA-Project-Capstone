@@ -95,6 +95,37 @@ public class ManagerController {
 			return "managerDashboard";
 		}
 		
+		@RequestMapping(path="/report", method=RequestMethod.GET)
+		public String showReportPage(ModelMap modelHolder, HttpSession session, HttpServletRequest request){
+			List<ScheduledClass> classes = managerDao.GetAllScheduledClassesByManager(((Manager)session.getAttribute("manager")).getManagerId());
+			modelHolder.put("allScheduledClassesByManager", classes);
+			if(! modelHolder.containsAttribute("instructor")) {
+				modelHolder.addAttribute("instructor", new Instructor());
+			}
+			if(! modelHolder.containsAttribute("student")) {
+				modelHolder.addAttribute("student", new Student());
+			}
+			List<Student> allStudents = studentDao.getAllStudents();
+			modelHolder.put("allStudents", allStudents);
+			return "report";
+		}
+		
+		@RequestMapping(path="/generateReport/{studentId}", method=RequestMethod.GET)
+		public String generateReportPage(ModelMap modelHolder, HttpSession session, HttpServletRequest request){
+			List<ScheduledClass> classes = managerDao.GetAllScheduledClassesByManager(((Manager)session.getAttribute("manager")).getManagerId());
+			modelHolder.put("allScheduledClassesByManager", classes);
+			if(! modelHolder.containsAttribute("instructor")) {
+				modelHolder.addAttribute("instructor", new Instructor());
+			}
+			if(! modelHolder.containsAttribute("student")) {
+				modelHolder.addAttribute("student", new Student());
+			}
+			List<Student> allStudents = studentDao.getAllStudents();
+			modelHolder.put("allStudents", allStudents);
+			return "generateReport";
+		}
+		
+		
 //		@RequestMapping(path="/addStudentToClass", method=RequestMethod.GET)
 //		public String displayAllStudents(ModelMap modelHolder){
 //			List<Student> allStudents = studentDao.getAllStudents();
