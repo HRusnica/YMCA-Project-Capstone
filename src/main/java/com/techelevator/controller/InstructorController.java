@@ -21,6 +21,7 @@ import com.techelevator.dao.StudentDAO;
 import com.techelevator.dao.SwimClassDAO;
 import com.techelevator.model.Instructor;
 import com.techelevator.model.ScheduledClass;
+import com.techelevator.model.Skill;
 import com.techelevator.model.Student;
 import com.techelevator.model.SwimClass;
 
@@ -54,6 +55,13 @@ public class InstructorController {
 		List<ScheduledClass> classes = instructorDao.GetAllScheduledClassesByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
 		modelHolder.put("allScheduledClasses", classes);
 		return "instructorViewClasses";
+	}
+	
+	@RequestMapping(path="/skillsIntroduced/{classId}", method=RequestMethod.GET)
+	public String showSkills(ModelMap modelHolder, HttpSession session, HttpServletRequest request, @PathVariable int classId) {
+		List<Skill> skillList = swimClassDao.getSkillsByClassId(classId);
+		modelHolder.addAttribute("skillList", skillList);
+		return "skillsIntroduced";
 	}
 	
 	@RequestMapping(path="/spreadsheet/{classId}", method=RequestMethod.GET)

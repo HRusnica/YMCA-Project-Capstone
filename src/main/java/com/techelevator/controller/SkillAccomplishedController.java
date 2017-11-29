@@ -20,9 +20,15 @@ public class SkillAccomplishedController {
 	@RequestMapping(path="/addAccomplishedSkill", method=RequestMethod.POST)
 	public void saveAccomplishedSkill (@ModelAttribute StudentSkill studentSkill){
 
+<<<<<<< HEAD
 		skillAccomplishedDao.saveSkillAccomplished(studentSkill.getSkillId(), studentSkill.getStudentId());
 
+=======
+
+		skillAccomplishedDao.saveSkillAccomplished(studentSkill.getThisSkill().getSkillId(), studentSkill.getStudentId());
+>>>>>>> f55e453b857b6542305d6249e933c8ba618f8431
 
 	}
 	
 }
+
