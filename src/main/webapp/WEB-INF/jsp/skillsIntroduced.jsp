@@ -16,7 +16,10 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/skillAccomplished.js"></script>
+   
+    <c:url value="/js/skillAccomplished.js" var="skillAccomplished"/>
+    <script type="text/javascript" src="${skillAccomplished}"></script>
+   
     <script type="text/javascript">
 			$(document).ready(function() {
 				
@@ -125,7 +128,7 @@
 								</c:otherwise>
 							</c:choose></td>
 							
-							<td data-skill-name="${skill.skillName}" data-toggle="modal" data-target="#addAccomplishedSkill-modal">Skill Accomplished </td>
+							<td data-skill-id="${skill.skillId}"  data-skill-name="${skill.skillName}" data-toggle="modal" data-target="#addAccomplishedSkill-modal">Skill Accomplished </td>
 							
 							<td>
 							<label for="${skill.skillId}"><c:out value="${skill.skillName}" /> </label>
@@ -156,13 +159,13 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h2>Skill Accomplished</h2>
         <h4 class="modal-title">Use this form to updated a student skill to accomplished</h4>
-        <input type="hidden" id="skillId" name="skillId">
+        <input type="hidden" id="addAccomplishedSkillId" name="skillId" value="${skill.skillId}">
       <h3 class ="modal-sub-title">Skill</h3>
       </div>
       
       <div class="modal-body">
 	      <label for="selectedStudent">Select Student</label>
-	      <select id="addToClassStudentId" name="studentName" class="form-control">
+	      <select id="addAccomplishedStudentId" name="studentName" class="form-control">
 	      	<option value="">Select a student</option>
 	      	<c:forEach var="student" items="${allStudents}">
 	        	<option value="${student.studentId }"><c:out value="${student.firstName} ${student.lastName}"/></option>
@@ -172,7 +175,7 @@
 	 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="saveSkillAccomplishedButton" onclick="saveSkillAccomplished()">Update Student File</button>
+        <button type="button" class="btn btn-primary" id="saveSkillAccomplishedButton" onclick="saveAccomplishedSkill()">Update Student File</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
