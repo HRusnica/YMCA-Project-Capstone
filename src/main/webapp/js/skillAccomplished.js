@@ -23,7 +23,6 @@ $(function(){
 
 
 function saveAccomplishedSkill(){
-	alert("ajax");
 	console.log(skillId);
 	$.ajax({
 		url: root + addAccomplishedSkillURL,
