@@ -20,7 +20,8 @@
 	<script type="text/javascript" src="js/newInstructor.js"></script>
 	<script type="text/javascript" src="js/addStudentToClass.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
+	
+	<script type="text/javascript">
 			$(document).ready(function() {
 				
 				
@@ -32,9 +33,8 @@
 				$("nav a[href='"+pathname+"']").parent().addClass("active");
 				
 			});
-			
-			
-		</script>
+
+	</script>
 
 
     <title>Manager Dashboard</title>

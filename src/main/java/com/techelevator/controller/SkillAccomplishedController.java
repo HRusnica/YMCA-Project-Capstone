@@ -20,7 +20,6 @@ public class SkillAccomplishedController {
 	@RequestMapping(path="/addAccomplishedSkill", method=RequestMethod.POST)
 	public void saveAccomplishedSkill (@ModelAttribute StudentSkill studentSkill){
 
-
 		skillAccomplishedDao.saveSkillAccomplished(studentSkill.getThisSkill().getSkillId(), studentSkill.getStudentId());
 
 	}

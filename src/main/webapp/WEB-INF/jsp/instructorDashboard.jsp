@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 
@@ -29,18 +29,18 @@
 				$("nav a[href='"+pathname+"']").parent().addClass("active");
 				
 			});
-			
-			
+					
 		</script>
+		
     <title>Instructor Dashboard</title>
 
-	
+<!-- Bootstrap core CSS -->
+<c:url value="/css/bootstrap.min.css" var="cssBootstrap"/>
+<link href="${cssBootstrap}" rel="stylesheet">
 
-
-
-    <!-- Custom styles for this template -->
-    <c:url value="/css/dashboard.css" var="cssDashboard"/>
-    <link href="${cssDashboard}" rel="stylesheet">
+<!-- Custom styles for this template -->
+<c:url value="/css/dashboard.css" var="cssDashboard"/>
+<link href="${cssDashboard}" rel="stylesheet">
   </head>
 
   <body>
@@ -82,8 +82,8 @@
             <li class="active"><a href="${instructorDashboard}">Overview <span class="sr-only">(current)</span></a></li>
             <c:url value="/instructorViewClasses" var="instructorViewClassesLink"/>
             <li><a href="${instructorViewClassesLink}">View My Classes</a></li>
-           <c:url value="/spreadsheet" var="spreadsheetLink"/>
-            <li><a href="${spreadsheetLink}">Spread Sheet</a></li>
+           <!--<c:url value="/spreadsheet" var="spreadsheetLink"/>
+            <li><a href="${spreadsheetLink}">Spread Sheet</a></li>-->
           </ul>
           <ul class="nav nav-sidebar">
             <li><strong>LINKS</strong></li>
@@ -99,6 +99,7 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Instructor Dashboard</h1>
+
 
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
@@ -162,6 +163,7 @@
         </div>
       </div>
     </div>
+    
     
 <!-- ATTENDANCE MODAL BELOW -->
 <div id="att-modal" class="modal fade" tabindex="-1" role="dialog">

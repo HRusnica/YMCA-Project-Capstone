@@ -47,6 +47,10 @@ public class InstructorController {
 		List<Student> students = studentDao.getAllStudentsByInstructor(((Instructor) session.getAttribute("instructor")).getInstructorId());
 		model.put("studentClassList", students);
 		
+		//is this needed?
+		List<Student> allStudents = studentDao.getAllStudents();
+		modelHolder.put("allStudents", allStudents);
+		
 		return "instructorDashboard";
 	}
 	@RequestMapping(path="/instructorViewClasses", method=RequestMethod.GET)
@@ -61,6 +65,9 @@ public class InstructorController {
 	public String showSkills(ModelMap modelHolder, HttpSession session, HttpServletRequest request, @PathVariable int classId) {
 		List<Skill> skillList = swimClassDao.getSkillsByClassId(classId);
 		modelHolder.addAttribute("skillList", skillList);
+		
+		List<Student> allStudents = studentDao.getAllStudents();
+		modelHolder.put("allStudents", allStudents);
 		return "skillsIntroduced";
 	}
 	
