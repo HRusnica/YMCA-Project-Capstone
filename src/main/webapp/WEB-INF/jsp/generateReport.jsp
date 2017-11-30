@@ -35,5 +35,13 @@
   </tr>
 </table></div>
 
+<button onclick="myFunction()">Print</button>
+
+<script>
+function myFunction() {
+	window.print();
+}
+</script>
+
 
 <%@include file="common/footer.jspf"%>  
