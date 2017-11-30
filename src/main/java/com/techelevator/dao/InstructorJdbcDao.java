@@ -64,8 +64,20 @@ public class InstructorJdbcDao implements InstructorDAO {
 	
 	@Override
 	public void saveInstructor(Instructor instructor) {
-		jdbcTemplate.update("INSERT INTO whitelist (email, role) VALUES (?,?)", instructor.getEmail(), "instructor"); 
-//	jdbcTemplate.update("INSERT INTO instructor (email, manager_id) VALUES (?,?)", instructor.getEmail(), "1");
+		String sqlInsertInstructor = "INSERT INTO whitelist (email, role) VALUES (?,?)";
+		jdbcTemplate.update(sqlInsertInstructor, instructor.getEmail(), "instructor"); 
+//		String sqlCreateInstructor = "INSERT INTO instructor (email, manager_id) VALUES (?,1)";
+//    	jdbcTemplate.update(sqlCreateInstructor, instructor.getEmail());
 	}
 
 }
+//@Override
+//public void saveStudentToClass(int studentId, int classId){
+//	String sqlInsertStudent = "INSERT INTO class_student (student_id, class_id) VALUES (?,?)";
+//	jdbcTemplate.update(sqlInsertStudent, studentId, classId);
+//	List<Integer> skillIdList = getAllSkillIdForClass(classId);
+//	for(Integer skillId : skillIdList){
+//		String sqlInsertSkilledStudent = "INSERT INTO skill_student (student_id, skill_id) VALUES (?, ?)";
+//		jdbcTemplate.update(sqlInsertSkilledStudent, studentId, skillId);
+//	}
+//}

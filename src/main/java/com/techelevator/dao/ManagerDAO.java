@@ -13,5 +13,5 @@ public interface ManagerDAO {
 	public List<ScheduledClass> GetAllScheduledClassesByManager(int managerId);
 	public Manager ManagerByEmail(String email);
 	public String getInstructorFullNameByID(int instructorId);
-
+	public void saveInstructorTable(String email);
 }
