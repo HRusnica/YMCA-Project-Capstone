@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import com.techelevator.model.ScheduledClass;
-import com.techelevator.model.Skill;
 
 @Component
 public class SkillIntroducedJdbcDao implements SkillIntroducedDAO {
