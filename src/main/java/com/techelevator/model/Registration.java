@@ -12,7 +12,7 @@ public class Registration {
 		@NotBlank(message="Last Name is required") @Length(max=20) 
 		private String lastName; 
 		
-		@NotBlank(message="Invalid Email") @Email
+		@NotBlank(message="An e-mail must be provided") @Email (message="Your e-mail address is not in the proper format. Please try again.")
 		private String email;
 	
 		//add requirements for special characters or capitals
