@@ -53,6 +53,7 @@ public class ManagerController {
 //					flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "instructor", result);
 //					return "redirect:/managerDashboard";
 //				} 
+				managerDao.saveInstructorTable(instructor.getEmail());
 				managerDao.saveInstructorEmail(instructor.getEmail());
 				return "redirect:/managerDashboard";
 		}

@@ -18,8 +18,10 @@ public class SkillAccomplishedJdbcDao implements SkillAccomplishedDAO{
 	}
 
 	@Override
-	public void saveSkillAccomplished(int skillId, int studentId) {
-		String sqlAddAccomplishedSkill = "UPDATE skill_student SET accomplish = true WHERE skill_id =? AND student_id = ?";
-		jdbcTemplate.update(sqlAddAccomplishedSkill, skillId, studentId);
+	public void saveSkillAccomplished(int skillId, boolean accomplished, int studentId) {
+		String sqlAddAccomplishedSkill = "UPDATE skill_student SET accomplish = ? WHERE skill_id =? AND student_id = ?";
+		jdbcTemplate.update(sqlAddAccomplishedSkill, accomplished, skillId, studentId);
 	}
+	
+
 }

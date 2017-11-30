@@ -22,8 +22,8 @@ public class SkillAccomplishedController {
 	SkillAccomplishedDAO skillAccomplishedDao;
 	
 	@RequestMapping(path="/addAccomplishedSkill", method=RequestMethod.POST)
-	public void saveAccomplishedSkill (@RequestParam int skillId, @RequestParam int studentId){
-		skillAccomplishedDao.saveSkillAccomplished(skillId, studentId);
+	public void saveAccomplishedSkill (@RequestParam boolean accomplished, @RequestParam int skillId, @RequestParam int studentId){
+		skillAccomplishedDao.saveSkillAccomplished(skillId, accomplished, studentId);
 	}
 	
 }

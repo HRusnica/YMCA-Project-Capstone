@@ -51,6 +51,7 @@ import com.techelevator.model.ScheduledClass;
 		public String saveInstructorEmail(String email){
 			if(!checkForEmail(email)){
 			jdbcTemplate.update("INSERT INTO whitelist(email, role) VALUES (?, 'instructor')", email);
+//			
 			String result = "The instructor E-mail was added.";
 			return result;
 			} else {
@@ -105,6 +106,11 @@ import com.techelevator.model.ScheduledClass;
 				scheduledClassList.add(myClass);
 			}
 			return scheduledClassList;
+		}
+
+		@Override
+		public void saveInstructorTable(String email) {
+			jdbcTemplate.update("INSERT INTO instructor (email, manager_id) VALUES (?,1)", email);
 		}
 		
 }
