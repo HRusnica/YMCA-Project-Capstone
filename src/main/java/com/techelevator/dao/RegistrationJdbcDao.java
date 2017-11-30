@@ -49,9 +49,13 @@ public class RegistrationJdbcDao implements RegistrationDAO {
 	}
 	
 	public boolean checkForEmail(String email) {
+		String check = "";
 		String sqlSearchForUser = "SELECT * FROM whitelist WHERE UPPER(email) = ? ";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForUser, email.toUpperCase());
-		return (results.next());
+		while (results.next()) {
+			check = results.getString("email");
+		}
+		return (email.equals(check));
 	}
 
 }

@@ -65,8 +65,8 @@ public class InstructorController {
 	public String showSkills(ModelMap modelHolder, HttpSession session, HttpServletRequest request, @PathVariable int classId) {
 		List<Skill> skillList = swimClassDao.getSkillsByClassId(classId);
 		modelHolder.addAttribute("skillList", skillList);
+		List<Student> allStudents = studentDao.getAllStudentsByClass(classId);
 		
-		List<Student> allStudents = studentDao.getAllStudents();
 		modelHolder.put("allStudents", allStudents);
 		return "skillsIntroduced";
 	}

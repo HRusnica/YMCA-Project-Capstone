@@ -56,7 +56,7 @@ public class StudentJdbcDao implements StudentDAO {
 	public List<Integer> getAllSkillIdForClass(int classId){
 		List<Integer> skillIdList = new ArrayList<Integer>();
 		String sqlSearchForSkill = "SELECT skill_id FROM skill_level sk JOIN class c ON sk.level_id = c.level_id WHERE c.class_id = ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForSkill);
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForSkill, classId);
 		if(results.next()){
 			Integer skillId = null;
 			skillId = results.getInt("skill_id");
