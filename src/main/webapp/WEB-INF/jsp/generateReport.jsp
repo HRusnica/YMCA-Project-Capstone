@@ -5,43 +5,33 @@
 
 <div class="tg-wrap"><table class="tg table">
   <tr>
-    <th class="tg-zemy" colspan="3">Swim Class Name<br>Class Level<br>        Instructor Name:             Day/Time:           Student Name:    </th>
+    <th class="tg-zemy" colspan="3"><h2>Water Discovery</h2><br><h3>Parent & Child</h3><br><h5>Instructor Name:         </h5><br><h5>Day/Time: 10:00am Wednesdays</h5><br><h5>Student Name: Joey Smith</h5><br>    </th>
   </tr>
   
   <tr>
-    <td class="tg-ejgj"></td>
-    <td class="tg-ejgj">Introduced</td>
-    <td class="tg-ejgj">Accomplished</td>
+    <td class="tg-ejgj"><strong>Skill Name</strong></td>
+    <td class="tg-ejgj"><strong>Introduced</strong></td>
+    <td class="tg-ejgj"><strong>Accomplished</strong></td>
   </tr>
   <tr>
-    <td class="tg-ejgj">Skill Name 1</td>
-    <td class="tg-ejgj"></td>
-    <td class="tg-ejgj"></td>
-  </tr>
-  <tr>
-    <td class="tg-ejgj">Skill Name 2</td>
-    <td class="tg-ejgj"></td>
+    <td class="tg-ejgj">Blow Bubbles</td>
+    <td class="tg-ejgj">&#10003</td>
     <td class="tg-ejgj"></td>
   </tr>
   <tr>
-    <td class="tg-ejgj">Skill Name 3</td>
+    <td class="tg-ejgj">Front Tow</td>
     <td class="tg-ejgj"></td>
     <td class="tg-ejgj"></td>
   </tr>
   <tr>
-    <td class="tg-ejgj">Skill Name 4</td>
-    <td class="tg-ejgj"></td>
-    <td class="tg-ejgj"></td>
+    <td class="tg-ejgj">Water exit</td>
+    <td class="tg-ejgj">&#10003;</td>
+    <td class="tg-ejgj">&#10003</td>
   </tr>
   <tr>
-    <td class="tg-ejgj">Skill Name 5</td>
-    <td class="tg-ejgj"></td>
-    <td class="tg-ejgj"></td>
-  </tr>
-  <tr>
-    <td class="tg-ejgj">Skill Name 6</td>
-    <td class="tg-ejgj"></td>
-    <td class="tg-ejgj"></td>
+    <td class="tg-ejgj">Water entry</td>
+    <td class="tg-ejgj">&#10003</td>
+    <td class="tg-ejgj">&#10003</td>
   </tr>
 </table></div>
 
