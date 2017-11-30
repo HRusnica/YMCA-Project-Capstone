@@ -32,7 +32,7 @@ public class RegistrationController {
 		
 		flash.addFlashAttribute("registration", registration);
 		
-		if(result.hasErrors()){
+		if(result.hasErrors() || !registrationDAO.checkForEmail(registration.getEmail())){
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "registration", result);
 			return "redirect:/#register"; 
 		}

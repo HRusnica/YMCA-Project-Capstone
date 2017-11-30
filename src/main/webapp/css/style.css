@@ -136,3 +136,7 @@ body{
 	width: 20vw;
 	padding-top: 20px;
 }
+
+.error {
+		color: red;
+		}
