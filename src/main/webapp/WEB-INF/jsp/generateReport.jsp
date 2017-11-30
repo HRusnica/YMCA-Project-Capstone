@@ -5,7 +5,7 @@
 
 <div class="tg-wrap"><table class="tg table">
   <tr>
-    <th class="tg-zemy" colspan="3"><h2>Water Discovery</h2><br><h3>Parent & Child</h3><br><h5>Instructor Name:         </h5><br><h5>Day/Time: 10:00am Wednesdays</h5><br><h5>Student Name: Joey Smith</h5><br>    </th>
+    <th class="tg-zemy" colspan="3"><strong>Water Discovery</strong><br><strong>Parent & Child</strong><br><strong>Instructor Name: </strong><br><strong>Day/Time: </strong>10:00am Wednesdays<br><strong>Student Name: </strong>Joey Smith<br>    </th>
   </tr>
   
   <tr>
