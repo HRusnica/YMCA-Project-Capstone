@@ -82,7 +82,7 @@
             <c:url value="/managerDashboard" var="managerDashboard"/>
             <li><a href="${managerDashboard}">Overview</a></li>
             <c:url value="/report" var="reportPage"/>
-            <li class="active"><a href="${reportPage}">Reports <span class="sr-only">(current)</span></a></li>
+            <li><a href="${reportPage}">Reports <span class="sr-only">(current)</span></a></li>
            <!--  <li><a href="#">All Classes</a></li> -->
             
           </ul>
