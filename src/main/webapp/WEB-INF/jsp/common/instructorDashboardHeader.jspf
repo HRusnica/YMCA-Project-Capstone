@@ -16,7 +16,13 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/attendance.js"></script>
+    
+    <c:url value="/js/attendance.js" var="attendance"/>
+    <script type="text/javascript" src="${attendance}"></script>
+    
+    <c:url value="/js/skillAccomplished.js" var="accomplished"/>
+    <script type="text/javascript" src="${accomplished}"></script>
+    
     <script type="text/javascript">
 			$(document).ready(function() {
 				
@@ -75,7 +81,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <c:url value="/instructorDashboard" var="instructorDashboard"/>
-            <li class="active"><a href="${instructorDashboard}">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="${instructorDashboard}">Overview </a></li>
             <c:url value="/instructorViewClasses" var="instructorViewClassesLink"/>
             <li><a href="${instructorViewClassesLink}">View My Classes</a></li>
           </ul>
