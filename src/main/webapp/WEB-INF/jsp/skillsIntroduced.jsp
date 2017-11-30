@@ -8,7 +8,7 @@
 						<tbody> 
 						
 						<c:forEach items="${skillList}" var="skill"> 
-							
+						
 							<c:url var="formAction" value="/introducedSkills" />
 							<form method="POST" action="${formAction}">
 								<tr>
@@ -32,7 +32,7 @@
 									<button type="submit" value="submit">Save Introduced Skill</button>	
 								</td>
 							
-							<td data-skill-name="${skill.skillName}" data-toggle="modal" data-target="#addAccomplishedSkill-modal">Skill Accomplished</td>
+							<td data-skill-name="${skill.skillName}" data-skill-id="${skill.skillId}" data-toggle="modal" data-target="#addAccomplishedSkill-modal">Skill Accomplished</td>
 							</tr>
 						</form>
 						
@@ -51,15 +51,16 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h2>Skill Accomplished</h2>
         <h4 class="modal-title">Use this form to updated a student skill to accomplished</h4>
-        <input type="hidden" id="addAccomplishedSkillId" name="skillId" value="${skill.skillId}">
+        <input type="hidden" id="addAccomplishedSkillId" class="modal-skill" name="skillId">
       <h3 class ="modal-sub-title">Skill</h3>
       </div>
       
       <div class="modal-body">
 		    	<c:forEach var="student" items="${allStudents }">
 		    	<div class="checkbox">
-		    		<label for="selectedStudent"><input type="checkbox" value="${student.studentId }">
+		    		<label for="selectedStudent"><input id="addAccomplished" type="checkbox" value="accomplished">
 		    		<c:out value="${student.firstName} ${student.lastName}" /></label>
+		    		<input type="hidden" id="addAccomplishedStudentId" name="studentId" value="${student.studentId}">
 		    	</div>
 		    	</c:forEach> 
 		    </div>
@@ -69,7 +70,9 @@
 	      <select id="addAccomplishedStudentId" name="studentName" class="form-control">
 	      	<option value="">Select a student</option>
 	      	<c:forEach var="student" items="${allStudents}">
-	        	<option value="${student.studentId }"><c:out value="${student.firstName} ${student.lastName}"/></option>
+	        	<option value="accomplished"><c:out value="${student.firstName} ${student.lastName}"/></option>
+	        	<input type="hidden" name="studentId" value="${student.studentId}">
+				<input type="hidden" name="skillId" value="${skill.skillId} ">
 	       	</c:forEach>
 	      </select>
 	 </div> -->

@@ -13,10 +13,9 @@ $(function(){
 	$('#addAccomplishedSkillTable').on('click', 'td', function(event){
 		var skillName= $(this).attr('data-skill-name');
 		$('#addAccomplishedSkill-modal .modal-sub-title').text(skillName);
-	
-		var skillId = $(this).attr('data-skill-id');
-		$("#skillId").val(skillId);
 		
+		var skillId= $(this).attr('data-skill-id');
+		$('#addAccomplishedSkill-modal .modal-skill').val(skillId);
 	});
 		
 });
@@ -29,7 +28,8 @@ function saveAccomplishedSkill(){
 		method: "POST",
 		data: {
 			'skillId' : $("#addAccomplishedSkillId").val(),
-			'studentId' : $("#addAccomplishedStudentId").val()
+			'studentId' : $("#addAccomplishedStudentId").val(),
+			'accomplished' : $("#addAccomplished").val(),
 		}
 	
 	}).done(function(data){
